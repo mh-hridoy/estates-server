@@ -1,0 +1,614 @@
+{
+  "propertyAddress": "245 Triple Crown Run",
+  "city": "Louisburg",
+  "county": "Franklin",
+  "state": "North Carolina",
+  "zip": 27549,
+  "lotSqf": 7.23,
+  "totalSqf": 3424,
+  "costPerSqf": 140,
+  "totalLivingSQF": 2168,
+  "mainFloor": 1624,
+  "secondFloor": 0,
+  "thirdFloor": 0,
+  "yearBuilt": 1999,
+  "bed": 3,
+  "bath": 2,
+  "fullBath": 0,
+  "halfBath": 0,
+  "oneThirdBath": 0,
+  "basement": 0,
+  "finishedBasement": 0,
+  "finishedAttic": 0,
+  "garages": 0,
+  "garageType": "NA",
+  "garageSqf": 0,
+  "enclosedPorch": 0,
+  "family": 1,
+  "kitchen": 1,
+  "fireplace": true,
+  "subdivision": " FRANKLIN FARMS",
+  "PropertyDescription": "This 2184 square foot single family home has 3 bedrooms and 2.0 bathrooms. This home is located at 245 Triple Crown Run, Louisburg, NC 27549.",
+  "legalDesc": "PRF 3 SL 91/75POWER LINE CROSSES PROP",
+  "extWall": "Alum/Vinyl Siding",
+  "roofing": "Ashphalt Shingle",
+  "ac": "Center",
+  "heating": "NA",
+  "poolSpa": "None",
+  "stories": 1,
+  "propertyType": "Single Family",
+  "specificPropertyType": "Single Family",
+  "buildingStyle": "Modern",
+  "parcelId": "26959",
+  "countyValue": 235200,
+  "prcURL": "https://estatestracking.com/storage/document_property/fc81b0fd3e81e36a5bbc63cda725d560.pdf",
+  "countyAssessorURL": "https://www.franklincountytax.us/pt/forms/htmlframe.aspx?mode=content/home.htm",
+  "gisURL": "http://maps2.roktech.net/franklin_GM4/",
+  "treasurerURL": "http://www.franklin.webtaxpay.com/search.php",
+  "taxBillUrl": "https://secure.webtaxpay.com/search.php",
+
+  "infoTabFile": {
+    "fileName": "file Here",
+    "uploadedAt": "2021-08-05",
+    "postedBy": "NameHere"
+  },
+  "zillowURL": "https://www.zillow.com/homedetails/245-Triple-Crown-Run-Louisburg-NC-27549/49963769_zpid/",
+  "zestimate": 368300.0,
+  "redfinUrl": "https://www.redfin.com/NC/Louisburg/245-Triple-Crown-Run-27549/home/44289416",
+  "redfinEst": 306474.0,
+  "realtorURL": "https://www.realtor.com/realestateandhomes-detail/245-Triple-Crown-Run_Louisburg_NC_27549_M69144-93443",
+  "realtorEst": 272200.0,
+  "truliaURL": "https://www.trulia.com/p/nc/louisburg/245-triple-crown-run-louisburg-nc-27549--2024638973",
+  "truliaEst": 368300.0,
+  "harUrl": "NA",
+  "harEst": 0,
+  "beenVerifiedURL": "NA",
+  "priceHistory": [
+    {
+      "date": "12/09/1999",
+      "price": 155000.0,
+      "costPerSqf": 71.0,
+      "source": "Public Record",
+      "Description": "NA"
+    }
+  ],
+
+  "schoolsAndNeighbors": {
+    "elementarySchool": {
+      "name": "Bunn Elementary School",
+      "ranking": "6/10",
+      "distance": "2.0 mi"
+    },
+
+    "middleSchool": {
+      "name": "Bunn Middle School",
+      "ranking": "4/10",
+      "distance": "2.2 mi"
+    },
+    "highSchool": {
+      "name": "Bunn High School",
+      "ranking": "3/10",
+      "distance": "2.6 mi"
+    }
+  },
+  "assesmentAndTaxes": [
+    {
+      "propertyTaxOwed": 0,
+      "owedYear": 0,
+      "taxAssessed": 2169.76,
+      "taxYear": 2020
+    },
+    {
+      "propertyTaxOwed": 0,
+      "owedYear": 0,
+      "taxAssessed": 1967.79,
+      "taxYear": 2019
+    },
+    {
+      "propertyTaxOwed": 0,
+      "owedYear": 0,
+      "taxAssessed": 1966.02,
+      "taxYear": 2018
+    },
+    {
+      "propertyTaxOwed": 0,
+      "owedYear": 0,
+      "taxAssessed": 1830.7,
+      "taxYear": 2017
+    }
+  ],
+
+  "countyRODURL": "http://72.15.246.186/FranklinNCNW/application.asp?resize=true",
+
+  "mortgageInfo": [
+    {
+      "noSTR": true,
+
+      "lender": "BANCFINANCIAL SERVICES CORP",
+      "lienAmount": 130050.0,
+      "dateRecorded": "12/09/1999",
+      "dtBookPage": "1162/25",
+      "loanType": "FNMA",
+      "loanTerm": "30 Years",
+      "maturityDate": "01/01/2030",
+      "rightToCure": 5,
+      "tursteeFee": 5.0,
+      "loanEstimatedBalance": 69564.63,
+      "cmaArv": 303520.0,
+      "resonableFees": true,
+      "amortizationView": {
+        "type": true,
+        "annualInterestRate": 7.91,
+        "monthlyPayment": 945.47,
+        "monthlyPrincipalPayment": 483.74,
+        "monthlyInterestPayment": 461.74
+      },
+      "propertySignature": {
+        "owner1": true,
+        "owner2": true,
+        "dtcFirstCheck": {
+          "type": true,
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          }
+        }
+      }
+    },
+    {
+      "lienForeclosing": true,
+
+      "lender": "ATHENE ANNUITY & LIFE ASSURANCE COMPANY",
+      "lienAmount": 111925.0,
+      "dateRecorded": "11/06/2008",
+      "dtBookPage": "1707/708",
+      "loanType": "FNMA",
+      "loanTerm": "30 Years",
+      "maturityDate": "11/01/2038",
+      "tursteeFee": 5.0,
+      "trustee": "Hutchens Law Firm",
+      "assignmentBookPage": "2198/1507",
+
+      "strBookPage": "2223/512",
+      "strDate": "09/15/2020",
+      "loanEstimatedBalance": 86838.6,
+      "estLatePaymentAndFees": 16214.48,
+      "totalEstimatedDebt": 103053.08,
+      "cmaArv": 303520.0,
+      "resonableFees": true,
+      "legalDescMatch": true,
+      "amortizationView": {
+        "type": true,
+        "annualInterestRate": 6.09,
+        "monthlyPayment": 676.88,
+        "monthlyPrincipalPayment": 234.98,
+        "monthlyInterestPayment": 441.9,
+        "estimatedEquity": 157106.92
+      },
+      "modA": {
+        "type": true,
+        "modABookPage": "2003/2003",
+        "modADate": "08/01/2015",
+        "modALienAmount": 131461.62,
+        "modALoanTerm": "40",
+        "modAmaturityDate": "07/01/2055",
+        "annualInterestRate": 6.0,
+        "monthlyPayment": 722.96,
+        "loanEstBalance": 125599.44,
+        "estLatePaymentAndFees": 17182.16,
+        "totalEstimatedDebt": 103053.08
+      },
+      "propertySignature": {
+        "owner1": true,
+        "owner2": true,
+        "dtcFirstCheck": {
+          "name": true,
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          }
+        },
+        "dcaSecondCheck": {
+          "type": true,
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          }
+        }
+      }
+    }
+  ],
+  "hoaLien": {
+    "lienForeclosing": true,
+    "noSTR": true,
+    "defectiveLien": true,
+    "manualSearch": true,
+    "note": "String",
+
+    "hoaName": "String",
+    "hoaLienAmount": 0,
+    "hoaLienDate": "Date",
+    "instrument": "String",
+    "dtBookPage": "String",
+    "trusteeHoa": "String",
+    "totalDebt": 0,
+    "strDate": "Date",
+    "strBookPage": "String",
+    "ccAndRsInstrument": "String",
+    "ccAndRsDate": "Date",
+    "hoaLienPriority": "String",
+
+    "foreclosureResult": {
+      "type": true,
+      "trDeedInstrument": "String",
+      "trDeedDate": "Date",
+      "winningBidder": "String",
+      "winningbid": 0
+    },
+    "redemptionInfo": {
+      "type": true,
+      "affidavitDate": "Date",
+      "taxCode": "String",
+      "redemptionExpires": "Date",
+      "redeemedByOwner": true,
+      "redemptionNoticeInst": "String",
+      "redemptionDate": "Date"
+    },
+    "document": {
+      "type": "String",
+      "docType": "String",
+      "otherName": "String",
+      "caseNo": "String",
+      "recordedDate": "Date"
+    },
+    "propertySignature": {
+      "owner1": true,
+      "owner2": true,
+      "owner3": true,
+      "owner4": true,
+      "dtcFirstCheck": {
+        "type": true,
+        "user": {
+          "name": "mongoose.Types.ObjectId",
+          "checkedAt": "Date.now"
+        }
+      },
+      "dcaSecondCheck": {
+        "type": true,
+        "user": {
+          "name": "mongoose.Types.ObjectId",
+          "checkedAt": "Date.now"
+        }
+      },
+      "dcaFinalCheck": {
+        "type": true,
+        "user": {
+          "name": "mongoose.Types.ObjectId",
+          "checkedAt": "Date.now"
+        }
+      }
+    }
+  },
+  "taxLien": {
+    "lienForeclosing": true,
+    "defectiveLien": true,
+
+    "plaintiff": "String",
+    "judgmentAmount": 0,
+    "judgmentDate": "Date",
+    "bpOrInstrument": "String",
+    "case": "String",
+    "sheriffOrConstable": "String",
+
+    "foreclosureResult": {
+      "type": true,
+      "trDeedInstrument": "String",
+      "trDeedDate": "Date",
+      "winningBidder": "String",
+      "winningbid": 0
+    },
+    "redemptionInfo": {
+      "type": true,
+      "affidavitDate": "Date",
+      "taxCode": "String",
+      "redemptionExpires": "Date",
+      "redeemedByOwner": true,
+      "redemptionNoticeInst": "String",
+      "redemptionDate": "Date"
+    },
+    "document": {
+      "type": "String",
+      "docType": "String",
+      "otherName": "String",
+      "caseNo": "String",
+      "recordedDate": "Date"
+    },
+    "propertySignature": {
+      "owner1": true,
+      "owner2": true,
+      "owner3": true,
+      "owner4": true,
+      "dtcFirstCheck": {
+        "type": true,
+        "user": {
+          "name": "mongoose.Types.ObjectId",
+          "checkedAt": "Date.now"
+        }
+      },
+      "dcaSecondCheck": {
+        "type": true,
+        "user": {
+          "name": "mongoose.Types.ObjectId",
+          "checkedAt": "Date.now"
+        }
+      },
+      "dcaFinalCheck": {
+        "type": true,
+        "user": {
+          "name": "mongoose.Types.ObjectId",
+          "checkedAt": "Date.now"
+        }
+      }
+    }
+  },
+
+  "ownerInfo": [
+    {
+      "sameOwner": true,
+      "pacer": true,
+
+      "ownerFullName": "String",
+      "ownerAddress": "String",
+      "ownerEmail": "String",
+      "ownerPhone": 0,
+      "pacerUrl": "String",
+      "beenVerifiedURL": "String",
+      "note": "String"
+    }
+  ],
+  "borrowerInfo": [
+    {
+      "sameAsOwner": true,
+      "addressSameAsOwner": true,
+      "borrowerName": "String",
+      "borrowerAddress": "String",
+      "borrowerEmail": "String",
+      "borrowerPhone": 0,
+      "notes": "String"
+    }
+  ],
+  "OwnerDocs": {
+    "type": "String",
+    "docType": "String",
+    "otherName": "String",
+    "caseNo": "String",
+    "recordedDate": "Date"
+  },
+
+  "saleinfo": [
+    {
+      "saleDate": "Date",
+      "case0": "String",
+      "openingBid": 0,
+      "saleType": "String",
+      "saleStatus": "String",
+      "salePlace": "String",
+      "saleTime": "String",
+      "truesteeFile": "String",
+      "precinct": 0,
+      "trustee": "String",
+      "trusteeUrl": "String",
+      "trusteeAddress": "String",
+      "trusteePhone": "0",
+      "trusteeHours": "String",
+      "noticeOfForclosure": "String",
+      "legalNoticeURL": "String",
+      "datePulled": "Date",
+      "book": "String",
+      "page": "String",
+      "imBy": "String",
+      "imByDate": "Date",
+      "nosName": "String",
+      "nosDate": "Date",
+      "auctionUrl": "String",
+      "auctionDate": "String",
+      "saleInfoDocs": {
+        "type": "String",
+        "docType": "String",
+        "otherName": "String",
+        "caseNo": "String",
+        "recordedDate": "Date"
+      },
+      "beforeSaleNotes": "String",
+      "afterSaleNotes": "String",
+
+      "firstBidderInfo": {
+        "nameOfBidder": "String",
+        "bidAmount": 0,
+
+        "nameOfPurchaser": "String",
+        "amountOfBid": 0,
+        "bidDate": "Date",
+        "ldub": "Date",
+        "minAmountOfNextBid": 0,
+        "depositRequiredToIpset": 0,
+        "address": "String",
+        "phone": 0,
+        "email": "String",
+        "fax": "String",
+        "dateOfSale": "Date",
+        "dateOfReport": "Date",
+        "nameOfMortgage": "String",
+        "cryer": "String",
+        "imby": "String",
+        "imByDate": "Date",
+        "bidConfirmed": true,
+        "bidUpset": true,
+        "auction": "String",
+        "nosName": "String",
+        "nosDate": "Date",
+        "imCheckedBy": "String",
+        "imCheckerDate": "Date",
+        "notes": "String",
+
+        "documents": {
+          "docType": "Upset",
+          "otherName": "DocHere",
+          "uploadedDate": "Date",
+          "uloadedBy": "UploaderNmae"
+        }
+      },
+      "otherBidderInfo": [
+        {
+          "nameOfUpsetBidder": "String",
+          "addressOfUpsetBidder": "String",
+          "cityOfUpsetBidder": "String",
+          "upsetBidderZipCode": 0,
+          "phone": 0,
+          "email": "String",
+
+          "amountOfBid": 0,
+          "bidDate": "Date",
+          "lastDateForNextUb": "Date",
+          "depositWithTheClerk": 0,
+          "minAmountOfNextUb": 0,
+          "nameOfAttorneyOrAgent": "String",
+          "addressofAttorneyOrAgent": "String",
+          "cityOfAttorneyOrAgent": "String",
+          "zipCode": 0,
+          "phone0": 0,
+          "dateOfFilling": "Date",
+          "Notes": "String",
+          "imby": "String",
+          "imByDate": "Date",
+
+          "auction": "String",
+          "nosName": "String",
+          "nosDate": "Date",
+          "imCheckedBy": "String",
+          "imCheckerDate": "Date",
+
+          "deputyCSC": true,
+          "assistantCSC": true,
+          "clerkOfSuperiorCourt": true,
+          "documents": {
+            "docType": "Upset",
+            "otherName": "DocHere",
+            "uploadedDate": "Date",
+            "uloadedBy": "UploaderNmae"
+          }
+        }
+      ]
+    }
+  ],
+
+  "geo": {
+    "lat": "String",
+    "long ": "String"
+  },
+
+  "image": {
+    "type ": "String"
+  },
+
+  "cmaArvNotes": "String",
+
+  "amEmail": { "type": ["String"] },
+
+  "firstComp": {
+    "SSD": "String",
+    "GSD": "String",
+    "ADOM": 0,
+    "adomDate": [
+      {
+        "start": "Date",
+        "end ": "Date"
+      }
+    ],
+    "phaseOfRenovation": "String",
+    "priceSqfOnSaleComp": 0,
+    "saleCompsAndSSDMaps": "String",
+    "GSDSaleCompMaps": "String",
+    "rentGSD": 0,
+    "priceSqfOnSoldComp": 0,
+    "GSDSoldCompMaps": "String",
+    "rentalCompsAndMaps": "String",
+    "pOneValue": 0,
+    "pTwoValue": 0,
+    "pThreeValue": 0,
+    "rentalRate": 0,
+    "compURL": "String",
+    "compURLTwo": "String",
+    "compURLThree": "String",
+    "compURLFour": "String",
+    "recommendedCMA": 0,
+    "wholeTailValue": 0,
+    "firstDTC": "String",
+    "date": "Date",
+    "note ": "String"
+  },
+  "secondComp": {
+    "SSD": "String",
+    "GSD": "String",
+    "ADOM": 0,
+    "adomDate": [
+      {
+        "start": "Date",
+        "end": "Date"
+      }
+    ],
+    "phaseOfRenovation": "String",
+    "priceSqfOnSaleComp": 0,
+    "saleCompsAndSSDMaps": "String",
+    "GSDSaleCompMaps": "String",
+    "rentGSD": 0,
+    "priceSqfOnSoldComp": 0,
+    "GSDSoldCompMaps": "String",
+    "rentalCompsAndMaps": "String",
+    "pOneValue": 0,
+    "pTwoValue": 0,
+    "pThreeValue": 0,
+    "rentalRate": 0,
+    "compURL": "String",
+    "compURLTwo": "String",
+    "compURLThree": "String",
+    "compURLFour": "String",
+    "recommendedCMA": 0,
+    "wholeTailValue": 0,
+    "firstDTC": "String",
+    "date": "Date",
+    "note": "String"
+  },
+  "thirdComp": {
+    "SSD": "String",
+    "GSD": "String",
+    "ADOM": 0,
+    "adomDate": [
+      {
+        "start": "Date",
+        "end": "Date"
+      }
+    ],
+    "phaseOfRenovation": "String",
+    "priceSqfOnSaleComp": 0,
+    "saleCompsAndSSDMaps": "String",
+    "GSDSaleCompMaps": "String",
+    "rentGSD": 0,
+    "priceSqfOnSoldComp": 0,
+    "GSDSoldCompMaps": "String",
+    "rentalCompsAndMaps": "String",
+    "pOneValue": 0,
+    "pTwoValue": 0,
+    "pThreeValue": 0,
+    "rentalRate": 0,
+    "compURL": "String",
+    "compURLTwo": "String",
+    "compURLThree": "String",
+    "compURLFour": "String",
+    "recommendedCMA": 0,
+    "wholeTailValue": 0,
+    "firstDTC": "String",
+    "date": "Date",
+    "note": "String"
+  }
+}

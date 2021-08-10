@@ -1,0 +1,32 @@
+/** for the propertyAddress search*/   DONE
+
+//add the regex to the search string to find the exact or possible property address./ DONE
+
+/** for the state, city, case and county search**/ DONE
+
+//search for the property with same city, state, country , case, year built/ DONE
+
+
+/**range based sale date search**/ DONE
+
+//search proeprty between the two date values. if the second value is empty then use current date value. or if the first value is empty then use search all the properties form the beginning to the last date value.
+
+/**range based sqf and lot search**/ DONE
+
+////search proeprty between the two values. //DONE
+
+
+/** add sorting functionality**/
+
+
+/** for the winnig bidder functionality/**
+  
+//for winning bidder check
+//add updatedAt field on the bidder array for each last array item.
+//check if the sale date has not posponed or added any other sale date on the saleInfo array.
+//check if the updated date has passed the after 10 days range where no new bidder added neither any new sale date added
+//check the database for these properties.
+
+***************************************
+//later goal::
+cusomize case and address search.

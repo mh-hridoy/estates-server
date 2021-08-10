@@ -1,0 +1,1478 @@
+[
+  {
+    "schoolsAndNeighbors": {
+      "elementarySchool": {
+        "name": "Bunn Elementary School",
+        "ranking": "6/10",
+        "distance": "2.0 mi"
+      },
+      "middleSchool": {
+        "name": "Bunn Middle School",
+        "ranking": "4/10",
+        "distance": "2.2 mi"
+      },
+      "highSchool": {
+        "name": "Bunn High School",
+        "ranking": "3/10",
+        "distance": "2.6 mi"
+      }
+    },
+    "hoaLien": {
+      "foreclosureResult": { "type": false },
+      "redemptionInfo": { "type": false, "redeemedByOwner": false },
+      "propertySignature": {
+        "dtcFirstCheck": { "type": false },
+        "dcaSecondCheck": { "type": false },
+        "dcaFinalCheck": { "type": false },
+        "owner1": false,
+        "owner2": false,
+        "owner3": false,
+        "owner4": false
+      },
+      "lienForeclosing": false,
+      "noSTR": false,
+      "defectiveLien": false,
+      "manualSearch": false
+    },
+    "taxLien": {
+      "foreclosureResult": { "type": false },
+      "redemptionInfo": { "type": false, "redeemedByOwner": false },
+      "propertySignature": {
+        "dtcFirstCheck": { "type": false },
+        "dcaSecondCheck": { "type": false },
+        "dcaFinalCheck": { "type": false },
+        "owner1": false,
+        "owner2": false,
+        "owner3": false,
+        "owner4": false
+      },
+      "lienForeclosing": false,
+      "defectiveLien": false
+    },
+    "thirdComp": { "adomDate": [] },
+    "state": "North Carolina",
+    "fireplace": true,
+    "manualSearch": false,
+    "noActiveMortgageLien": false,
+    "amEmail": ["some@gmail.com"],
+    "propertyAddress": "245 Triple Crown Run",
+    "city": "Louisburg",
+    "county": "Franklin",
+    "zip": 27549,
+    "lotSqf": 7.23,
+    "totalSqf": 424,
+    "costPerSqf": 140,
+    "totalLivingSQF": 2168,
+    "mainFloor": 1624,
+    "secondFloor": 0,
+    "thirdFloor": 0,
+    "yearBuilt": 1999,
+    "bed": 3,
+    "bath": 2,
+    "fullBath": 0,
+    "halfBath": 0,
+    "oneThirdBath": 0,
+    "basement": 0,
+    "finishedBasement": 0,
+    "finishedAttic": 0,
+    "garages": 0,
+    "garageType": "NA",
+    "garageSqf": 0,
+    "enclosedPorch": 0,
+    "family": 1,
+    "kitchen": 1,
+    "subdivision": " FRANKLIN FARMS",
+    "PropertyDescription": "This 2184 square foot single family home has 3 bedrooms and 2.0 bathrooms. This home is located at 245 Triple Crown Run, Louisburg, NC 27549.",
+    "legalDesc": "PRF 3 SL 91/75POWER LINE CROSSES PROP",
+    "extWall": "Alum/Vinyl Siding",
+    "roofing": "Ashphalt Shingle",
+    "ac": "Center",
+    "heating": "NA",
+    "poolSpa": "None",
+    "stories": 1,
+    "propertyType": "Single Family",
+    "specificPropertyType": "Single Family",
+    "buildingStyle": "Modern",
+    "parcelId": "26959",
+    "countyValue": 235200,
+    "prcURL": "https://estatestracking.com/storage/document_property/fc81b0fd3e81e36a5bbc63cda725d560.pdf",
+    "countyAssessorURL": "https://www.franklincountytax.us/pt/forms/htmlframe.aspx?mode=content/home.htm",
+    "gisURL": "http://maps2.roktech.net/franklin_GM4/",
+    "treasurerURL": "http://www.franklin.webtaxpay.com/search.php",
+    "taxBillUrl": "https://secure.webtaxpay.com/search.php",
+    "infoTabFile": {
+      "fileName": "fileName Here",
+      "uploadedAt": "2021-08-05",
+      "postedBy": "someGuy"
+    },
+    "zillowURL": "https://www.zillow.com/homedetails/245-Triple-Crown-Run-Louisburg-NC-27549/49963769_zpid/",
+    "zestimate": 368300,
+    "redfinUrl": "https://www.redfin.com/NC/Louisburg/245-Triple-Crown-Run-27549/home/44289416",
+    "redfinEst": 306474,
+    "realtorURL": "https://www.realtor.com/realestateandhomes-detail/245-Triple-Crown-Run_Louisburg_NC_27549_M69144-93443",
+    "realtorEst": 272200,
+    "truliaURL": "https://www.trulia.com/p/nc/louisburg/245-triple-crown-run-louisburg-nc-27549--2024638973",
+    "truliaEst": 368300,
+    "harUrl": "NA",
+    "harEst": 0,
+    "beenVerifiedURL": "NA",
+    "priceHistory": [
+      {
+        "date": "1999-12-08",
+        "price": 155000,
+        "costPerSqf": 71,
+        "source": "Public Record",
+        "Description": "NA"
+      }
+    ],
+    "assesmentAndTaxes": [
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 2169.76,
+        "taxYear": 2020
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1967.79,
+        "taxYear": 2019
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1966.02,
+        "taxYear": 2018
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1830.7,
+        "taxYear": 2017
+      }
+    ],
+    "countyRODURL": "http://72.15.246.186/FranklinNCNW/application.asp?resize=true",
+    "mortgageInfo": [
+      {
+        "amortizationView": {
+          "type": true,
+          "annualInterestRate": 7.91,
+          "monthlyPayment": 945.47,
+          "monthlyPrincipalPayment": 483.74,
+          "monthlyInterestPayment": 461.74
+        },
+        "modA": { "type": false },
+        "subA": { "type": false },
+        "foreclosureResult": { "type": false },
+        "propertySignature": {
+          "dtcFirstCheck": {
+            "user": {
+              "name": "oneGuy",
+              "checkedAt": "2021-08-05"
+            },
+            "type": true
+          },
+          "dcaSecondCheck": { "type": false },
+          "dcaFinalCheck": { "type": false },
+          "owner1": true,
+          "owner2": true,
+          "owner3": false,
+          "owner4": false
+        },
+        "lienForeclosing": false,
+        "noSTR": true,
+        "defectiveLien": false,
+        "legalDescMatch": false,
+        "propertyAddressMatch": false,
+        "resonableFees": true,
+        "lender": "BANCFINANCIAL SERVICES CORP",
+        "lienAmount": 130050,
+        "dateRecorded": "1999-12-08",
+        "dtBookPage": "1162/25",
+        "loanType": "FNMA",
+        "loanTerm": "30 Years",
+        "maturityDate": "2029-12-31",
+        "rightToCure": 5,
+        "tursteeFee": 5,
+        "loanEstimatedBalance": 69564.63,
+        "cmaArv": 303520
+      },
+      {
+        "amortizationView": {
+          "type": true,
+          "annualInterestRate": 6.09,
+          "monthlyPayment": 676.88,
+          "monthlyPrincipalPayment": 234.98,
+          "monthlyInterestPayment": 441.9,
+          "estimatedEquity": 157106.92
+        },
+        "modA": {
+          "type": true,
+          "modABookPage": "2003/2003",
+          "modADate": "2015-07-31",
+          "modALienAmount": 131461.62,
+          "modALoanTerm": "40",
+          "modAmaturityDate": "2055-06-30",
+          "annualInterestRate": 6,
+          "monthlyPayment": 722.96,
+          "loanEstBalance": 125599.44,
+          "estLatePaymentAndFees": 17182.16,
+          "totalEstimatedDebt": 103053.08
+        },
+        "subA": { "type": false },
+        "foreclosureResult": { "type": false },
+        "propertySignature": {
+          "dtcFirstCheck": {
+            "user": {
+              "name": "oneGuy",
+              "checkedAt": "2021-08-05"
+            },
+            "type": true
+          },
+          "dcaSecondCheck": {
+            "user": {
+              "name": "oneGuy",
+              "checkedAt": "2021-08-05"
+            },
+            "type": true
+          },
+          "dcaFinalCheck": { "type": false },
+          "owner1": true,
+          "owner2": true,
+          "owner3": false,
+          "owner4": false
+        },
+        "lienForeclosing": true,
+        "noSTR": false,
+        "defectiveLien": false,
+        "legalDescMatch": true,
+        "propertyAddressMatch": false,
+        "resonableFees": true,
+        "lender": "ATHENE ANNUITY & LIFE ASSURANCE COMPANY",
+        "lienAmount": 111925,
+        "dateRecorded": "2008-11-05",
+        "dtBookPage": "1707/708",
+        "loanType": "FNMA",
+        "loanTerm": "30 Years",
+        "maturityDate": "2038-10-31",
+        "tursteeFee": 5,
+        "trustee": "Hutchens Law Firm",
+        "assignmentBookPage": "2198/1507",
+        "strBookPage": "2223/512",
+        "strDate": "2020-09-14",
+        "loanEstimatedBalance": 86838.6,
+        "estLatePaymentAndFees": 16214.48,
+        "totalEstimatedDebt": 103053.08,
+        "cmaArv": 303520
+      }
+    ],
+    "ownerInfo": [
+      {
+        "sameOwner": true,
+        "pacer": false,
+        "ownerFullName": "STEPHEN C JONES",
+        "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      },
+      {
+        "sameOwner": false,
+        "pacer": false,
+        "ownerFullName": "DONNA JONES",
+        "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      }
+    ],
+    "borrowerInfo": [{ "sameAsOwner": true, "addressSameAsOwner": true }],
+    "saleinfo": [
+      {
+        "firstBidderInfo": { "bidConfirmed": false, "bidUpset": false },
+        "saleDate": "2021-08-12",
+        "caseNumber": "20SP130",
+        "saleType": "2nd Lien FCL",
+        "saleStatus": "Active",
+        "truesteeFile": "3679-11019",
+        "precinct": 0,
+        "trustee": "Hutchens Law Firm",
+        "trusteeUrl": "https://sales.hutchenslawfirm.com/fcSaleDetail.aspx?ID=3679-11019&bidsID=",
+        "trusteeAddress": "4317 Ramsey St.Fayetteville, NC 28311",
+        "trusteePhone": "(910)864-6888",
+        "trusteeHours": "8:30 am - 05:00 pm",
+        "noticeOfForclosure": "Notice will be here",
+        "legalNoticeURL": "Notice URL here",
+        "otherBidderInfo": []
+      }
+    ],
+    "geo": { "lat": "35.9553564", "long": "-78.2952710" },
+    "firstComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "LastPriceSqfOnSaleComp": 192,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "LastPriceSqfOnSoldComp": 120,
+      "SSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "firstDTC": "SomeGuy",
+      "date": "2021-08-05"
+    },
+    "secondComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "secondDCA": "secondGuy",
+      "date": "2021-08-05"
+    }
+  },
+  {
+    "propertyAddress": "3009 Polanski Dr",
+    "city": "Wake Forest",
+    "county": "Wake",
+    "state": "North Carolina",
+    "zip": 27587,
+    "lotSqf": 0.2,
+    "totalSqf": 4932,
+    "costPerSqf": 123.0,
+    "totalLivingSQF": 4236,
+    "mainFloor": 1196,
+    "secondFloor": 3040,
+    "thirdFloor": 0,
+    "yearBuilt": 2006,
+    "bed": 5,
+    "bath": 4,
+    "fullBath": 0,
+    "halfBath": 0,
+    "oneThirdBath": 0,
+    "basement": 0,
+    "finishedBasement": 0,
+    "finishedAttic": 0,
+    "garages": 2,
+    "garageType": "Attached",
+    "garageSqf": 420,
+    "enclosedPorch": 0,
+    "family": 1,
+    "kitchen": 1,
+    "fireplace": true,
+    "subdivision": " CADDELL WOODS",
+    "PropertyDescription": "OPPORTUNITY! Open kitchen/family room, living/dinning room, 5 bdrms, 3.5 bths, full finished walk out basement, 2 car garage, fenced yard! Community pool. Buyer can put their own TLC in areas. Seller incentives! Wake Cty Tax records measurements. BA to confirm schools. Sold \"As Is\". SUBJECT TO UPSET BID AND APPROVAL OF WAKE COUNTY SUPERIOR COURT WITH A 15 DAYS WAITING LIST PERIOD. Notice of Upset Bid filed 7/8/21, $432,000. Last day of Upset Bid is 7/19/21. Clerks # (919) 792-4000.",
+    "legalDesc": "LO144 CADDELL WOODS SUB PH3C BM2004-00788",
+    "extWall": "Alum/Vinyl Siding",
+    "roofing": "Ashphalt Shingle",
+    "ac": "Center",
+    "heating": "Center",
+    "poolSpa": "None",
+    "stories": 2,
+    "propertyType": "Residential",
+    "specificPropertyType": "Single Family",
+    "buildingStyle": "Conventional",
+    "parcelId": "0317616",
+    "countyValue": 322467,
+    "prcURL": "http://services.wakegov.com/realestate/Building.asp?id=0317616&stype=addr&stnum=3009&stname=Polanski&locidList=&spg=1&cd=01&loc=3009++POLANSKI+DR&des=LO144+CADDELL+WOODS+SUB+PH3C+BM2004%2D00788&pin=1738991301",
+    "countyAssessorURL": "http://services.wakegov.com/realestate/",
+    "gisURL": "http://services.wakegov.com/realestate/",
+    "treasurerURL": "https://services.wakegov.com/ptax/main/billing",
+    "taxBillUrl": "https://services.wakegov.com/ptax/main/billing/acctsummary.aspx?search=re&yrs=2&prev=re&id=0317616",
+    "infoTabFile": {
+      "fileName": "fileHere",
+      "uploadedAt": "2021-08-05",
+      "postedBy": "Uploader name"
+    },
+    "zillowURL": "https://www.zillow.com/homes/3009-Polanski-Dr-Wake-Forest,-NC-27587_rb/71205761_zpid/",
+    "zestimate": 368300.0,
+    "redfinUrl": "https://www.redfin.com/NC/Wake-Forest/3009-Polanski-Dr-27587/home/41294861",
+    "redfinEst": 306474.0,
+    "realtorURL": "https://www.realtor.com/realestateandhomes-detail/M5561030791",
+    "realtorEst": 272200.0,
+    "truliaURL": "https://www.trulia.com/p/nc/wake-forest/3009-polanski-dr-wake-forest-nc-27587--2024713086",
+    "truliaEst": 368300.0,
+    "harUrl": "NA",
+    "harEst": 0,
+    "beenVerifiedURL": "NA",
+    "priceHistory": [
+      {
+        "date": "07/01/2021",
+        "price": 395000.0,
+        "costPerSqf": 395000.0,
+        "source": "TMLS #2390915",
+        "Description": "Pending"
+      },
+      {
+        "date": "06/19/2021",
+        "price": 395000.0,
+        "costPerSqf": 395000.0,
+        "source": "TMLS #2390915",
+        "Description": "Listed"
+      }
+    ],
+
+    "schoolsAndNeighbors": {
+      "elementarySchool": {
+        "name": "Sanford Creek Elementary",
+        "ranking": "4/10",
+        "distance": "4.3 mi"
+      },
+
+      "middleSchool": {
+        "name": "Wake Forest Middle School",
+        "ranking": "5/10",
+        "distance": "2.2 mi"
+      },
+      "highSchool": {
+        "name": "Wake Forest High School",
+        "ranking": "5/10",
+        "distance": "4.3 mi"
+      }
+    },
+    "assesmentAndTaxes": [
+      {
+        "propertyTaxOwed": 3551.01,
+        "owedYear": 2021,
+        "taxAssessed": 3551.01,
+        "taxYear": 2020
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1967.79,
+        "taxYear": 2019
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1966.02,
+        "taxYear": 2018
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1830.7,
+        "taxYear": 2017
+      }
+    ],
+
+    "countyRODURL": "http://services.wakegov.com/booksweb/GenExtSearch.aspx",
+
+    "mortgageInfo": [
+      {
+        "noSTR": true,
+
+        "lender": "FEDERAL HOME LONE MORTGAGE CORPORATION",
+        "lienAmount": 83000.0,
+        "dateRecorded": "06/15/2006",
+        "dtBookPage": "012012-00755",
+        "assignmentBookPage": "017785-01233",
+        "loanType": "FNMA",
+        "loanTerm": "30 Years",
+        "maturityDate": "07/01/2036",
+        "rightToCure": 5,
+        "tursteeFee": 5.0,
+        "loanEstimatedBalance": 60560.31,
+        "cmaArv": 521028.0,
+        "resonableFees": true,
+        "amortizationView": {
+          "type": true,
+          "annualInterestRate": 6.68,
+          "monthlyPayment": 533.56,
+          "monthlyPrincipalPayment": 195.35,
+          "monthlyInterestPayment": 338.21
+        },
+        "propertySignature": {
+          "owner1": true,
+          "owner2": true,
+          "dtcFirstCheck": {
+            "type": true,
+            "user": {
+              "name": "oneGuy",
+              "checkedAt": "2021-08-05"
+            }
+          },
+          "dcaSecondCheck": {
+            "type": true,
+            "user": {
+              "name": "dcaGuy",
+              "checkedAt": "2021-08-05"
+            }
+          }
+        }
+      }
+    ],
+    "ownerInfo": [
+      {
+        "sameOwner": false,
+        "pacer": false,
+
+        "ownerFullName": "EUNICE P AIKEN EVERETT",
+        "ownerAddress": "3009 POLANSKI DR WAKE FOREST NC 27587-6494",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      },
+      {
+        "ownerFullName": "DONTE D EVERETT",
+        "ownerAddress": "3009 POLANSKI DR WAKE FOREST NC 27587-6494",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      }
+    ],
+    "borrowerInfo": [
+      {
+        "sameAsOwner": true,
+        "addressSameAsOwner": true
+      }
+    ],
+
+    "saleinfo": [
+      {
+        "saleDate": "07/01/2021",
+        "caseNumber": "19SP1731",
+        "openingBid": 0,
+        "saleType": "NA",
+        "saleStatus": "Active",
+        "salePlace": "316 Fayetteville St Mall Raleigh, NC 27601",
+        "saleTime": "12:00 AM",
+        "noticeOfForclosure": "This is Not Actual Sale Date. Here we are use from the Upset bid image guess Sale date.",
+        "datePulled": "07/11/2021",
+        "firstBidderInfo": {
+          "nameOfBidder": "String",
+          "bidAmount": 0,
+
+          "nameOfPurchaser": "FEDERAL HOME LONE MORTGAGE CORPORATION",
+          "amountOfBid": 400000.0,
+          "bidDate": "07/01/2021",
+          "ldub": "07/12/2021",
+          "minAmountOfNextBid": 420000.0,
+          "depositRequiredToIpset": 21000.0,
+          "address": "String",
+          "phone": 0,
+          "email": "String",
+          "fax": "String",
+          "dateOfReport": "07/01/2021",
+          "notes": "WILFRED 2021-07-26 2021-07-01 VCAP RPFS 3009 Polanski Dr $400000.00",
+
+          "documents": {
+            "docType": "Vcap",
+            "otherName": "DocHere",
+            "uploadedDate": "2021-08-07",
+            "uloadedBy": "UploaderName"
+          }
+        },
+        "otherBidderInfo": [
+          {
+            "nameOfUpsetBidder": "THIRD PARTY",
+
+            "amountOfBid": 420000.0,
+            "bidDate": "07/01/2021",
+            "lastDateForNextUb": "07/12/2021",
+
+            "depositWithTheClerk": 21000.0,
+            "minAmountOfNextUb": 441000.0,
+            "nameOfAttorneyOrAgent": "String",
+            "addressofAttorneyOrAgent": "String",
+            "cityOfAttorneyOrAgent": "String",
+            "zipCode": 0,
+            "phone0": 0,
+            "dateOfFilling": "07/01/2021",
+            "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
+
+            "imCheckedBy": "someGuy",
+
+            "deputyCSC": true,
+            "assistantCSC": true,
+            "clerkOfSuperiorCourt": true,
+            "documents": {
+              "docType": "Upset",
+              "otherName": "DocHere",
+              "uploadedDate": "2021-08-07",
+              "uloadedBy": "UploaderNmae"
+            }
+          }
+        ]
+      }
+    ],
+
+    "geo": {
+      "lat": "35.9178470",
+      "long ": "-78.5301670"
+    },
+
+    "image": "Img url here",
+
+    "amEmail": ["tonya@thestates.com"],
+    "firstComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "LastPriceSqfOnSaleComp": 192,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "LastPriceSqfOnSoldComp": 120,
+      "SSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "firstDTC": "SomeGuy",
+      "date": "2021-08-05"
+    },
+    "secondComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "secondDCA": "secondGuy",
+      "date": "2021-08-05"
+    }
+  },
+  {
+    "propertyAddress": "3903 Caldwell Ridge Pkwy",
+    "city": "Charlotte",
+    "county": "Mecklenburg",
+    "state": "North Carolina",
+    "zip": 28213,
+    "lotSqf": 0.19,
+    "totalSqf": 4204,
+    "costPerSqf": 109.0,
+    "totalLivingSQF": 3348,
+    "mainFloor": 1404,
+    "secondFloor": 1944,
+    "thirdFloor": 0,
+    "yearBuilt": 2008,
+    "bed": 3,
+    "bath": 2.5,
+    "fullBath": 2,
+    "halfBath": 1,
+    "oneThirdBath": 0,
+    "basement": 0,
+    "finishedBasement": 0,
+    "finishedAttic": 0,
+    "garages": 3,
+    "garageType": "Attached",
+    "garageSqf": 600,
+    "enclosedPorch": 0,
+    "family": 1,
+    "kitchen": 1,
+    "fireplace": true,
+    "subdivision": " OLD STONE XING FINAL",
+    "PropertyDescription": "This single-family home is located at 3903 Caldwell Rdg, Charlotte, NC. 3903 Caldwell Rdg is in the Back Creek Church Road neighborhood in Charlotte, NC and in ZIP code 28213. This property has 3 bedrooms, 2.5 bathrooms and approximately 3,348 sqft of floor space. This property has a lot size of 8,123 sqft and was built in 2008.",
+    "legalDesc": "L42 M43-27",
+    "extWall": "Alum/Vinyl Siding",
+    "roofing": "Ashphalt Shingle",
+    "ac": "Center",
+    "heating": "Forced Air",
+    "poolSpa": "None",
+    "stories": 2,
+    "propertyType": "Residential",
+    "specificPropertyType": "Single Family",
+    "buildingStyle": "Two Story",
+    "parcelId": "05121178",
+    "countyValue": 289900,
+    "prcURL": "https://property.spatialest.com/nc/mecklenburg/#/property/287424/print",
+    "countyAssessorURL": "http://services.wakegov.com/realestate/",
+    "gisURL": "http://services.wakegov.com/realestate/",
+    "treasurerURL": "https://services.wakegov.com/ptax/main/billing",
+    "taxBillUrl": "https://services.wakegov.com/ptax/main/billing/acctsummary.aspx?search=re&yrs=2&prev=re&id=0317616",
+    "infoTabFile": {
+      "fileName": "fileHere",
+      "uploadedAt": "2021-08-05",
+      "postedBy": "Uploader name"
+    },
+    "zillowURL": "https://www.zillow.com/homes/3009-Polanski-Dr-Wake-Forest,-NC-27587_rb/71205761_zpid/",
+    "zestimate": 368300.0,
+    "redfinUrl": "https://www.redfin.com/NC/Wake-Forest/3009-Polanski-Dr-27587/home/41294861",
+    "redfinEst": 306474.0,
+    "realtorURL": "https://www.realtor.com/realestateandhomes-detail/M5561030791",
+    "realtorEst": 272200.0,
+    "truliaURL": "https://www.trulia.com/p/nc/wake-forest/3009-polanski-dr-wake-forest-nc-27587--2024713086",
+    "truliaEst": 368300.0,
+    "harUrl": "NA",
+    "harEst": 0,
+    "beenVerifiedURL": "NA",
+    "priceHistory": [
+      {
+        "date": "07/01/2021",
+        "price": 395000.0,
+        "costPerSqf": 395000.0,
+        "source": "TMLS #2390915",
+        "Description": "Pending"
+      },
+      {
+        "date": "06/19/2021",
+        "price": 395000.0,
+        "costPerSqf": 395000.0,
+        "source": "TMLS #2390915",
+        "Description": "Listed"
+      }
+    ],
+
+    "schoolsAndNeighbors": {
+      "elementarySchool": {
+        "name": "Sanford Creek Elementary",
+        "ranking": "4/10",
+        "distance": "4.3 mi"
+      },
+
+      "middleSchool": {
+        "name": "Wake Forest Middle School",
+        "ranking": "5/10",
+        "distance": "2.2 mi"
+      },
+      "highSchool": {
+        "name": "Wake Forest High School",
+        "ranking": "5/10",
+        "distance": "4.3 mi"
+      }
+    },
+    "assesmentAndTaxes": [
+      {
+        "propertyTaxOwed": 3551.01,
+        "owedYear": 2021,
+        "taxAssessed": 3551.01,
+        "taxYear": 2020
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1967.79,
+        "taxYear": 2019
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1966.02,
+        "taxYear": 2018
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1830.7,
+        "taxYear": 2017
+      }
+    ],
+
+    "countyRODURL": "https://meckrod.manatron.com/RealEstate/SearchEntry.aspx",
+
+    "mortgageInfo": [
+      {
+        "noSTR": true,
+
+        "lender": "CARRINGTON MORTGAGE SERVICES, LLC",
+        "lienAmount": 242704.0,
+        "dateRecorded": "06/23/2008",
+        "dtBookPage": "23887/161",
+        "assignmentBookPage": "32027/518",
+        "loanType": "FHA",
+        "loanTerm": "30 Years",
+        "maturityDate": "07/01/2038",
+        "rightToCure": 5,
+        "tursteeFee": 5.0,
+        "loanEstimatedBalance": 60560.31,
+        "cmaArv": 364932.0,
+        "resonableFees": true,
+        "amortizationView": {
+          "type": true,
+          "annualInterestRate": 6.32,
+          "monthlyPayment": 1502.65,
+          "monthlyPrincipalPayment": 509.23,
+          "monthlyInterestPayment": 993.42
+        },
+        "propertySignature": {
+          "owner1": true,
+          "owner2": true,
+          "dtcFirstCheck": {
+            "type": true,
+            "user": {
+              "name": "oneGuy",
+              "checkedAt": "2021-08-05"
+            }
+          },
+          "dcaSecondCheck": {
+            "type": true,
+            "user": {
+              "name": "dcaGuy",
+              "checkedAt": "2021-08-05"
+            }
+          }
+        }
+      }
+    ],
+    "hoaLien": {
+      "lienForeclosing": true,
+
+      "hoaName": "CALDWELL CREEK PROPERTY OWNERS ASSOCIATION, INC.",
+      "hoaLienAmount": 0,
+      "hoaLienDate": "05/04/2020",
+      "trusteeHoa": "Sellers, Ayers, Dortch & Lyons, P.A. MINOR",
+      "totalDebt": 0,
+      "propertySignature": {
+        "owner1": true,
+        "owner2": true,
+        "dtcFirstCheck": {
+          "type": true,
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          }
+        },
+        "dcaSecondCheck": {
+          "type": true,
+          "user": {
+            "name": "dcaGuy",
+            "checkedAt": "2021-08-05"
+          }
+        }
+      }
+    },
+
+    "ownerInfo": [
+      {
+        "ownerFullName": "EARLIE ROBINSON",
+        "ownerAddress": "3903 CALDWELL RIDGE PKWY CHARLOTTE NC 28213",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      },
+      {
+        "ownerFullName": "DONTE D EVERETT",
+        "ownerAddress": "3009 POLANSKI DR WAKE FOREST NC 27587-6494",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      }
+    ],
+    "borrowerInfo": [
+      {
+        "sameAsOwner": true,
+        "addressSameAsOwner": true
+      }
+    ],
+
+    "saleinfo": [
+      {
+        "saleDate": "07/10/2021",
+        "caseNumber": "21SP161",
+        "openingBid": 0,
+        "saleType": "HOA Sale",
+        "saleStatus": "Active",
+        "salePlace": "832 East Fourth St Charlotte, NC 28202",
+        "saleTime": "11:00 a.m",
+        "noticeOfForclosure": "NOTICE OF SALE OF REAL ESTATE UNDER CLAIM OF LIEN RE: 21-SP-161 UNDER AND BY VIRTUE of the power granted in the recorded Declarations and North Carolina law which authorize the f ",
+        "datePulled": "06/22/2021",
+        "truesteeFile": "20-M-2740",
+
+        "trustee": "Robert C. Dortch Minor",
+        "trusteeUrl": "N/A",
+        "trusteeAddress": "301 S McDowell St, Charlotte, NC 28204",
+        "trusteePhone": "1 704-377-5050",
+        "book": "23887",
+        "page": "150",
+
+        "firstBidderInfo": {
+          "nameOfBidder": "String",
+          "bidAmount": 0,
+
+          "nameOfPurchaser": "FEDERAL HOME LONE MORTGAGE CORPORATION",
+          "amountOfBid": 400000.0,
+          "bidDate": "07/01/2021",
+          "ldub": "07/12/2021",
+          "minAmountOfNextBid": 420000.0,
+          "depositRequiredToIpset": 21000.0,
+          "address": "String",
+          "phone": 0,
+          "email": "String",
+          "fax": "String",
+          "dateOfReport": "07/01/2021",
+          "notes": "WILFRED 2021-07-26 2021-07-01 VCAP RPFS 3009 Polanski Dr $400000.00",
+
+          "documents": {
+            "docType": "Vcap",
+            "otherName": "DocHere",
+            "uploadedDate": "2021-08-07",
+            "uloadedBy": "UploaderName"
+          }
+        },
+        "otherBidderInfo": [
+          {
+            "nameOfUpsetBidder": "THIRD PARTY",
+
+            "amountOfBid": 420000.0,
+            "bidDate": "07/01/2021",
+            "lastDateForNextUb": "07/12/2021",
+
+            "depositWithTheClerk": 21000.0,
+            "minAmountOfNextUb": 441000.0,
+            "nameOfAttorneyOrAgent": "String",
+            "addressofAttorneyOrAgent": "String",
+            "cityOfAttorneyOrAgent": "String",
+            "zipCode": 0,
+            "phone0": 0,
+            "dateOfFilling": "07/01/2021",
+            "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
+
+            "imCheckedBy": "someGuy",
+
+            "deputyCSC": true,
+            "assistantCSC": true,
+            "clerkOfSuperiorCourt": true,
+            "documents": {
+              "docType": "Upset",
+              "otherName": "DocHere",
+              "uploadedDate": "2021-08-07",
+              "uloadedBy": "UploaderNmae"
+            }
+          }
+        ]
+      }
+    ],
+
+    "geo": {
+      "lat": "35.2949338",
+      "long ": "-80.6875342"
+    },
+
+    "image": "Img url here",
+
+    "amEmail": ["tonya@thestates.com"],
+    "firstComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "LastPriceSqfOnSaleComp": 192,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "LastPriceSqfOnSoldComp": 120,
+      "SSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "firstDTC": "SomeGuy",
+      "date": "2021-08-05"
+    },
+    "secondComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "secondDCA": "secondGuy",
+      "date": "2021-08-05"
+    }
+  },
+  {
+    "propertyAddress": "1824 Pine Hollow Dr",
+    "city": "Randleman",
+    "county": "Randolph",
+    "state": "North Carolina",
+    "zip": 27317,
+    "lotSqf": 5.0,
+    "totalSqf": 2400,
+    "costPerSqf": 73.0,
+    "totalLivingSQF": 2052,
+    "mainFloor": 2052,
+    "secondFloor": 0,
+    "thirdFloor": 0,
+    "yearBuilt": 2000,
+    "bed": 3,
+    "bath": 2,
+    "fullBath": 2,
+    "halfBath": 0,
+    "oneThirdBath": 0,
+    "basement": 0,
+    "finishedBasement": 0,
+    "finishedAttic": 0,
+    "garages": 0,
+    "garageType": "NA",
+    "garageSqf": 0,
+    "enclosedPorch": 0,
+    "family": 1,
+    "kitchen": 1,
+    "fireplace": false,
+    "subdivision": " NA",
+    "PropertyDescription": "This is a 2052 square foot, 2.0 bathroom, mobile / manufactured home. This home is located at 1824 Pine Hollow Dr, Randleman, NC 27317.",
+    "legalDesc": "Being all that certain 5.001 acre tract of the property of Harold T. Lichtenberg and Analene Lictenberg per plat thereof recorded in Plat Book 73 at Page 37, Randolph County Registry, North Carolina Together with improvements located hereon; said property being located at 1824 Pine Hollow Drive, Randleman, NC 27317. Tax ID: 7773356581.",
+    "extWall": "Alum/Vinyl Siding",
+    "roofing": "Ashphalt Shingle",
+    "ac": "Center",
+    "heating": "Heat Pump",
+    "poolSpa": "NA",
+    "stories": 1,
+    "propertyType": "Residential",
+    "specificPropertyType": "Manufactured",
+    "buildingStyle": "NA",
+    "parcelId": "7773-35-6581",
+    "countyValue": 93310,
+    "prcURL": "https://property.spatialest.com/nc/mecklenburg/#/property/287424/print",
+    "countyAssessorURL": "http://services.wakegov.com/realestate/",
+    "gisURL": "http://services.wakegov.com/realestate/",
+    "treasurerURL": "https://services.wakegov.com/ptax/main/billing",
+    "taxBillUrl": "https://services.wakegov.com/ptax/main/billing/acctsummary.aspx?search=re&yrs=2&prev=re&id=0317616",
+    "infoTabFile": {
+      "fileName": "fileHere",
+      "uploadedAt": "2021-08-05",
+      "postedBy": "Uploader name"
+    },
+    "zillowURL": "https://www.zillow.com/homes/3009-Polanski-Dr-Wake-Forest,-NC-27587_rb/71205761_zpid/",
+    "zestimate": 368300.0,
+    "redfinUrl": "https://www.redfin.com/NC/Wake-Forest/3009-Polanski-Dr-27587/home/41294861",
+    "redfinEst": 306474.0,
+    "realtorURL": "https://www.realtor.com/realestateandhomes-detail/M5561030791",
+    "realtorEst": 272200.0,
+    "truliaURL": "https://www.trulia.com/p/nc/wake-forest/3009-polanski-dr-wake-forest-nc-27587--2024713086",
+    "truliaEst": 368300.0,
+    "harUrl": "NA",
+    "harEst": 0,
+    "beenVerifiedURL": "NA",
+    "priceHistory": [
+      {
+        "date": "07/01/2021",
+        "price": 395000.0,
+        "costPerSqf": 395000.0,
+        "source": "TMLS #2390915",
+        "Description": "Pending"
+      },
+      {
+        "date": "06/19/2021",
+        "price": 395000.0,
+        "costPerSqf": 395000.0,
+        "source": "TMLS #2390915",
+        "Description": "Listed"
+      }
+    ],
+
+    "schoolsAndNeighbors": {
+      "elementarySchool": {
+        "name": "Sanford Creek Elementary",
+        "ranking": "4/10",
+        "distance": "4.3 mi"
+      },
+
+      "middleSchool": {
+        "name": "Wake Forest Middle School",
+        "ranking": "5/10",
+        "distance": "2.2 mi"
+      },
+      "highSchool": {
+        "name": "Wake Forest High School",
+        "ranking": "5/10",
+        "distance": "4.3 mi"
+      }
+    },
+    "assesmentAndTaxes": [
+      {
+        "propertyTaxOwed": 3551.01,
+        "owedYear": 2021,
+        "taxAssessed": 3551.01,
+        "taxYear": 2020
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1967.79,
+        "taxYear": 2019
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1966.02,
+        "taxYear": 2018
+      },
+      {
+        "propertyTaxOwed": 0,
+        "owedYear": 0,
+        "taxAssessed": 1830.7,
+        "taxYear": 2017
+      }
+    ],
+
+    "countyRODURL": "https://meckrod.manatron.com/RealEstate/SearchEntry.aspx",
+
+    "mortgageInfo": [
+      {
+        "lienForeclosing": true,
+
+        "lender": "WILMINGTON SAVINGS FUND SOCIETY",
+        "lienAmount": 68623.0,
+        "dateRecorded": "07/27/2011",
+        "dtBookPage": "2243/667",
+        "assignmentBookPage": "2740/1235",
+        "loanType": "FHA",
+        "loanTerm": "30 Years",
+        "maturityDate": "08/01/2041",
+        "rightToCure": 5,
+        "tursteeFee": 5.0,
+
+        "strBookPage": "2750/877",
+        "strDate": "04/21/2021",
+        "loanEstimatedBalance": 55167.14,
+        "estLatePaymentAndFees": 6529.59,
+        "totalEstimatedDebt": 61696.73,
+        "cmaArv": 149796.0,
+        "resonableFees": true,
+        "legalDescMatch": true,
+        "propertyAddressMatch": true,
+        "amortizationView": {
+          "type": true,
+          "annualInterestRate": 6.32,
+          "monthlyPayment": 1502.65,
+          "monthlyPrincipalPayment": 509.23,
+          "monthlyInterestPayment": 993.42
+        },
+        "propertySignature": {
+          "owner1": true,
+          "owner2": true,
+          "dtcFirstCheck": {
+            "type": true,
+            "user": {
+              "name": "oneGuy",
+              "checkedAt": "2021-08-05"
+            }
+          },
+          "dcaSecondCheck": {
+            "type": true,
+            "user": {
+              "name": "dcaGuy",
+              "checkedAt": "2021-08-05"
+            }
+          }
+        }
+      }
+    ],
+
+    "ownerInfo": [
+      {
+        "ownerFullName": "EARLIE ROBINSON",
+        "ownerAddress": "3903 CALDWELL RIDGE PKWY CHARLOTTE NC 28213",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      },
+      {
+        "ownerFullName": "DONTE D EVERETT",
+        "ownerAddress": "3009 POLANSKI DR WAKE FOREST NC 27587-6494",
+        "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+        "beenVerifiedURL": "https://www.beenverified.com/people/"
+      }
+    ],
+    "borrowerInfo": [
+      {
+        "sameAsOwner": true,
+        "addressSameAsOwner": true
+      }
+    ],
+
+    "saleinfo": [
+      {
+        "saleDate": "07/15/2021",
+        "caseNumber": "21SP74",
+        "openingBid": 0,
+        "saleType": "1st Lien FCL",
+        "saleStatus": "Active",
+        "salePlace": "176 East Salisbury St Asheboro, NC 27203",
+        "saleTime": "10:00AM",
+        "noticeOfForclosure": "AMENDED NOTICE OF FORECLOSURE SALE NORTH CAROLINA, RANDOLPH COUNTY 21 SP 74 Under and by virtue of a Power of Sale contained in that certain Deed of Trust executed by John A. Jeffries II and Glenda L. Jeffries, in the original amount of $68,623.00, payable to Wells Fargo Bank, N.A., dated July 25, 2011 and recorded on July 27, 2011 in Book RE2243, Page 667,",
+        "datePulled": "06/17/20211",
+
+        "trustee": "McMichael Taylor Gray, LLC MINOR",
+        "trusteeUrl": "https://mtglaw.com/contact-us/",
+        "trusteeAddress": "3550 Engineering Drive Suite 260 Peachtree Corners, GA 30092",
+        "trusteePhone": "(404) 474-7149",
+        "book": "RE2243",
+        "page": "667",
+
+        "firstBidderInfo": {
+          "nameOfBidder": "String",
+          "bidAmount": 0,
+
+          "nameOfPurchaser": "FEDERAL HOME LONE MORTGAGE CORPORATION",
+          "amountOfBid": 400000.0,
+          "bidDate": "07/01/2021",
+          "ldub": "07/12/2021",
+          "minAmountOfNextBid": 420000.0,
+          "depositRequiredToIpset": 21000.0,
+          "address": "String",
+          "phone": 0,
+          "email": "String",
+          "fax": "String",
+          "dateOfReport": "07/01/2021",
+          "notes": "WILFRED 2021-07-26 2021-07-01 VCAP RPFS 3009 Polanski Dr $400000.00",
+
+          "documents": {
+            "docType": "Vcap",
+            "otherName": "DocHere",
+            "uploadedDate": "2021-08-07",
+            "uloadedBy": "UploaderName"
+          }
+        },
+        "otherBidderInfo": [
+          {
+            "nameOfUpsetBidder": "THIRD PARTY",
+
+            "amountOfBid": 420000.0,
+            "bidDate": "07/01/2021",
+            "lastDateForNextUb": "07/12/2021",
+
+            "depositWithTheClerk": 21000.0,
+            "minAmountOfNextUb": 441000.0,
+            "nameOfAttorneyOrAgent": "String",
+            "addressofAttorneyOrAgent": "String",
+            "cityOfAttorneyOrAgent": "String",
+            "zipCode": 0,
+            "phone0": 0,
+            "dateOfFilling": "07/01/2021",
+            "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
+
+            "imCheckedBy": "someGuy",
+
+            "deputyCSC": true,
+            "assistantCSC": true,
+            "clerkOfSuperiorCourt": true,
+            "documents": {
+              "docType": "Upset",
+              "otherName": "DocHere",
+              "uploadedDate": "2021-08-07",
+              "uloadedBy": "UploaderNmae"
+            }
+          }
+        ]
+      }
+    ],
+
+    "geo": {
+      "lat": "35.7686185",
+      "long ": "-79.7643233"
+    },
+
+    "image": "Img url here",
+
+    "amEmail": ["tonya@thestates.com"],
+    "firstComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "LastPriceSqfOnSaleComp": 192,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "LastPriceSqfOnSoldComp": 120,
+      "SSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "firstDTC": "SomeGuy",
+      "date": "2021-08-05"
+    },
+    "secondComp": {
+      "SSD": "5:3 P1+/P2-",
+      "GSD": "10:8",
+      "ADOM": 54,
+      "adomDate": [
+        {
+          "start": "2020-10-05",
+          "end": "2020-11-19"
+        },
+        {
+          "start": "2020-10-13",
+          "end": "2021-01-05"
+        },
+        {
+          "start": "2020-11-05",
+          "end": "2020-12-08"
+        }
+      ],
+      "phaseOfRenovation": "P2-",
+      "priceSqfOnSaleComp": 168,
+      "saleCompsAndSSDMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.32349926233292%2C%22east%22%3A-78.25603634119034%2C%22south%22%3A35.93699890673384%2C%22north%22%3A35.97997615451944%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A14%7D",
+      "GSDSaleCompMaps": "https://www.zillow.com/homes/for_sale/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35783153772354%2C%22east%22%3A-78.22290569543839%2C%22south%22%3A35.91283912777307%2C%22north%22%3A35.99879651626379%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "rentGSD": 0,
+      "priceSqfOnSoldComp": 116,
+      "GSDSoldCompMaps": "https://www.zillow.com/homes/recently_sold/house_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.3029642701149%2C%22east%22%3A-78.28609853982925%2C%22south%22%3A35.950649809663346%2C%22north%22%3A35.96139445746826%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22doz%22%3A%7B%22value%22%3A%2212m%22%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22rs%22%3A%7B%22value%22%3Atrue%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A16%7D",
+      "rentalCompsAndMaps": "https://www.zillow.com/homes/for_rent/house,townhouse_type/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22usersSearchTerm%22%3A%22245%20Triple%20Crown%20Run%20Louisburg%2C%20NC%2027549%22%2C%22mapBounds%22%3A%7B%22west%22%3A-78.35371166467667%2C%22east%22%3A-78.21878582239151%2C%22south%22%3A35.91659285692506%2C%22north%22%3A36.002546162564606%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22fr%22%3A%7B%22value%22%3Atrue%7D%2C%22fsba%22%3A%7B%22value%22%3Afalse%7D%2C%22fsbo%22%3A%7B%22value%22%3Afalse%7D%2C%22nc%22%3A%7B%22value%22%3Afalse%7D%2C%22cmsn%22%3A%7B%22value%22%3Afalse%7D%2C%22auc%22%3A%7B%22value%22%3Afalse%7D%2C%22fore%22%3A%7B%22value%22%3Afalse%7D%2C%22pmf%22%3A%7B%22value%22%3Afalse%7D%2C%22pf%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A13%7D",
+      "pOneValue": 251488,
+      "pTwoValue": 260160,
+      "compURL": "https://www.zillow.com/homedetails/249-John-Winstead-Rd-Louisburg-NC-27549/53741022_zpid/",
+      "compURLTwo": "https://www.zillow.com/homedetails/85-Ingate-Way-Louisburg-NC-27549/72250909_zpid/",
+      "compURLThree": "https://www.zillow.com/homedetails/215-Honeydo-Ln-Zebulon-NC-27597/62673195_zpid/",
+      "recommendedCMA": 260160,
+      "wholeTailValue": 251488,
+      "secondDCA": "secondGuy",
+      "date": "2021-08-05"
+    }
+  }
+]
