@@ -54,18 +54,18 @@
   "manualSearch": false,
   "noActiveMortgageLien": false,
   "amEmail": ["some@gmail.com"],
-  "propertyAddress": "76 trying pl",
-  "city": "Wake Forest",
-  "county": "Wake",
+  "propertyAddress": "988 craigs palace",
+  "city": "Charlotte",
+  "county": "Mecklenburg",
   "zip": 27549,
-  "lotSqf": 4.9,
-  "totalSqf": 955,
+  "lotSqf": 2.2,
+  "totalSqf": 455,
   "costPerSqf": 140,
-  "totalLivingSQF": 1855,
+  "totalLivingSQF": 1555,
   "mainFloor": 1624,
   "secondFloor": 0,
   "thirdFloor": 0,
-  "yearBuilt": 2016,
+  "yearBuilt": 2011,
   "bed": 3,
   "bath": 2,
   "fullBath": 0,
@@ -286,8 +286,31 @@
   "borrowerInfo": [{ "sameAsOwner": true, "addressSameAsOwner": true }],
   "saleinfo": [
     {
-      "firstBidderInfo": { "bidConfirmed": false, "bidUpset": false },
-      "saleDate": "2021-08-10",
+      "firstBidderInfo": {
+        "nameOfBidder": "String",
+        "bidAmount": 0,
+
+        "nameOfPurchaser": "FEDERAL HOME LONE MORTGAGE CORPORATION",
+        "amountOfBid": 400000.0,
+        "bidDate": "07/01/2021",
+        "ldub": "07/12/2021",
+        "minAmountOfNextBid": 420000.0,
+        "depositRequiredToIpset": 21000.0,
+        "address": "String",
+        "phone": 0,
+        "email": "String",
+        "fax": "String",
+        "dateOfReport": "07/01/2021",
+        "notes": "WILFRED 2021-07-26 2021-07-01 VCAP RPFS 3009 Polanski Dr $400000.00",
+
+        "documents": {
+          "docType": "Vcap",
+          "otherName": "DocHere",
+          "uploadedDate": "2021-08-07",
+          "uloadedBy": "UploaderName"
+        }
+      },
+      "saleDate": "2021-07-29",
       "caseNumber": "20SP130",
       "saleType": "2nd Lien FCL",
       "saleStatus": "Active",
@@ -300,7 +323,37 @@
       "trusteeHours": "8:30 am - 05:00 pm",
       "noticeOfForclosure": "Notice will be here",
       "legalNoticeURL": "Notice URL here",
-      "otherBidderInfo": []
+      "otherBidderInfo": [
+        {
+          "nameOfUpsetBidder": "THIRD PARTY",
+
+          "amountOfBid": 420000.0,
+          "bidDate": "07/01/2021",
+          "lastDateForNextUb": "07/12/2021",
+
+          "depositWithTheClerk": 21000.0,
+          "minAmountOfNextUb": 441000.0,
+          "nameOfAttorneyOrAgent": "String",
+          "addressofAttorneyOrAgent": "String",
+          "cityOfAttorneyOrAgent": "String",
+          "zipCode": 0,
+          "phone0": 0,
+          "dateOfFilling": "07/01/2021",
+          "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
+
+          "imCheckedBy": "someGuy",
+
+          "deputyCSC": true,
+          "assistantCSC": true,
+          "clerkOfSuperiorCourt": true,
+          "documents": {
+            "docType": "Upset",
+            "otherName": "DocHere",
+            "uploadedDate": "2021-08-07",
+            "uloadedBy": "UploaderNmae"
+          }
+        }
+      ]
     }
   ],
   "geo": { "lat": "35.9553564", "long": "-78.2952710" },

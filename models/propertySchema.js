@@ -445,6 +445,8 @@ const propertySchema = new Schema({
                 bidAmount: Number,
 
                 nameOfPurchaser: String,
+                isWinningBidder: { type: Boolean },
+
                 amountOfBid: Number,
                 bidDate: Date,
                 ldub: Date,
@@ -459,8 +461,8 @@ const propertySchema = new Schema({
                 cryer: String,
                 imby: String,
                 imByDate: Date,
-                bidConfirmed: { type: Boolean, default: false },
-                bidUpset: { type: Boolean, default: false },
+                bidConfirmed: { type: Boolean },
+                bidUpset: { type: Boolean },
                 auction: String,
                 nosName: String,
                 nosDate: Date,
@@ -479,6 +481,7 @@ const propertySchema = new Schema({
             },
             otherBidderInfo: [
                 {
+                    isWinningBidder: { type: Boolean },
                     nameOfUpsetBidder: String,
                     addressOfUpsetBidder: String,
                     cityOfUpsetBidder: String,
@@ -507,9 +510,9 @@ const propertySchema = new Schema({
                     imCheckedBy: String,
                     imCheckerDate: Date,
 
-                    deputyCSC: { type: Boolean, default: false },
-                    assistantCSC: { type: Boolean, default: false },
-                    clerkOfSuperiorCourt: { type: Boolean, default: false },
+                    deputyCSC: { type: Boolean },
+                    assistantCSC: { type: Boolean },
+                    clerkOfSuperiorCourt: { type: Boolean },
                     documents: {
                         docType: String,
                         otherName: String,
@@ -645,12 +648,32 @@ const propertySchema = new Schema({
         thirdDCA: String,
         date: Date,
         note: String,
-
     }
 }, { timestamps: true })
 
 propertySchema.pre(/^find/, function (next) {
     this.select('-__v -createdAt -updatedAt')
+
+    next()
+})
+
+propertySchema.pre('save', function (next) {
+    //first check if it contains firstBidderinfo. If yes and user is adding other bid info then make winningBidder to the firsBidderInfo to false and add winningBidder feld to true to the current bidder that user updated . if user is adding the firstBidderinfo then make it true. 
+
+    const saleInfoArray = this.saleinfo
+    const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1]
+    const lastOtherBidInfo = lastSaleInfo.otherBidderInfo[lastSaleInfo.otherBidderInfo.length - 1]
+
+    if (lastSaleInfo.otherBidderInfo.length !== 0) {
+
+        console.log("there's already upset info")
+    } else {
+        console.log("there's no upset info")
+
+    }
+    lastSaleInfo.firstBidderInfo.isWinningBidder = true
+
+    console.log(lastSaleInfo)
 
     next()
 })

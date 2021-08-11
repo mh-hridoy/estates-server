@@ -60,7 +60,7 @@ userSchema.pre("save", async function (next) {
 
 userSchema.pre(/^find/, async function (next) {
     this.select('-__v -createdAt -updatedAt')
-
+    next()
 })
 
 

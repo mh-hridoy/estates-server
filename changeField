@@ -16,16 +16,16 @@
 ////search proeprty between the two values. //DONE
 
 
-/** add sorting functionality**/
+/** add sorting functionality**/ Done
 
 
-/** for the winnig bidder functionality/**
-  
-//for winning bidder check
+/** for the winnig bidder functionality/**   need to check the ore save method. if possible then add current date and isWinningBidder to True on the current bidder information... also try changing the isWinningBidder status when add any other array object.
 //add updatedAt field on the bidder array for each last array item.
 //check if the sale date has not posponed or added any other sale date on the saleInfo array.
 //check if the updated date has passed the after 10 days range where no new bidder added neither any new sale date added
 //check the database for these properties.
+
+//check pre save method.. first check if the data contains bidder info then select last element and add winningbidder to true and others to false.
 
 ***************************************
 //later goal::
