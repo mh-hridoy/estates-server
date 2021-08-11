@@ -15,11 +15,7 @@ const duplicateError = (err, res) => {
         stack: err.stack
 
     })
-
-
     return new ErrorHandler(err.message, err.code)
-
-
 }
 
 module.exports = (err, req, res, next) => {

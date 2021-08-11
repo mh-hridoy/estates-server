@@ -1,23 +1,77 @@
 {
-  "propertyAddress": "501 West D Drive",
-  "city": "Salisbury",
-  "county": "Rowan",
+  "schoolsAndNeighbors": {
+    "elementarySchool": {
+      "name": "Bunn Elementary School",
+      "ranking": "6/10",
+      "distance": "2.0 mi"
+    },
+    "middleSchool": {
+      "name": "Bunn Middle School",
+      "ranking": "4/10",
+      "distance": "2.2 mi"
+    },
+    "highSchool": {
+      "name": "Bunn High School",
+      "ranking": "3/10",
+      "distance": "2.6 mi"
+    }
+  },
+  "hoaLien": {
+    "foreclosureResult": { "type": false },
+    "redemptionInfo": { "type": false, "redeemedByOwner": false },
+    "propertySignature": {
+      "dtcFirstCheck": { "type": false },
+      "dcaSecondCheck": { "type": false },
+      "dcaFinalCheck": { "type": false },
+      "owner1": false,
+      "owner2": false,
+      "owner3": false,
+      "owner4": false
+    },
+    "lienForeclosing": false,
+    "noSTR": false,
+    "defectiveLien": false,
+    "manualSearch": false
+  },
+  "taxLien": {
+    "foreclosureResult": { "type": false },
+    "redemptionInfo": { "type": false, "redeemedByOwner": false },
+    "propertySignature": {
+      "dtcFirstCheck": { "type": false },
+      "dcaSecondCheck": { "type": false },
+      "dcaFinalCheck": { "type": false },
+      "owner1": false,
+      "owner2": false,
+      "owner3": false,
+      "owner4": false
+    },
+    "lienForeclosing": false,
+    "defectiveLien": false
+  },
+  "thirdComp": { "adomDate": [] },
   "state": "North Carolina",
-  "zip": 28144,
-  "lotSqf": 0.27,
-  "totalSqf": 2295,
-  "costPerSqf": 111.0,
-  "totalLivingSQF": 1120,
-  "mainFloor": 1120,
+  "fireplace": true,
+  "manualSearch": false,
+  "noActiveMortgageLien": false,
+  "amEmail": ["some@gmail.com"],
+  "propertyAddress": "566 unknown pl",
+  "city": "Wake Forest",
+  "county": "Wake",
+  "zip": 27549,
+  "lotSqf": 4.9,
+  "totalSqf": 955,
+  "costPerSqf": 140,
+  "totalLivingSQF": 1855,
+  "mainFloor": 1624,
   "secondFloor": 0,
   "thirdFloor": 0,
-  "yearBuilt": 1955,
-  "bed": 2,
-  "bath": 1,
-  "fullBath": 1,
+  "yearBuilt": 2009,
+  "bed": 3,
+  "bath": 2,
+  "fullBath": 0,
   "halfBath": 0,
   "oneThirdBath": 0,
-  "basement": 1120,
+  "basement": 0,
   "finishedBasement": 0,
   "finishedAttic": 0,
   "garages": 0,
@@ -26,82 +80,55 @@
   "enclosedPorch": 0,
   "family": 1,
   "kitchen": 1,
-  "fireplace": false,
-  "subdivision": " NA",
-  "PropertyDescription": "Property Overview - Looking for that super cute home located close to everything? This is the one! What charm it has with faux finishes, original hard wood flooring, tile counters, the list goes on 2 BR, 1 Bath home offers metal roof replaced in 2009, replacement windows & HVAC updates in 2008, fenced yard and level lot! Spacious bath with new counters. Full basement part is being used as a workshop has access from home and outside. Located near I-85, restaurants and shopping! Stop renting and make this your new home today!",
-  "legalDesc": "501 W D AVE",
+  "subdivision": " FRANKLIN FARMS",
+  "PropertyDescription": "This 2184 square foot single family home has 3 bedrooms and 2.0 bathrooms. This home is located at 245 Triple Crown Run, Louisburg, NC 27549.",
+  "legalDesc": "PRF 3 SL 91/75POWER LINE CROSSES PROP",
   "extWall": "Alum/Vinyl Siding",
   "roofing": "Ashphalt Shingle",
   "ac": "Center",
-  "heating": "Heat Pump",
-  "poolSpa": "NA",
+  "heating": "NA",
+  "poolSpa": "None",
   "stories": 1,
-  "propertyType": "Residential",
-  "specificPropertyType": "Manufactured",
-  "buildingStyle": "NA",
-  "parcelId": "061200804",
-  "countyValue": 93462,
-  "prcURL": "https://property.spatialest.com/nc/mecklenburg/#/property/287424/print",
-  "countyAssessorURL": "http://services.wakegov.com/realestate/",
-  "gisURL": "http://services.wakegov.com/realestate/",
-  "treasurerURL": "https://services.wakegov.com/ptax/main/billing",
-  "taxBillUrl": "https://services.wakegov.com/ptax/main/billing/acctsummary.aspx?search=re&yrs=2&prev=re&id=0317616",
+  "propertyType": "Single Family",
+  "specificPropertyType": "Single Family",
+  "buildingStyle": "Modern",
+  "parcelId": "26959",
+  "countyValue": 235200,
+  "prcURL": "https://estatestracking.com/storage/document_property/fc81b0fd3e81e36a5bbc63cda725d560.pdf",
+  "countyAssessorURL": "https://www.franklincountytax.us/pt/forms/htmlframe.aspx?mode=content/home.htm",
+  "gisURL": "http://maps2.roktech.net/franklin_GM4/",
+  "treasurerURL": "http://www.franklin.webtaxpay.com/search.php",
+  "taxBillUrl": "https://secure.webtaxpay.com/search.php",
   "infoTabFile": {
-    "fileName": "fileHere",
+    "fileName": "fileName Here",
     "uploadedAt": "2021-08-05",
-    "postedBy": "Uploader name"
+    "postedBy": "someGuy"
   },
-  "zillowURL": "https://www.zillow.com/homes/3009-Polanski-Dr-Wake-Forest,-NC-27587_rb/71205761_zpid/",
-  "zestimate": 368300.0,
-  "redfinUrl": "https://www.redfin.com/NC/Wake-Forest/3009-Polanski-Dr-27587/home/41294861",
-  "redfinEst": 306474.0,
-  "realtorURL": "https://www.realtor.com/realestateandhomes-detail/M5561030791",
-  "realtorEst": 272200.0,
-  "truliaURL": "https://www.trulia.com/p/nc/wake-forest/3009-polanski-dr-wake-forest-nc-27587--2024713086",
-  "truliaEst": 368300.0,
+  "zillowURL": "https://www.zillow.com/homedetails/245-Triple-Crown-Run-Louisburg-NC-27549/49963769_zpid/",
+  "zestimate": 368300,
+  "redfinUrl": "https://www.redfin.com/NC/Louisburg/245-Triple-Crown-Run-27549/home/44289416",
+  "redfinEst": 306474,
+  "realtorURL": "https://www.realtor.com/realestateandhomes-detail/245-Triple-Crown-Run_Louisburg_NC_27549_M69144-93443",
+  "realtorEst": 272200,
+  "truliaURL": "https://www.trulia.com/p/nc/louisburg/245-triple-crown-run-louisburg-nc-27549--2024638973",
+  "truliaEst": 368300,
   "harUrl": "NA",
   "harEst": 0,
   "beenVerifiedURL": "NA",
   "priceHistory": [
     {
-      "date": "07/01/2021",
-      "price": 395000.0,
-      "costPerSqf": 395000.0,
-      "source": "TMLS #2390915",
-      "Description": "Pending"
-    },
-    {
-      "date": "06/19/2021",
-      "price": 395000.0,
-      "costPerSqf": 395000.0,
-      "source": "TMLS #2390915",
-      "Description": "Listed"
+      "date": "1999-12-08",
+      "price": 155000,
+      "costPerSqf": 71,
+      "source": "Public Record",
+      "Description": "NA"
     }
   ],
-
-  "schoolsAndNeighbors": {
-    "elementarySchool": {
-      "name": "Sanford Creek Elementary",
-      "ranking": "4/10",
-      "distance": "4.3 mi"
-    },
-
-    "middleSchool": {
-      "name": "Wake Forest Middle School",
-      "ranking": "5/10",
-      "distance": "2.2 mi"
-    },
-    "highSchool": {
-      "name": "Wake Forest High School",
-      "ranking": "5/10",
-      "distance": "4.3 mi"
-    }
-  },
   "assesmentAndTaxes": [
     {
-      "propertyTaxOwed": 3551.01,
-      "owedYear": 2021,
-      "taxAssessed": 3551.01,
+      "propertyTaxOwed": 0,
+      "owedYear": 0,
+      "taxAssessed": 2169.76,
       "taxYear": 2020
     },
     {
@@ -123,159 +150,160 @@
       "taxYear": 2017
     }
   ],
-
-  "countyRODURL": "https://meckrod.manatron.com/RealEstate/SearchEntry.aspx",
-
+  "countyRODURL": "http://72.15.246.186/FranklinNCNW/application.asp?resize=true",
   "mortgageInfo": [
     {
-      "lienForeclosing": true,
-
-      "lender": "AMERICAN FIN HOUSE LARIBA",
-      "lienAmount": 75150.0,
-      "dateRecorded": "04/06/2018",
-      "dtBookPage": "1306 / 984",
-      "loanType": "FNMA",
-      "loanTerm": "30 Years",
-      "maturityDate": "05/01/2048",
-      "rightToCure": 5,
-      "tursteeFee": 5.0,
-
-      "strBookPage": "1368 / 732",
-      "strDate": "02/23/2021",
-      "loanEstimatedBalance": 70909.604,
-      "estLatePaymentAndFees": 8055.04,
-      "totalEstimatedDebt": 78964.64,
-      "cmaArv": 124320.0,
-      "resonableFees": true,
-      "propertyAddressMatch": true,
       "amortizationView": {
         "type": true,
-        "annualInterestRate": 6.32,
-        "monthlyPayment": 1502.65,
-        "monthlyPrincipalPayment": 509.23,
-        "monthlyInterestPayment": 993.42
+        "annualInterestRate": 7.91,
+        "monthlyPayment": 945.47,
+        "monthlyPrincipalPayment": 483.74,
+        "monthlyInterestPayment": 461.74
       },
+      "modA": { "type": false },
+      "subA": { "type": false },
+      "foreclosureResult": { "type": false },
       "propertySignature": {
-        "owner1": true,
-        "owner2": true,
         "dtcFirstCheck": {
-          "type": true,
           "user": {
             "name": "oneGuy",
             "checkedAt": "2021-08-05"
-          }
+          },
+          "type": true
+        },
+        "dcaSecondCheck": { "type": false },
+        "dcaFinalCheck": { "type": false },
+        "owner1": true,
+        "owner2": true,
+        "owner3": false,
+        "owner4": false
+      },
+      "lienForeclosing": false,
+      "noSTR": true,
+      "defectiveLien": false,
+      "legalDescMatch": false,
+      "propertyAddressMatch": false,
+      "resonableFees": true,
+      "lender": "BANCFINANCIAL SERVICES CORP",
+      "lienAmount": 130050,
+      "dateRecorded": "1999-12-08",
+      "dtBookPage": "1162/25",
+      "loanType": "FNMA",
+      "loanTerm": "30 Years",
+      "maturityDate": "2029-12-31",
+      "rightToCure": 5,
+      "tursteeFee": 5,
+      "loanEstimatedBalance": 69564.63,
+      "cmaArv": 303520
+    },
+    {
+      "amortizationView": {
+        "type": true,
+        "annualInterestRate": 6.09,
+        "monthlyPayment": 676.88,
+        "monthlyPrincipalPayment": 234.98,
+        "monthlyInterestPayment": 441.9,
+        "estimatedEquity": 157106.92
+      },
+      "modA": {
+        "type": true,
+        "modABookPage": "2003/2003",
+        "modADate": "2015-07-31",
+        "modALienAmount": 131461.62,
+        "modALoanTerm": "40",
+        "modAmaturityDate": "2055-06-30",
+        "annualInterestRate": 6,
+        "monthlyPayment": 722.96,
+        "loanEstBalance": 125599.44,
+        "estLatePaymentAndFees": 17182.16,
+        "totalEstimatedDebt": 103053.08
+      },
+      "subA": { "type": false },
+      "foreclosureResult": { "type": false },
+      "propertySignature": {
+        "dtcFirstCheck": {
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          },
+          "type": true
         },
         "dcaSecondCheck": {
-          "type": true,
           "user": {
-            "name": "dcaGuy",
+            "name": "oneGuy",
             "checkedAt": "2021-08-05"
-          }
-        }
-      }
+          },
+          "type": true
+        },
+        "dcaFinalCheck": { "type": false },
+        "owner1": true,
+        "owner2": true,
+        "owner3": false,
+        "owner4": false
+      },
+      "lienForeclosing": true,
+      "noSTR": false,
+      "defectiveLien": false,
+      "legalDescMatch": true,
+      "propertyAddressMatch": false,
+      "resonableFees": true,
+      "lender": "ATHENE ANNUITY & LIFE ASSURANCE COMPANY",
+      "lienAmount": 111925,
+      "dateRecorded": "2008-11-05",
+      "dtBookPage": "1707/708",
+      "loanType": "FNMA",
+      "loanTerm": "30 Years",
+      "maturityDate": "2038-10-31",
+      "tursteeFee": 5,
+      "trustee": "Hutchens Law Firm",
+      "assignmentBookPage": "2198/1507",
+      "strBookPage": "2223/512",
+      "strDate": "2020-09-14",
+      "loanEstimatedBalance": 86838.6,
+      "estLatePaymentAndFees": 16214.48,
+      "totalEstimatedDebt": 103053.08,
+      "cmaArv": 303520
     }
   ],
-
   "ownerInfo": [
     {
-      "ownerFullName": "BOYD HEIR COAN",
-      "ownerAddress": "607 MILLER ST WINSTON SALEM NC 27103",
+      "sameOwner": true,
+      "pacer": false,
+      "ownerFullName": "STEPHEN C JONES",
+      "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549",
+      "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
+      "beenVerifiedURL": "https://www.beenverified.com/people/"
+    },
+    {
+      "sameOwner": false,
+      "pacer": false,
+      "ownerFullName": "DONNA JONES",
+      "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549",
       "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
       "beenVerifiedURL": "https://www.beenverified.com/people/"
     }
   ],
-  "borrowerInfo": [
-    {
-      "sameAsOwner": true,
-      "addressSameAsOwner": true
-    }
-  ],
-
+  "borrowerInfo": [{ "sameAsOwner": true, "addressSameAsOwner": true }],
   "saleinfo": [
     {
-      "saleDate": "07/07/2021",
-      "case0": "21SP80",
-      "openingBid": 0,
-      "saleType": "1st Lien FCL",
+      "firstBidderInfo": { "bidConfirmed": false, "bidUpset": false },
+      "saleDate": "2021-08-10",
+      "caseNumber": "20SP130",
+      "saleType": "2nd Lien FCL",
       "saleStatus": "Active",
-      "salePlace": "210 N Main St Salisbury, NC 28144-4374",
-      "saleTime": "1:30 PM",
-      "noticeOfForclosure": "AMENDED NOTICE OF FORECLOSURE SALE NORTH CAROLINA, RANDOLPH COUNTY 21 SP 74 Under and by virtue of a Power of Sale contained in that certain Deed of Trust executed by John A. Jeffries II and Glenda L. Jeffries, in the original amount of $68,623.00, payable to Wells Fargo Bank, N.A., dated July 25, 2011 and recorded on July 27, 2011 in Book RE2243, Page 667,",
-      "datePulled": "06/23/2021",
-
+      "truesteeFile": "3679-11019",
+      "precinct": 0,
       "trustee": "Hutchens Law Firm",
-      "trusteeUrl": "https://sales.hutchenslawfirm.com/fcSaleDetail.aspx?ID=45066315-9e90-4d05-8ccb-ac60010b4852&bidsID=8ca4e998-a9f2-4d6b-89bb-ad6d00b1f510",
+      "trusteeUrl": "https://sales.hutchenslawfirm.com/fcSaleDetail.aspx?ID=3679-11019&bidsID=",
       "trusteeAddress": "4317 Ramsey St.Fayetteville, NC 28311",
       "trusteePhone": "(910)864-6888",
-      "book": "1306",
-      "page": "984",
-
-      "firstBidderInfo": {
-        "nameOfBidder": "String",
-        "bidAmount": 0,
-
-        "nameOfPurchaser": "FEDERAL HOME LONE MORTGAGE CORPORATION",
-        "amountOfBid": 400000.0,
-        "bidDate": "07/01/2021",
-        "ldub": "07/12/2021",
-        "minAmountOfNextBid": 420000.0,
-        "depositRequiredToIpset": 21000.0,
-        "address": "String",
-        "phone": 0,
-        "email": "String",
-        "fax": "String",
-        "dateOfReport": "07/01/2021",
-        "notes": "WILFRED 2021-07-26 2021-07-01 VCAP RPFS 3009 Polanski Dr $400000.00",
-
-        "documents": {
-          "docType": "Vcap",
-          "otherName": "DocHere",
-          "uploadedDate": "2021-08-07",
-          "uloadedBy": "UploaderName"
-        }
-      },
-      "otherBidderInfo": [
-        {
-          "nameOfUpsetBidder": "THIRD PARTY",
-
-          "amountOfBid": 420000.0,
-          "bidDate": "07/01/2021",
-          "lastDateForNextUb": "07/12/2021",
-
-          "depositWithTheClerk": 21000.0,
-          "minAmountOfNextUb": 441000.0,
-          "nameOfAttorneyOrAgent": "String",
-          "addressofAttorneyOrAgent": "String",
-          "cityOfAttorneyOrAgent": "String",
-          "zipCode": 0,
-          "phone0": 0,
-          "dateOfFilling": "07/01/2021",
-          "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
-
-          "imCheckedBy": "someGuy",
-
-          "deputyCSC": true,
-          "assistantCSC": true,
-          "clerkOfSuperiorCourt": true,
-          "documents": {
-            "docType": "Upset",
-            "otherName": "DocHere",
-            "uploadedDate": "2021-08-07",
-            "uloadedBy": "UploaderNmae"
-          }
-        }
-      ]
+      "trusteeHours": "8:30 am - 05:00 pm",
+      "noticeOfForclosure": "Notice will be here",
+      "legalNoticeURL": "Notice URL here",
+      "otherBidderInfo": []
     }
   ],
-
-  "geo": {
-    "lat": "35.6580119",
-    "long ": "-80.4966922"
-  },
-
-  "image": "Img url here",
-
-  "amEmail": ["tonya@thestates.com"],
+  "geo": { "lat": "35.9553564", "long": "-78.2952710" },
   "firstComp": {
     "SSD": "5:3 P1+/P2-",
     "GSD": "10:8",

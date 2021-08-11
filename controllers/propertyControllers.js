@@ -5,21 +5,17 @@ const { isValidObjectId } = require("mongoose")
 
 const addProperty = asynchErrorHandler(async (req, res) => {
     const { propertyAddress, ...data } = req.body
-
-
     const property = await new Property({ propertyAddress, ...data })
 
     await property.save()
     res.json('hit the endpoints')
 })
 
-
-
 const getProperties = asynchErrorHandler(async (req, res) => {
 
     const allQuery = { ...req.query }
 
-    const depricateQuery = ['sort', "page", "limit", "fields"]
+    const depricateQuery = ["sort", "page", "limit", "fields"]
     depricateQuery.forEach(el => delete allQuery[el])
 
 
@@ -46,44 +42,35 @@ const getProperties = asynchErrorHandler(async (req, res) => {
     // const modifiedNumber = caseNumber ? caseNumber.split(" ").join("") : undefined
 
 
-
     //didnot use await here because I had to sort these property before store them.. **checkout the all peroperty variable.
-    // let property = Property.find({
-    //     totalSqf: { $gte: startSqf, $lte: endSqf },
-    //     lotSqf: { $gte: startAcre, $lte: endAcre },
-    //     "ownerInfo.ownerFullName": new RegExp(ownerFullName, "i"), lotSqf: { $gte: startAcre, $lte: endAcre },
-    //     propertyAddress: new RegExp(propertyAddress, "i"), city: new RegExp(city, "i"), state: new RegExp(state, "i"), county: new RegExp(county, "i"), PropertyDescription: new RegExp(PropertyDescription, "i"), legalDesc: new RegExp(legalDesc, "i"), "saleinfo.caseNumber": new RegExp(caseNumber, "i"), "saleinfo.saleDate": { $gte: new Date(new Date(startDate)), $lte: new Date(new Date(endDate)) }, ...data
-    // })
+    let property = Property.find({
+        totalSqf: { $gte: startSqf, $lte: endSqf },
+        lotSqf: { $gte: startAcre, $lte: endAcre },
+        "ownerInfo.ownerFullName": new RegExp(ownerFullName, "i"),
+        propertyAddress: new RegExp(propertyAddress, "gi"), city: new RegExp(city, "i"), state: new RegExp(state, "i"), county: new RegExp(county, "i"), PropertyDescription: new RegExp(PropertyDescription, "i"), legalDesc: new RegExp(legalDesc, "i"), "saleinfo.caseNumber": new RegExp(caseNumber, "i"), "saleinfo.saleDate": { $gte: new Date(new Date(startDate)), $lte: new Date(new Date(endDate)) }, ...data
+    })
 
-    let property = Property.find()
+    //Seletcting the last index of array
+    // const saleInfoArray = property.schema.obj.saleinfo
+    // const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1].saleDate
 
     //for sort use -sortbyname to desc result.
-
-    //using sort functionality
     if (req.query.sort) {
-        const modifiedSort = req.query.sort.split(',').join(" ")
-
+        const modifiedSort = req.query.sort.split(",").join(" ")
         property = property.sort(modifiedSort)
 
     } else {
         property = property.sort("-createdAt")
+
     }
+    //try creating same sale date. but change the yearBuilt values .
 
-    //will use another if else for multi sort functionality
-
-
-    //no property found
-    if (property.length == 0) {
-        return res.json("There is no property found.")
-    }
-
-    //executeProperty
+    //execute Property
     const allProperty = await property;
 
     res.json({ totalCount: allProperty.length, allProperty })
 
 })
-
 
 const updateProperty = asynchErrorHandler(async (req, res, next) => {
 
