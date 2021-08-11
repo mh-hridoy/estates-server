@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -481,6 +482,7 @@ const propertySchema = new Schema({
             },
             otherBidderInfo: [
                 {
+                    _id: false,
                     isWinningBidder: { type: Boolean },
                     nameOfUpsetBidder: String,
                     addressOfUpsetBidder: String,
@@ -664,14 +666,18 @@ propertySchema.pre('save', function (next) {
     const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1]
     const lastOtherBidInfo = lastSaleInfo.otherBidderInfo[lastSaleInfo.otherBidderInfo.length - 1]
 
-    if (lastSaleInfo.otherBidderInfo.length !== 0) {
+    if (lastSaleInfo.otherBidderInfo.length <= 0) {
+        lastSaleInfo.firstBidderInfo.isWinningBidder = true
+    } else if (lastSaleInfo.otherBidderInfo.length > 0) {
+        lastSaleInfo.firstBidderInfo.isWinningBidder = false
 
-        console.log("there's already upset info")
-    } else {
-        console.log("there's no upset info")
+        lastOtherBidInfo.isWinningBidder = false
 
+        let switchToFalse = lastSaleInfo.otherBidderInfo.map(({ isWinningBidder }) => isWinningBidder)
+        switchToFalse = false
+
+        lastOtherBidInfo.isWinningBidder = true
     }
-    lastSaleInfo.firstBidderInfo.isWinningBidder = true
 
     console.log(lastSaleInfo)
 

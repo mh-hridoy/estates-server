@@ -352,6 +352,35 @@
             "uploadedDate": "2021-08-07",
             "uloadedBy": "UploaderNmae"
           }
+        },
+        {
+          "nameOfUpsetBidder": "checking for winningBidder",
+
+          "amountOfBid": 445664.0,
+          "bidDate": "08/01/2021",
+          "lastDateForNextUb": "08/12/2021",
+
+          "depositWithTheClerk": 54545.0,
+          "minAmountOfNextUb": 454646.0,
+          "nameOfAttorneyOrAgent": "String",
+          "addressofAttorneyOrAgent": "String",
+          "cityOfAttorneyOrAgent": "String",
+          "zipCode": 0,
+          "phone0": 0,
+          "dateOfFilling": "07/01/2021",
+          "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
+
+          "imCheckedBy": "someGuy",
+
+          "deputyCSC": true,
+          "assistantCSC": true,
+          "clerkOfSuperiorCourt": true,
+          "documents": {
+            "docType": "Upset",
+            "otherName": "DocHere",
+            "uploadedDate": "2021-08-07",
+            "uloadedBy": "UploaderNmae"
+          }
         }
       ]
     }
