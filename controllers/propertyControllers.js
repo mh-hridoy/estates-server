@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const asynchErrorHandler = require("../utils/asynchErrorHandler")
 const Property = require("../models/propertySchema")
 const Errorhandler = require("../utils/ErrorHandler")
@@ -72,12 +73,10 @@ const getProperties = asynchErrorHandler(async (req, res) => {
 
 })
 
-const updateProperty = asynchErrorHandler(async (req, res, next) => {
-
-    console.log(req.csrfToken)
+const addBidderInfo = asynchErrorHandler(async (req, res, next) => {
 
     const id = req.params.id;
-    const { ...data } = req.body
+    const { saleinfoId, ...data } = req.body
 
     const isValidId = isValidObjectId(id)
 
@@ -87,11 +86,25 @@ const updateProperty = asynchErrorHandler(async (req, res, next) => {
 
     if (!property) return next(new Errorhandler("Property not found"))
 
+    const selectedSaleDate = property.saleinfo.find((obj) => {
+        const stringObjId = obj._id.toString()
+        return stringObjId === saleinfoId
+    })
 
-    await property.updateOne({ ...data })
+    const otherBidderArray = selectedSaleDate.otherBidderInfo
 
+    otherBidderArray.push(data)
+
+    await property.save()
+    //need to push bid info to the array
     res.json("Information updated successfully")
 })
+
+//need to creaete another controller for the proeprty update.
+
+const addNewSaleDate = (req, res, next) => {
+
+}
 
 const deletePropery = asynchErrorHandler(async (req, res, next) => {
     const { id } = req.body
@@ -117,8 +130,10 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
 
 })
 
+//will be working on update property functionality
+
 module.exports = {
-    addProperty, getProperties, updateProperty, deletePropery
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate
 }
 
 

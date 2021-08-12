@@ -404,7 +404,6 @@ const propertySchema = new Schema({
 
     saleinfo: [
         {
-            _id: false,
             saleDate: Date,
             caseNumber: String,
             openingBid: Number,
@@ -482,7 +481,6 @@ const propertySchema = new Schema({
             },
             otherBidderInfo: [
                 {
-                    _id: false,
                     isWinningBidder: { type: Boolean },
                     nameOfUpsetBidder: String,
                     addressOfUpsetBidder: String,
@@ -666,6 +664,19 @@ propertySchema.pre('save', function (next) {
     const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1]
     const lastOtherBidInfo = lastSaleInfo.otherBidderInfo[lastSaleInfo.otherBidderInfo.length - 1]
 
+    // saleinfo firstBidderInfo setup
+    if (saleInfoArray.length == 1) {
+        if (saleInfoArray.firstBidderInfo.nameOfPurchaser && saleInfoArray.firstBidderInfo.amountOfBid) {
+            return saleInfoArray.firstBidderInfo.isWinningBidder = true
+        }
+    } else if (saleInfoArray.length > 1) {
+        const selectExceptLastOne = saleInfoArray.slice(0, -1)
+        if (selectExceptLastOne.length !== 0) {
+            return selectExceptLastOne.map(info => { return info.isWinningBidder = false })
+        }
+    }
+
+    //last Bidder info setup
     if (lastSaleInfo.otherBidderInfo.length <= 0) {
         lastSaleInfo.firstBidderInfo.isWinningBidder = true
     } else if (lastSaleInfo.otherBidderInfo.length > 0) {

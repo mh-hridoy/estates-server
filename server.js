@@ -18,7 +18,7 @@ const options = {
 process.on('uncaughtException', err => {
     console.log("uncaughtException Error... System will terminate soon")
 
-    console.log(err.name, err.message)
+    console.log(err.name, err.message, err.stack)
 
     process.exit(1)
 })
@@ -33,7 +33,7 @@ fs.readdirSync('./routes').map(route => app.use('/api', require(`./routes/${rout
 
 
 app.all('*', (req, res) => {
-    res.status(400).send("not found " + req.originalUrl)
+    res.status(400).json("not found " + req.originalUrl)
 })
 
 //do not execute this errorhandlingMiddleware function
@@ -48,7 +48,7 @@ const server = app.listen(port, () => console.log("Server listening on port " + 
 
 process.on('unhandledRejection', err => {
     console.log("unhandledRejection Error... System will terminate soon")
-    console.log(err.name, err.message)
+    console.log(err.name, err.message, err.stack)
     server.close(() => {
         process.exit(1)
     })
