@@ -7,7 +7,6 @@ const { isValidObjectId } = require("mongoose")
 const addProperty = asynchErrorHandler(async (req, res) => {
     const { propertyAddress, ...data } = req.body
     const property = await new Property({ propertyAddress, ...data })
-
     await property.save()
     res.json('hit the endpoints')
 })

@@ -663,33 +663,37 @@ propertySchema.pre('save', function (next) {
     const saleInfoArray = this.saleinfo
     const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1]
     const lastOtherBidInfo = lastSaleInfo.otherBidderInfo[lastSaleInfo.otherBidderInfo.length - 1]
+    const allOtherBidInfo = lastSaleInfo.otherBidderInfo
 
     // saleinfo firstBidderInfo setup
-    if (saleInfoArray.length == 1) {
-        if (saleInfoArray.firstBidderInfo.nameOfPurchaser && saleInfoArray.firstBidderInfo.amountOfBid) {
-            return saleInfoArray.firstBidderInfo.isWinningBidder = true
+
+    //if there's only one saleinfo array and no other bid info then.
+    if (saleInfoArray.length === 1 && allOtherBidInfo.length === 0) {
+        if (lastSaleInfo.firstBidderInfo.nameOfPurchaser && lastSaleInfo.firstBidderInfo.amountOfBid) {
+            lastSaleInfo.firstBidderInfo.isWinningBidder = true
         }
-    } else if (saleInfoArray.length > 1) {
+        //if there's only one saleinfo array with otherbid info then.
+    } else if (saleInfoArray.length === 1 && allOtherBidInfo.length !== 0) {
+        lastSaleInfo.firstBidderInfo.isWinningBidder = false
+        lastSaleInfo.otherBidderInfo.isWinningBidder = true
+        //if there's not only one saleinfo then.   
+    } else if (saleInfoArray.length > 1 && allOtherBidInfo.length === 0) {
         const selectExceptLastOne = saleInfoArray.slice(0, -1)
         if (selectExceptLastOne.length !== 0) {
-            return selectExceptLastOne.map(info => { return info.isWinningBidder = false })
+            selectExceptLastOne.map(info => {
+                return info.firstBidderInfo.isWinningBidder = false
+            })
+        }
+        lastSaleInfo.firstBidderInfo.isWinningBidder = true
+        //if saleInfoArray is more than 1 & theres otherBidInfo array.
+    } else if (saleInfoArray.length > 1 && allOtherBidInfo.length !== 0) {
+        if (lastSaleInfo.otherBidderInfo.length >= 1) {
+            lastSaleInfo.firstBidderInfo.isWinningBidder = false
+            allOtherBidInfo.map(info => { return info.otherBidderInfo.isWinning = false })
+
+            lastOtherBidInfo.isWinningBidder = true
         }
     }
-
-    //last Bidder info setup
-    if (lastSaleInfo.otherBidderInfo.length <= 0) {
-        lastSaleInfo.firstBidderInfo.isWinningBidder = true
-    } else if (lastSaleInfo.otherBidderInfo.length > 0) {
-        lastSaleInfo.firstBidderInfo.isWinningBidder = false
-
-        lastOtherBidInfo.isWinningBidder = false
-
-        let switchToFalse = lastSaleInfo.otherBidderInfo.map(({ isWinningBidder }) => isWinningBidder)
-        switchToFalse = false
-
-        lastOtherBidInfo.isWinningBidder = true
-    }
-
     console.log(lastSaleInfo)
 
     next()
