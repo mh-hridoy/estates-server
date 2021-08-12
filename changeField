@@ -28,5 +28,17 @@
 //check pre save method.. first check if the data contains bidder info then select last element and add winningbidder to true and others to false.
 
 ***************************************
-//later goal::
-cusomize case and address search.
+//later on:: will be researching on this one.
+
+****cusomize case and address search.
+
+
+//conditions for the winnig bidder functionalities. //D
+
+***if there's only one saleInfo with only firstBidder information then make the firstBidder winning to true.
+
+
+***if there's only one saleInfo with firstBidder and otherBidder information then make the firstBidder winning to false. And make the last of otherBidderInfo winnig to true and make all the previous bidder information winnig to false.
+
+
+***if there multiple multiple saleInfo then make all the previous firstBidder and otherBidder information winnig to false if they existed before.
