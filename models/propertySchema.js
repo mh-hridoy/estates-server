@@ -675,24 +675,25 @@ propertySchema.pre('save', function (next) {
         //if there's only one saleinfo array with otherbid info then.
     } else if (saleInfoArray.length === 1 && allOtherBidInfo.length !== 0) {
         lastSaleInfo.firstBidderInfo.isWinningBidder = false
-        lastSaleInfo.otherBidderInfo.isWinningBidder = true
+        if (allOtherBidInfo.length === 1) {
+            allOtherBidInfo.map((info) => { return info.isWinningBidder = true })
+        } else if (allOtherBidInfo.length > 1) {
+            const selectOtheBidExceptLastOne = allOtherBidInfo.slice(0, -1)
+            selectOtheBidExceptLastOne.map((info) => { return info.isWinningBidder = false })
+            lastOtherBidInfo.isWinningBidder = true
+        }
+
         //if there's not only one saleinfo then.   
-    } else if (saleInfoArray.length > 1 && allOtherBidInfo.length === 0) {
+    } else if (saleInfoArray.length > 1) {
         const selectExceptLastOne = saleInfoArray.slice(0, -1)
         if (selectExceptLastOne.length !== 0) {
             selectExceptLastOne.map(info => {
+                const selectAllOtherBidder = info.otherBidderInfo
+                selectAllOtherBidder.map((info) => { return info.isWinningBidder = false })
                 return info.firstBidderInfo.isWinningBidder = false
             })
         }
-        lastSaleInfo.firstBidderInfo.isWinningBidder = true
         //if saleInfoArray is more than 1 & theres otherBidInfo array.
-    } else if (saleInfoArray.length > 1 && allOtherBidInfo.length !== 0) {
-        if (lastSaleInfo.otherBidderInfo.length >= 1) {
-            lastSaleInfo.firstBidderInfo.isWinningBidder = false
-            allOtherBidInfo.map(info => { return info.otherBidderInfo.isWinning = false })
-
-            lastOtherBidInfo.isWinningBidder = true
-        }
     }
     console.log(lastSaleInfo)
 
