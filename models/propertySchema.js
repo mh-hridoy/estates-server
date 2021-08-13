@@ -690,7 +690,9 @@ propertySchema.pre('save', function (next) {
             selectExceptLastOne.map(info => {
                 const selectAllOtherBidder = info.otherBidderInfo
                 selectAllOtherBidder.map((info) => { return info.isWinningBidder = false })
-                return info.firstBidderInfo.isWinningBidder = false
+                info.firstBidderInfo.isWinningBidder = false
+
+                return info //return info array because map require return an new array in order to be able to create and submit changed array
             })
             //
         }
