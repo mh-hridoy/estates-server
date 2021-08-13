@@ -23,11 +23,6 @@
 
 ***************************************
 
-//later on:: will be researching on this one.
-
-****cusomize case and address search.
-
-
 //conditions for the winnig bidder functionalities. //D
 
 ***if there's only one saleInfo with only firstBidder information then make the firstBidder winning to true.
@@ -37,3 +32,15 @@
 
 
 ***if there  multiple saleInfo then make all the previous firstBidder and otherBidder information winnig to false if they existed before.
+
+
+****ALL DONE ABOVE*******
+
+netx plan :
+
+*craete update middleware for bidder and saleinfo. //
+
+*research for the aggregation query.
+
+*cusomize case and address search.
+
