@@ -101,9 +101,28 @@ const addBidderInfo = asynchErrorHandler(async (req, res, next) => {
 
 //need to creaete another controller for the proeprty update.
 
-const addNewSaleDate = (req, res, next) => {
+const addNewSaleDate = asynchErrorHandler(async (req, res, next) => {
+    const id = req.params.id;
+    const { ...data } = req.body
 
-}
+    const isValidId = isValidObjectId(id)
+
+    if (!isValidId) return next(new Errorhandler("Property not found"))
+
+    const property = await Property.findById({ _id: id })
+
+    if (!property) return next(new Errorhandler("Property not found"))
+
+    const saleInfoArray = property.saleinfo
+
+    saleInfoArray.push(data)
+
+    await property.save()
+
+    //need to push bid info to the array
+    res.json("Information updated successfully")
+
+})
 
 const deletePropery = asynchErrorHandler(async (req, res, next) => {
     const { id } = req.body

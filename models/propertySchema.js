@@ -683,7 +683,7 @@ propertySchema.pre('save', function (next) {
             lastOtherBidInfo.isWinningBidder = true
         }
 
-        //if there's not only one saleinfo then.   
+        //if there's not only one saleinfo then.   **CHECK THE CHANGEFIELD FILE FOR MORE INFO
     } else if (saleInfoArray.length > 1) {
         const selectExceptLastOne = saleInfoArray.slice(0, -1)
         if (selectExceptLastOne.length !== 0) {
@@ -692,8 +692,25 @@ propertySchema.pre('save', function (next) {
                 selectAllOtherBidder.map((info) => { return info.isWinningBidder = false })
                 return info.firstBidderInfo.isWinningBidder = false
             })
+            //
         }
-        //if saleInfoArray is more than 1 & theres otherBidInfo array.
+        //CODE HERE FOR THE 
+        if (lastSaleInfo.otherBidderInfo.length === 0 && lastSaleInfo.firstBidderInfo.nameOfPurchaser && lastSaleInfo.firstBidderInfo.amountOfBid) {
+            lastSaleInfo.firstBidderInfo.isWinningBidder = true;
+
+        } else if (lastSaleInfo.otherBidderInfo.length === 1) {
+            lastSaleInfo.firstBidderInfo.isWinningBidder = false;
+
+            lastSaleInfo.otherBidderInfo.map((info) => { return info.isWinningBidder = true })
+        } else if (lastSaleInfo.otherBidderInfo.length > 1) {
+            lastSaleInfo.firstBidderInfo.isWinningBidder = false;
+            const selectExceptLastOne = lastSaleInfo.otherBidderInfo.slice(0, -1)
+
+            selectExceptLastOne.map(info => { return info.isWinningBidder = false })
+
+            lastOtherBidInfo.isWinningBidder = true
+        }
+
     }
     console.log(lastSaleInfo)
 

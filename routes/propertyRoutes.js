@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/properties', protectedRoute, getProperties)
 router.post('/add-property', protectedRoute, addProperty)
 router.patch('/add-bidderinfo/:id', protectedRoute, addBidderInfo)
-router.patch('/add-newsale/:id', protectedRoute, addNewSaleDate)
+router.patch('/add-newsaledate/:id', protectedRoute, addNewSaleDate)
 router.delete('/delete-property', protectedRoute, deletePropery)
 
 //need to create bidder and sale update middleware. also bidder and sale delete middleware.
