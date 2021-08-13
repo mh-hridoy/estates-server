@@ -120,7 +120,7 @@ const addNewSaleDate = asynchErrorHandler(async (req, res, next) => {
     await property.save()
 
     //need to push bid info to the array
-    res.json("Information updated successfully")
+    res.json("Information added successfully")
 
 })
 
@@ -148,10 +148,31 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
 
 })
 
+const updateProperty = asynchErrorHandler(async (req, res, next) => {
+    const id = req.params.id;
+    const { ...data } = req.body
+
+    const isValidId = isValidObjectId(id)
+
+    if (!isValidId) return next(new Errorhandler("Property not found"))
+
+    const property = await Property.findById({ _id: id })
+
+    if (!property) return next(new Errorhandler("Property not found"))
+
+    await property.updateOne({ ...data })
+
+    //need to push bid info to the array
+    res.json("Information updated successfully")
+
+
+})
+
+
 //will be working on update property functionality
 
 module.exports = {
-    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty
 }
 
 

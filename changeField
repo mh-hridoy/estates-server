@@ -38,9 +38,19 @@
 
 netx plan :
 
-*craete update middleware for bidder and saleinfo. //
+*craete update middleware for bidder and saleinfo. // Done
 
 *research for the aggregation query.
 
 *cusomize case and address search.
 
+
+*************************************
+//if I make seperate middleware for each array then the count will be around 10...//this is the best approach to prevent losing data.//
+
+
+I'll be making only one middleware for all the changes.// DOne
+
+
+//
+Also need to lookup into all the array property adding operations. // DOne
