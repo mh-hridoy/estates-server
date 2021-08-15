@@ -64,20 +64,6 @@ const getProperties = asynchErrorHandler(async (req, res) => {
     // const saleInfoArray = property.schema.obj.saleinfo
     // const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1].saleDate
 
-    // let property = Property.find({
-    //     $or: [
-    //         {
-    //             $and: [{ "saleinfo.firstBidderInfo.isWinningBidder": true },
-    //             { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp("FEDERAL HOME", "gi") }]
-    //         },
-    //         {
-    //             $and: [{ "saleinfo.otherBidderInfo.isWinningBidder": true },
-    //             { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp("FEDERAL HOME", "gi") }]
-    //         }
-
-    //     ]
-    // })
-
     //need try with if state blocks.
     if (bidderName || winningBidder) {
         property = Property.find({
