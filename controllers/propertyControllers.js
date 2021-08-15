@@ -64,9 +64,22 @@ const getProperties = asynchErrorHandler(async (req, res) => {
     // const saleInfoArray = property.schema.obj.saleinfo
     // const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1].saleDate
 
+    // let property = Property.find({
+    //     $or: [
+    //         {
+    //             $and: [{ "saleinfo.firstBidderInfo.isWinningBidder": true },
+    //             { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp("FEDERAL HOME", "gi") }]
+    //         },
+    //         {
+    //             $and: [{ "saleinfo.otherBidderInfo.isWinningBidder": true },
+    //             { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp("FEDERAL HOME", "gi") }]
+    //         }
+
+    //     ]
+    // })
 
     //need try with if state blocks.
-    if (bidderName) {
+    if (bidderName || winningBidder) {
         property = Property.find({
             "saleinfo.saleDate": { $gte: req.query.startDate, $lte: req.query.endDate },
             totalSqf: { $gte: startSqf, $lte: endSqf },
@@ -78,7 +91,20 @@ const getProperties = asynchErrorHandler(async (req, res) => {
 
                 { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp(bidderName, "gi") },
                 { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(bidderName, "gi") }
-            ], ...data
+            ],
+            // eslint-disable-next-line no-dupe-keys
+            $or: [
+                {
+                    $and: [{ "saleinfo.firstBidderInfo.isWinningBidder": true },
+                    { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp(winningBidder, "gi") }]
+                },
+                {
+                    $and: [{ "saleinfo.otherBidderInfo.isWinningBidder": true },
+                    { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(winningBidder, "gi") }]
+                }
+
+            ],
+            ...data
 
         })
     }

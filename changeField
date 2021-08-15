@@ -41,7 +41,7 @@ netx plan :
 
 *craete update middleware for bidder and saleinfo. // Done
 
-*fix sale date, bidder, winning bidder search query.
+*fix sale date, bidder, winning bidder search query.// Done
 
 *add pagination .
 
