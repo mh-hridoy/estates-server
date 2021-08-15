@@ -15,18 +15,19 @@ const getProperties = asynchErrorHandler(async (req, res) => {
 
     const allQuery = { ...req.query }
 
-    const depricateQuery = ["sort", "page", "limit", "fields"]
+    const depricateQuery = ["sort", "page", "limit", "fields", "startDate", "endDate"]
     depricateQuery.forEach(el => delete allQuery[el])
 
 
     // eslint-disable-next-line no-unused-vars
-    let { startSqf, endSqf, startAcre, endAcre, ownerFullName, startDate, endDate, caseNumber, propertyAddress, city, state, county, PropertyDescription, legalDesc, ...data } = allQuery
+    //all the query field should have one default value in SCHEMA. otherwise mongodb sucks at query data even when using fucking $exists field...😡
+
+    let { winningBidder, bidderName, startSqf, endSqf, startAcre, endAcre, ownerFullName, caseNumber, propertyAddress, city, state, county, PropertyDescription, legalDesc, borrowerName, ...data } = allQuery
+
 
     //if I dont clarify what would happen if the user dosent provide startDate and endDate then it would thorw error. also these dates dosent work on the find property method with single new Date() method... kind of a bug of mongoose...
 
     //
-    if (!startDate) startDate = "2000-01-01"
-    if (!endDate) endDate = "2100-12-31"
 
     //  IMPORTANT NOTE : MONGOOSE DOSENT TAKE PARAMS AS UNDEFINED FOR NUMBER AND DATE OBJECT.
     //
@@ -37,22 +38,51 @@ const getProperties = asynchErrorHandler(async (req, res) => {
     if (!endSqf) endSqf = 99999
 
     //
+
+
+    if (!req.query.startDate) req.query.startDate = "2000-01-01"
+    if (!req.query.endDate) req.query.endDate = "2100-12-31"
+
+
     //for better case search experience . NEED TO RECHECK CODE FOR THAT.
     //`/(var) | (var)/gi` // check this method
     // const modifiedNumber = caseNumber ? caseNumber.split(" ").join("") : undefined
 
 
     //didnot use await here because I had to sort these property before store them.. **checkout the all peroperty variable.
+
     let property = Property.find({
+        "saleinfo.saleDate": { $gte: req.query.startDate, $lte: req.query.endDate },
         totalSqf: { $gte: startSqf, $lte: endSqf },
         lotSqf: { $gte: startAcre, $lte: endAcre },
-        "ownerInfo.ownerFullName": new RegExp(ownerFullName, "i"),
-        propertyAddress: new RegExp(propertyAddress, "gi"), city: new RegExp(city, "i"), state: new RegExp(state, "i"), county: new RegExp(county, "i"), PropertyDescription: new RegExp(PropertyDescription, "i"), legalDesc: new RegExp(legalDesc, "i"), "saleinfo.caseNumber": new RegExp(caseNumber, "i"), "saleinfo.saleDate": { $gte: new Date(new Date(startDate)), $lte: new Date(new Date(endDate)) }, ...data
+        "ownerInfo.ownerFullName": new RegExp(ownerFullName, "gi"),
+        "borrowerInfo.borrowerName": new RegExp(borrowerName, "gi"),
+        propertyAddress: new RegExp(propertyAddress, "gi"), city: new RegExp(city, "gi"), state: new RegExp(state, "gi"), county: new RegExp(county, "gi"), PropertyDescription: new RegExp(PropertyDescription, "gi"), legalDesc: new RegExp(legalDesc, "gi"), "saleinfo.caseNumber": new RegExp(caseNumber, "gi"), ...data
     })
 
-    //Seletcting the last index of array
+    //select the last index of array
     // const saleInfoArray = property.schema.obj.saleinfo
     // const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1].saleDate
+
+
+    //need try with if state blocks.
+    if (bidderName) {
+        property = Property.find({
+            "saleinfo.saleDate": { $gte: req.query.startDate, $lte: req.query.endDate },
+            totalSqf: { $gte: startSqf, $lte: endSqf },
+            lotSqf: { $gte: startAcre, $lte: endAcre },
+            "ownerInfo.ownerFullName": new RegExp(ownerFullName, "gi"),
+            "borrowerInfo.borrowerName": new RegExp(borrowerName, "gi"),
+            propertyAddress: new RegExp(propertyAddress, "gi"), city: new RegExp(city, "gi"), state: new RegExp(state, "gi"), county: new RegExp(county, "gi"), PropertyDescription: new RegExp(PropertyDescription, "gi"), legalDesc: new RegExp(legalDesc, "gi"), "saleinfo.caseNumber": new RegExp(caseNumber, "gi"),
+            $or: [
+
+                { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp(bidderName, "gi") },
+                { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(bidderName, "gi") }
+            ], ...data
+
+        })
+    }
+
 
     //for sort use -sortbyname to desc result.
     if (req.query.sort) {

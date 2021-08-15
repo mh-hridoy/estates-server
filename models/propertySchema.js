@@ -374,7 +374,7 @@ const propertySchema = new Schema({
             sameOwner: { type: Boolean, default: false },
             pacer: { type: Boolean, default: false },
 
-            ownerFullName: String,
+            ownerFullName: { type: String, default: "" },
             ownerAddress: String,
             ownerEmail: String,
             ownerPhone: String,
@@ -387,7 +387,7 @@ const propertySchema = new Schema({
         _id: false,
         sameAsOwner: { type: Boolean, default: false },
         addressSameAsOwner: { type: Boolean, default: false },
-        borrowerName: String,
+        borrowerName: { type: String, default: "" },
         borrowerAddress: String,
         borrowerEmail: String,
         borrowerPhone: Number,
@@ -405,7 +405,7 @@ const propertySchema = new Schema({
     saleinfo: [
         {
             saleDate: Date,
-            caseNumber: String,
+            caseNumber: { type: String, default: "" },
             openingBid: Number,
             saleType: String,
             saleStatus: String,

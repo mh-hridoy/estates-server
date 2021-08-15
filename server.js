@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
+    useCreateIndex: true
 }
 
 process.on('uncaughtException', err => {
