@@ -11,7 +11,7 @@ const addProperty = asynchErrorHandler(async (req, res) => {
     res.json('hit the endpoints')
 })
 
-const getProperties = asynchErrorHandler(async (req, res) => {
+const getProperties = asynchErrorHandler(async (req, res, next) => {
 
     const allQuery = { ...req.query }
 
@@ -105,7 +105,20 @@ const getProperties = asynchErrorHandler(async (req, res) => {
         property = property.sort("-createdAt")
 
     }
-    //try creating same sale date. but change the yearBuilt values .
+
+    //pagination functionality
+
+    const page = req.query.page * 1 || 1
+    const limit = req.query.limit * 1 || 20
+    const skip = (page - 1) * limit;
+
+    property = property.skip(skip).limit(limit)
+
+    if (req.query.page) {
+        const propertyCount = await Property.countDocuments()
+
+        if (skip > propertyCount) next(new Errorhandler("Pgae not found", 400))
+    }
 
     //execute Property
     const allProperty = await property;
