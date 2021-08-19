@@ -23,9 +23,8 @@ process.on('uncaughtException', err => {
 
     process.exit(1)
 })
-
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 app.use(morgan('dev'))
 app.use(sanitize())
 app.use(xss())

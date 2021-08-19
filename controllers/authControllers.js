@@ -47,7 +47,7 @@ const sendResetCode = asynchErrorHandler(async (req, res, next) => {
 
     if (!user) { return next(new ErrorHandler("Credentials does not exist.", 404)) } else {
 
-        sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+        sgMail.setApiKey(process.env.SENDGRID_SECRET_KEY)
         const msg = {
             to: email, // Change to your recipient
             from: 'alif.pab120na.12@gmail.com', // Change to your verified sender
