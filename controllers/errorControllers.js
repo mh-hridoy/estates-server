@@ -8,11 +8,7 @@ const duplicateError = (err, res) => {
     err.status = err.status || 'error'
 
     res.status(err.statusCode).json({
-        status: err.status,
         message: err.message,
-        error: err,
-        code: err.code,
-        stack: err.stack
 
     })
     return new ErrorHandler(err.message, err.code)
@@ -29,10 +25,10 @@ module.exports = (err, req, res, next) => {
     err.status = err.status || 'error'
 
     res.status(err.statusCode).json({
-        status: err.status,
+        // status: err.status,
         message: err.message,
-        error: err,
-        code: err.code,
-        stack: err.stack
+        // error: err,
+        // code: err.code,
+        // stack: err.stack
     })
 }

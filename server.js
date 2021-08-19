@@ -7,6 +7,7 @@ const morgan = require('morgan')
 const sanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const errorhandlingMiddleware = require('./controllers/errorControllers')
+const cors = require('cors')
 
 const port = process.env.PORT || 3000;
 const options = {
@@ -24,6 +25,7 @@ process.on('uncaughtException', err => {
 })
 
 app.use(express.json())
+app.use(cors())
 app.use(morgan('dev'))
 app.use(sanitize())
 app.use(xss())
