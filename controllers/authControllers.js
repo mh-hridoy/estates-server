@@ -27,13 +27,18 @@ const login = asynchErrorHandler(async (req, res, next) => {
         return next(new ErrorHandler('Credentials does not exist', 404))
     }
 
+    if (user.status !== "Active") {
+        return next(new ErrorHandler('Your account is not active. Please contact our administrator.', 404))
+    }
+
     if (user && await user.comparePassword(password, user.password)) {
         user.password = undefined;
         var token = jwt.sign({ id: user._id }, privateKey, { expiresIn: "1d" });
 
-        res.cookie('token', token)
-
-        res.status(200).json({ user, token })
+        res.cookie("token", token, {
+            httpOnly: true,
+        })
+        res.status(200).json({ user })
     } else {
         return next(new ErrorHandler('Credentials does not exist', 404))
     }

@@ -8,6 +8,9 @@ const sanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const errorhandlingMiddleware = require('./controllers/errorControllers')
 const cors = require('cors')
+const cookieParser = require('cookie-parser')
+const helmet = require('helmet')
+
 
 const port = process.env.PORT || 3000;
 const options = {
@@ -23,8 +26,13 @@ process.on('uncaughtException', err => {
 
     process.exit(1)
 })
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000', //frontend url
+    credentials: true
+}))
+app.use(helmet())
 app.use(express.json())
+app.use(cookieParser())
 app.use(morgan('dev'))
 app.use(sanitize())
 app.use(xss())

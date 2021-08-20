@@ -42,7 +42,7 @@ const userSchema = new Schema({
     status: {
         type: String,
         default: "Active",
-        enum: ["Active", "Deactive"]
+        enum: ["Active", "inActive"]
     },
     setAlarmed: [String],
 
