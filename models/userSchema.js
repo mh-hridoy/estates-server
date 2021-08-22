@@ -26,6 +26,7 @@ const userSchema = new Schema({
     role: {
         type: [String],
         default: "DTC",
+        selectedRole: String,
         enum: ["DTC", "DCA", "Image", "NOS", "Client", "Third DCA", "Accountant"]
     },
     profilePicture: {
