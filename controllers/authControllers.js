@@ -153,9 +153,18 @@ const deleteAccount = asynchErrorHandler(async (req, res, next) => {
 
 })
 
-//need to create logout endpoint.
+// logout endpoint.
+
+const logout = asynchErrorHandler(async (req, res) => {
+
+    res.clearCookie('token')
+
+    res.json({ message: "Logout Successfully." })
+
+})
+
 
 
 module.exports = {
-    signup, login, sendResetCode, verifyCode, changePassword, deleteAccount
+    signup, login, sendResetCode, verifyCode, changePassword, deleteAccount, logout
 }
