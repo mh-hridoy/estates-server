@@ -153,6 +153,8 @@ const deleteAccount = asynchErrorHandler(async (req, res, next) => {
 
 })
 
+//need to create logout endpoint.
+
 
 module.exports = {
     signup, login, sendResetCode, verifyCode, changePassword, deleteAccount
