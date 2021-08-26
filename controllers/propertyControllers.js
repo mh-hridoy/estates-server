@@ -25,7 +25,7 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     let { winningBidder, bidderName, startSqf, endSqf, startAcre, endAcre, ownerFullName, caseNumber, propertyAddress, city, state, county, PropertyDescription, legalDesc, borrowerName, ...data } = allQuery
 
 
-    //if I dont clarify what would happen if the user dosent provide startDate and endDate then it would thorw error. also these dates dosent work on the find property method with single new Date() method... kind of a bug of mongoose...
+    //if I dont clarify what would happen if the user dosent provide startDate and endDate then it would thorw error. also these dates dosent work on the find property method with single new Date() method... kinda bug of mongoose...
 
     //
 
