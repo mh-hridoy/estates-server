@@ -38,6 +38,8 @@ const login = asynchErrorHandler(async (req, res, next) => {
         res.cookie("token", token, {
             httpOnly: true,
         })
+        res.setHeader('Authorization', 'Bearer ' + token);
+
         res.status(200).json({ user, token })
     } else {
         return next(new ErrorHandler('Credentials does not exist', 404))
@@ -158,8 +160,10 @@ const deleteAccount = asynchErrorHandler(async (req, res, next) => {
 const logout = asynchErrorHandler(async (req, res) => {
 
     res.clearCookie('token')
+    res.removeHeader('Authorization');
 
     res.json({ message: "Logout Successfully." })
+
 
 })
 
