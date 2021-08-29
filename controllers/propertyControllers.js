@@ -121,12 +121,13 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
         if (skip > propertyCount) next(new Errorhandler("Pgae not found", 400))
     }
 
-    const totalPage = Math.ceil(propertyCount / limit)
-
     //execute Property
     const allProperty = await property;
 
-    res.json({ totalPage, totalCount: allProperty.length, allProperty })
+    const totalPage = allProperty.length !== 0 ? Math.ceil(propertyCount / limit) : 0
+
+
+    res.json({ totalPage, totalCount: allProperty.length, allProperty, totalProperty: propertyCount })
 
 })
 

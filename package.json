@@ -20,14 +20,14 @@
     "validator": "^13.6.0",
     "xss-clean": "^0.1.1"
   },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.24.0",
-    "nodemon": "^2.0.12"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
+    "nodemon": "^2.0.6"
   },
   "author": "",
   "license": "ISC"
