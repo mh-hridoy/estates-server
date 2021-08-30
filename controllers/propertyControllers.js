@@ -106,6 +106,10 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
 
     }
 
+    //copy the proerty object and make a  constructor to get totaldocument counts.
+    const queryData = property.toConstructor();
+    const copyQuery = new queryData()
+
     //pagination functionality
 
     const page = req.query.page * 1 || 1
@@ -116,9 +120,9 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
 
     let propertyCount;
     if (req.query.page) {
-        propertyCount = await Property.countDocuments()
+        propertyCount = await copyQuery.countDocuments()
 
-        if (skip > propertyCount) next(new Errorhandler("Pgae not found", 400))
+        if (skip > propertyCount) return next(new Errorhandler("Pgae not found", 400))
     }
 
     //execute Property
@@ -127,7 +131,7 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     const totalPage = allProperty.length !== 0 ? Math.ceil(propertyCount / limit) : 0
 
 
-    res.json({ totalPage, totalCount: allProperty.length, allProperty, totalProperty: propertyCount })
+    res.json({ totalPage, totalSearchedProperty: propertyCount, allProperty })
 
 })
 
