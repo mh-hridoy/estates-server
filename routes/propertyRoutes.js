@@ -8,7 +8,8 @@ router.get('/properties', protectedRoute, getProperties)
 router.post('/add-property', protectedRoute, addProperty)
 router.patch('/add-bidderinfo/:id', protectedRoute, addBidderInfo)
 router.patch('/add-newsaledate/:id', protectedRoute, addNewSaleDate)
-router.put('/update-property/:id', protectedRoute, updateProperty)
 router.delete('/delete-property', protectedRoute, deletePropery)
+
+router.put('/update-property/:id', protectedRoute, updateProperty)
 
 module.exports = router;

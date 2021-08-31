@@ -191,7 +191,7 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
     const { id } = req.body
 
 
-    const idMongoId = id.map(el => isValidObjectId(el))
+    const idMongoId = id && id.map(el => isValidObjectId(el))
 
 
     idMongoId.map((el) => {
@@ -207,7 +207,7 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
 
     await Property.deleteMany({ _id: { $in: id } })
 
-    res.json("hit the endpoints")
+    res.json("Operation succesful!")
 
 })
 
