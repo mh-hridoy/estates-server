@@ -12,7 +12,6 @@ const addProperty = asynchErrorHandler(async (req, res) => {
 })
 
 const getProperties = asynchErrorHandler(async (req, res, next) => {
-    console.log(req.cookies)
 
     const allQuery = { ...req.query }
 
@@ -41,8 +40,8 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     //
 
 
-    if (!req.query.startDate) req.query.startDate = "2000-01-01"
-    if (!req.query.endDate) req.query.endDate = "2100-12-31"
+    if (!req.query.startDate) req.query.startDate = new Date("2000-01-01").setHours(24, 59, 59, 59)
+    if (!req.query.endDate) req.query.endDate = new Date("2100-12-31").setHours(24, 59, 59, 59)
 
 
     //for better case search experience . NEED TO RECHECK CODE FOR THAT.
@@ -53,7 +52,7 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     //didnot use await here because I had to sort these property before store them.. **checkout the all peroperty variable.
 
     let property = Property.find({
-        "saleinfo.saleDate": { $gte: req.query.startDate, $lte: req.query.endDate },
+        "saleinfo.saleDate": { $gte: new Date(req.query.startDate).setHours(24, 59, 59, 59), $lte: new Date(req.query.endDate).setHours(24, 59, 59, 59) },
         totalSqf: { $gte: startSqf, $lte: endSqf },
         lotSqf: { $gte: startAcre, $lte: endAcre },
         "ownerInfo.ownerFullName": new RegExp(ownerFullName, "gi"),
