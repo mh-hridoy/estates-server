@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken')
 
+//we can also parse the token from cookie and match them .
+//it dosent have to be the header bearer token.
 
 const protectedRoute = (req, res, next) => {
 

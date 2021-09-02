@@ -12,6 +12,7 @@ const addProperty = asynchErrorHandler(async (req, res) => {
 })
 
 const getProperties = asynchErrorHandler(async (req, res, next) => {
+    console.log(req.cookies)
 
     const allQuery = { ...req.query }
 

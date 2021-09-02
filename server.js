@@ -8,7 +8,7 @@ const sanitize = require('express-mongo-sanitize')
 const xss = require('xss-clean')
 const errorhandlingMiddleware = require('./controllers/errorControllers')
 const cors = require('cors')
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser') //it parse the client side cookies.
 const helmet = require('helmet')
 
 
