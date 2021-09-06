@@ -40,6 +40,7 @@ const propertySchema = new Schema({
     enclosedPorch: Number,
     family: Number,
     kitchen: Number,
+    bonusRoom: Number,
     fireplace: { type: Boolean, default: false },
     subdivision: String,
     PropertyDescription: String,
@@ -61,11 +62,11 @@ const propertySchema = new Schema({
     treasurerURL: String,
     taxBillUrl: String,
 
-    infoTabFile: {
+    infoTabFile: [{
         fileName: String,
         uploadedAt: Date,
         postedBy: String,
-    },
+    }],
     zillowURL: String,
     zestimate: Number,
     redfinUrl: String,
@@ -119,111 +120,423 @@ const propertySchema = new Schema({
     countyRODURL: String,
     manualSearch: { type: Boolean, default: false },
     noActiveMortgageLien: { type: Boolean, default: false },
-    mortgageInfo: [
-        {
-            _id: false,
-            lienForeclosing: { type: Boolean, default: false },
-            noSTR: { type: Boolean, default: false },
-            defectiveLien: { type: Boolean, default: false },
-            note: String,
+    firstmortgageInfo:
+    {
+        _id: false,
+        lienForeclosing: { type: Boolean, default: false },
+        noSTR: { type: Boolean, default: false },
+        defectiveLien: { type: Boolean, default: false },
+        note: String,
 
-            lender: String,
-            lienAmount: Number,
-            dateRecorded: Date,
-            instrument: String,
-            dtBookPage: String,
-            assignmentBookPage: String,
-            loanType: String,
-            loanTerm: String,
-            maturityDate: Date,
-            rightToCure: Number,
-            tursteeFee: Number,
-            trustee: String,
-            strBookPage: String,
-            strDate: Date,
-            loanEstimatedBalance: Number,
+        lender: String,
+        lienAmount: Number,
+        dateRecorded: Date,
+        instrument: String,
+        dtBookPage: String,
+        assignmentBookPage: String,
+        loanType: String,
+        loanTerm: String,
+        maturityDate: Date,
+        rightToCure: Number,
+        tursteeFee: Number,
+        trustee: String,
+        strBookPage: String,
+        strDate: Date,
+        loanEstimatedBalance: Number,
+        estLatePaymentAndFees: Number,
+        totalEstimatedDebt: Number,
+        cmaArv: Number,
+        totalDebt: Number,
+        legalDescMatch: { type: Boolean, default: false },
+        propertyAddressMatch: { type: Boolean, default: false },
+        resonableFees: { type: Boolean, default: false },
+        amortizationView: {
+            type: { type: Boolean, default: false },
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            monthlyPrincipalPayment: Number,
+            monthlyInterestPayment: Number,
+            estimatedEquity: Number,
+        },
+        modA: {
+            type: { type: Boolean, default: false },
+            modABookPage: String,
+            modADate: Date,
+            modALienAmount: Number,
+            modALoanTerm: String,
+            modAmaturityDate: Date,
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            loanEstBalance: Number,
             estLatePaymentAndFees: Number,
             totalEstimatedDebt: Number,
             cmaArv: Number,
-            totalDebt: Number,
-            legalDescMatch: { type: Boolean, default: false },
-            propertyAddressMatch: { type: Boolean, default: false },
-            resonableFees: { type: Boolean, default: false },
-            amortizationView: {
-                type: { type: Boolean, default: false },
-                annualInterestRate: Number,
-                monthlyPayment: Number,
-                monthlyPrincipalPayment: Number,
-                monthlyInterestPayment: Number,
-                estimatedEquity: Number,
-            },
-            modA: {
-                type: { type: Boolean, default: false },
-                modABookPage: String,
-                modADate: Date,
-                modALienAmount: Number,
-                modALoanTerm: String,
-                modAmaturityDate: Date,
-                annualInterestRate: Number,
-                monthlyPayment: Number,
-                loanEstBalance: Number,
-                estLatePaymentAndFees: Number,
-                totalEstimatedDebt: Number,
-                cmaArv: Number,
-            },
-            subA: {
-                type: { type: Boolean, default: false },
-                subABookPage: String,
-                subADate: Date,
-                lienPosition: String
-            },
-            foreclosureResult: {
-                type: { type: Boolean, default: false },
-                trDeedInstrument: String,
-                trDeedDate: Date,
-                winningBidder: String,
-                winningbid: Number,
-
-            },
-            document: {
-                type: String,
-                docType: String,
-                otherName: String,
-                caseNo: String,
-                recordedDate: Date,
-
-            },
-            propertySignature: {
-                owner1: { type: Boolean, default: false },
-                owner2: { type: Boolean, default: false },
-                owner3: { type: Boolean, default: false },
-                owner4: { type: Boolean, default: false },
-                dtcFirstCheck: {
-                    type: { type: Boolean, default: false },
-                    user: {
-                        name: String,
-                        checkedAt: Date
-                    }
-                },
-                dcaSecondCheck: {
-                    type: { type: Boolean, default: false },
-                    user: {
-                        name: String,
-                        checkedAt: Date
-                    }
-                },
-                dcaFinalCheck: {
-                    type: { type: Boolean, default: false },
-                    user: {
-                        name: String,
-                        checkedAt: Date
-                    }
-                }
-
-            }
         },
+        subA: {
+            type: { type: Boolean, default: false },
+            subABookPage: String,
+            subADate: Date,
+            lienPosition: String
+        },
+        foreclosureResult: {
+            type: { type: Boolean, default: false },
+            trDeedInstrument: String,
+            trDeedDate: Date,
+            winningBidder: String,
+            winningbid: Number,
 
-    ],
+        },
+        document: {
+            type: String,
+            docType: String,
+            otherName: String,
+            caseNo: String,
+            recordedDate: Date,
+
+        },
+        propertySignature: {
+            owner1: { type: Boolean, default: false },
+            owner2: { type: Boolean, default: false },
+            owner3: { type: Boolean, default: false },
+            owner4: { type: Boolean, default: false },
+            dtcFirstCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaSecondCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaFinalCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            }
+
+        }
+    },
+
+    secondMortgageInfo:
+    {
+        _id: false,
+        lienForeclosing: { type: Boolean, default: false },
+        noSTR: { type: Boolean, default: false },
+        defectiveLien: { type: Boolean, default: false },
+        note: String,
+
+        lender: String,
+        lienAmount: Number,
+        dateRecorded: Date,
+        instrument: String,
+        dtBookPage: String,
+        assignmentBookPage: String,
+        loanType: String,
+        loanTerm: String,
+        maturityDate: Date,
+        rightToCure: Number,
+        tursteeFee: Number,
+        trustee: String,
+        strBookPage: String,
+        strDate: Date,
+        loanEstimatedBalance: Number,
+        estLatePaymentAndFees: Number,
+        totalEstimatedDebt: Number,
+        cmaArv: Number,
+        totalDebt: Number,
+        legalDescMatch: { type: Boolean, default: false },
+        propertyAddressMatch: { type: Boolean, default: false },
+        resonableFees: { type: Boolean, default: false },
+        amortizationView: {
+            type: { type: Boolean, default: false },
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            monthlyPrincipalPayment: Number,
+            monthlyInterestPayment: Number,
+            estimatedEquity: Number,
+        },
+        modA: {
+            type: { type: Boolean, default: false },
+            modABookPage: String,
+            modADate: Date,
+            modALienAmount: Number,
+            modALoanTerm: String,
+            modAmaturityDate: Date,
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            loanEstBalance: Number,
+            estLatePaymentAndFees: Number,
+            totalEstimatedDebt: Number,
+            cmaArv: Number,
+        },
+        subA: {
+            type: { type: Boolean, default: false },
+            subABookPage: String,
+            subADate: Date,
+            lienPosition: String
+        },
+        foreclosureResult: {
+            type: { type: Boolean, default: false },
+            trDeedInstrument: String,
+            trDeedDate: Date,
+            winningBidder: String,
+            winningbid: Number,
+
+        },
+        document: {
+            type: String,
+            docType: String,
+            otherName: String,
+            caseNo: String,
+            recordedDate: Date,
+
+        },
+        propertySignature: {
+            owner1: { type: Boolean, default: false },
+            owner2: { type: Boolean, default: false },
+            owner3: { type: Boolean, default: false },
+            owner4: { type: Boolean, default: false },
+            dtcFirstCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaSecondCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaFinalCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            }
+
+        }
+    },
+
+    thirdMortgageInfo:
+    {
+        _id: false,
+        lienForeclosing: { type: Boolean, default: false },
+        noSTR: { type: Boolean, default: false },
+        defectiveLien: { type: Boolean, default: false },
+        note: String,
+
+        lender: String,
+        lienAmount: Number,
+        dateRecorded: Date,
+        instrument: String,
+        dtBookPage: String,
+        assignmentBookPage: String,
+        loanType: String,
+        loanTerm: String,
+        maturityDate: Date,
+        rightToCure: Number,
+        tursteeFee: Number,
+        trustee: String,
+        strBookPage: String,
+        strDate: Date,
+        loanEstimatedBalance: Number,
+        estLatePaymentAndFees: Number,
+        totalEstimatedDebt: Number,
+        cmaArv: Number,
+        totalDebt: Number,
+        legalDescMatch: { type: Boolean, default: false },
+        propertyAddressMatch: { type: Boolean, default: false },
+        resonableFees: { type: Boolean, default: false },
+        amortizationView: {
+            type: { type: Boolean, default: false },
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            monthlyPrincipalPayment: Number,
+            monthlyInterestPayment: Number,
+            estimatedEquity: Number,
+        },
+        modA: {
+            type: { type: Boolean, default: false },
+            modABookPage: String,
+            modADate: Date,
+            modALienAmount: Number,
+            modALoanTerm: String,
+            modAmaturityDate: Date,
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            loanEstBalance: Number,
+            estLatePaymentAndFees: Number,
+            totalEstimatedDebt: Number,
+            cmaArv: Number,
+        },
+        subA: {
+            type: { type: Boolean, default: false },
+            subABookPage: String,
+            subADate: Date,
+            lienPosition: String
+        },
+        foreclosureResult: {
+            type: { type: Boolean, default: false },
+            trDeedInstrument: String,
+            trDeedDate: Date,
+            winningBidder: String,
+            winningbid: Number,
+
+        },
+        document: {
+            type: String,
+            docType: String,
+            otherName: String,
+            caseNo: String,
+            recordedDate: Date,
+
+        },
+        propertySignature: {
+            owner1: { type: Boolean, default: false },
+            owner2: { type: Boolean, default: false },
+            owner3: { type: Boolean, default: false },
+            owner4: { type: Boolean, default: false },
+            dtcFirstCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaSecondCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaFinalCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            }
+
+        }
+    },
+
+    otherMortgageInfo:
+    {
+        _id: false,
+        lienForeclosing: { type: Boolean, default: false },
+        noSTR: { type: Boolean, default: false },
+        defectiveLien: { type: Boolean, default: false },
+        note: String,
+
+        lender: String,
+        lienAmount: Number,
+        dateRecorded: Date,
+        instrument: String,
+        dtBookPage: String,
+        assignmentBookPage: String,
+        loanType: String,
+        loanTerm: String,
+        maturityDate: Date,
+        rightToCure: Number,
+        tursteeFee: Number,
+        trustee: String,
+        strBookPage: String,
+        strDate: Date,
+        loanEstimatedBalance: Number,
+        estLatePaymentAndFees: Number,
+        totalEstimatedDebt: Number,
+        cmaArv: Number,
+        totalDebt: Number,
+        legalDescMatch: { type: Boolean, default: false },
+        propertyAddressMatch: { type: Boolean, default: false },
+        resonableFees: { type: Boolean, default: false },
+        amortizationView: {
+            type: { type: Boolean, default: false },
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            monthlyPrincipalPayment: Number,
+            monthlyInterestPayment: Number,
+            estimatedEquity: Number,
+        },
+        modA: {
+            type: { type: Boolean, default: false },
+            modABookPage: String,
+            modADate: Date,
+            modALienAmount: Number,
+            modALoanTerm: String,
+            modAmaturityDate: Date,
+            annualInterestRate: Number,
+            monthlyPayment: Number,
+            loanEstBalance: Number,
+            estLatePaymentAndFees: Number,
+            totalEstimatedDebt: Number,
+            cmaArv: Number,
+        },
+        subA: {
+            type: { type: Boolean, default: false },
+            subABookPage: String,
+            subADate: Date,
+            lienPosition: String
+        },
+        foreclosureResult: {
+            type: { type: Boolean, default: false },
+            trDeedInstrument: String,
+            trDeedDate: Date,
+            winningBidder: String,
+            winningbid: Number,
+
+        },
+        document: {
+            type: String,
+            docType: String,
+            otherName: String,
+            caseNo: String,
+            recordedDate: Date,
+
+        },
+        propertySignature: {
+            owner1: { type: Boolean, default: false },
+            owner2: { type: Boolean, default: false },
+            owner3: { type: Boolean, default: false },
+            owner4: { type: Boolean, default: false },
+            dtcFirstCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaSecondCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            },
+            dcaFinalCheck: {
+                type: { type: Boolean, default: false },
+                user: {
+                    name: String,
+                    checkedAt: Date
+                }
+            }
+
+        }
+    },
+
+
     hoaLien: {
         lienForeclosing: { type: Boolean, default: false },
         noSTR: { type: Boolean, default: false },
