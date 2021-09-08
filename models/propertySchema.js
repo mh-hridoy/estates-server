@@ -647,7 +647,11 @@ const propertySchema = new Schema({
             ownerPhone: String,
             pacerUrl: String,
             beenVerifiedURL: String,
-            note: String,
+            note: [
+                {
+                    type: String
+                }
+            ],
         }
     ],
     borrowerInfo: [{
@@ -658,7 +662,11 @@ const propertySchema = new Schema({
         borrowerAddress: String,
         borrowerEmail: String,
         borrowerPhone: Number,
-        notes: String
+        note: [
+            {
+                type: String
+            }
+        ],
     }],
     OwnerDocs: {
         type: String,
@@ -733,8 +741,6 @@ const propertySchema = new Schema({
                 auction: String,
                 nosName: String,
                 nosDate: Date,
-                imCheckedBy: String,
-                imCheckerDate: Date,
                 notes: String,
                 createdAt: Date,
 
