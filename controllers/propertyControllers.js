@@ -231,11 +231,29 @@ const updateProperty = asynchErrorHandler(async (req, res, next) => {
 
 })
 
+const getRequestedProperty = asynchErrorHandler(async (req, res, next) => {
+
+    const id = req.params.id;
+
+    const isValidId = isValidObjectId(id)
+
+    if (!isValidId) return next(new Errorhandler("Property not found", 400))
+
+    const property = await Property.findById({ _id: id })
+
+    if (!property) return next(new Errorhandler("Property not found", 400))
+
+
+    //need to push bid info to the array
+    res.json(property)
+}
+)
+
 
 //will be working on update property functionality
 
 module.exports = {
-    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty
 }
 
 

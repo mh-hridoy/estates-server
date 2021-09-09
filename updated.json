@@ -152,120 +152,118 @@
       }
     ],
     "countyRODURL": "http://72.15.246.186/FranklinNCNW/application.asp?resize=true",
-    "mortgageInfo": [
-      {
-        "amortizationView": {
-          "type": true,
-          "annualInterestRate": 7.91,
-          "monthlyPayment": 945.47,
-          "monthlyPrincipalPayment": 483.74,
-          "monthlyInterestPayment": 461.74
-        },
-        "modA": { "type": false },
-        "subA": { "type": false },
-        "foreclosureResult": { "type": false },
-        "propertySignature": {
-          "dtcFirstCheck": {
-            "user": {
-              "name": "oneGuy",
-              "checkedAt": "2021-08-05"
-            },
-            "type": true
-          },
-          "dcaSecondCheck": { "type": false },
-          "dcaFinalCheck": { "type": false },
-          "owner1": true,
-          "owner2": true,
-          "owner3": false,
-          "owner4": false
-        },
-        "lienForeclosing": false,
-        "noSTR": true,
-        "defectiveLien": false,
-        "legalDescMatch": false,
-        "propertyAddressMatch": false,
-        "resonableFees": true,
-        "lender": "BANCFINANCIAL SERVICES CORP",
-        "lienAmount": 130050,
-        "dateRecorded": "1999-12-08",
-        "dtBookPage": "1162/25",
-        "loanType": "FNMA",
-        "loanTerm": "30 Years",
-        "maturityDate": "2029-12-31",
-        "rightToCure": 5,
-        "tursteeFee": 5,
-        "loanEstimatedBalance": 69564.63,
-        "cmaArv": 303520
+    "firstmortgageInfo": {
+      "amortizationView": {
+        "type": true,
+        "annualInterestRate": 7.91,
+        "monthlyPayment": 945.47,
+        "monthlyPrincipalPayment": 483.74,
+        "monthlyInterestPayment": 461.74
       },
-      {
-        "amortizationView": {
-          "type": true,
-          "annualInterestRate": 6.09,
-          "monthlyPayment": 676.88,
-          "monthlyPrincipalPayment": 234.98,
-          "monthlyInterestPayment": 441.9,
-          "estimatedEquity": 157106.92
-        },
-        "modA": {
-          "type": true,
-          "modABookPage": "2003/2003",
-          "modADate": "2015-07-31",
-          "modALienAmount": 131461.62,
-          "modALoanTerm": "40",
-          "modAmaturityDate": "2055-06-30",
-          "annualInterestRate": 6,
-          "monthlyPayment": 722.96,
-          "loanEstBalance": 125599.44,
-          "estLatePaymentAndFees": 17182.16,
-          "totalEstimatedDebt": 103053.08
-        },
-        "subA": { "type": false },
-        "foreclosureResult": { "type": false },
-        "propertySignature": {
-          "dtcFirstCheck": {
-            "user": {
-              "name": "oneGuy",
-              "checkedAt": "2021-08-05"
-            },
-            "type": true
+      "modA": { "type": false },
+      "subA": { "type": false },
+      "foreclosureResult": { "type": false },
+      "propertySignature": {
+        "dtcFirstCheck": {
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
           },
-          "dcaSecondCheck": {
-            "user": {
-              "name": "oneGuy",
-              "checkedAt": "2021-08-05"
-            },
-            "type": true
-          },
-          "dcaFinalCheck": { "type": false },
-          "owner1": true,
-          "owner2": true,
-          "owner3": false,
-          "owner4": false
+          "type": true
         },
-        "lienForeclosing": true,
-        "noSTR": false,
-        "defectiveLien": false,
-        "legalDescMatch": true,
-        "propertyAddressMatch": false,
-        "resonableFees": true,
-        "lender": "ATHENE ANNUITY & LIFE ASSURANCE COMPANY",
-        "lienAmount": 111925,
-        "dateRecorded": "2008-11-05",
-        "dtBookPage": "1707/708",
-        "loanType": "FNMA",
-        "loanTerm": "30 Years",
-        "maturityDate": "2038-10-31",
-        "tursteeFee": 5,
-        "trustee": "Hutchens Law Firm",
-        "assignmentBookPage": "2198/1507",
-        "strBookPage": "2223/512",
-        "strDate": "2020-09-14",
-        "loanEstimatedBalance": 86838.6,
-        "estLatePaymentAndFees": 16214.48,
-        "totalEstimatedDebt": 103053.08,
-        "cmaArv": 303520
-      }
-    ],
+        "dcaSecondCheck": { "type": false },
+        "dcaFinalCheck": { "type": false },
+        "owner1": true,
+        "owner2": true,
+        "owner3": false,
+        "owner4": false
+      },
+      "lienForeclosing": false,
+      "noSTR": true,
+      "defectiveLien": false,
+      "legalDescMatch": false,
+      "propertyAddressMatch": false,
+      "resonableFees": true,
+      "lender": "BANCFINANCIAL SERVICES CORP",
+      "lienAmount": 130050,
+      "dateRecorded": "1999-12-08",
+      "dtBookPage": "1162/25",
+      "loanType": "FNMA",
+      "loanTerm": "30 Years",
+      "maturityDate": "2029-12-31",
+      "rightToCure": 5,
+      "tursteeFee": 5,
+      "loanEstimatedBalance": 69564.63,
+      "cmaArv": 303520
+    },
+    "secondMortgageInfo": {
+      "amortizationView": {
+        "type": true,
+        "annualInterestRate": 6.09,
+        "monthlyPayment": 676.88,
+        "monthlyPrincipalPayment": 234.98,
+        "monthlyInterestPayment": 441.9,
+        "estimatedEquity": 157106.92
+      },
+      "modA": {
+        "type": true,
+        "modABookPage": "2003/2003",
+        "modADate": "2015-07-31",
+        "modALienAmount": 131461.62,
+        "modALoanTerm": "40",
+        "modAmaturityDate": "2055-06-30",
+        "annualInterestRate": 6,
+        "monthlyPayment": 722.96,
+        "loanEstBalance": 125599.44,
+        "estLatePaymentAndFees": 17182.16,
+        "totalEstimatedDebt": 103053.08
+      },
+      "subA": { "type": false },
+      "foreclosureResult": { "type": false },
+      "propertySignature": {
+        "dtcFirstCheck": {
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          },
+          "type": true
+        },
+        "dcaSecondCheck": {
+          "user": {
+            "name": "oneGuy",
+            "checkedAt": "2021-08-05"
+          },
+          "type": true
+        },
+        "dcaFinalCheck": { "type": false },
+        "owner1": true,
+        "owner2": true,
+        "owner3": false,
+        "owner4": false
+      },
+      "lienForeclosing": true,
+      "noSTR": false,
+      "defectiveLien": false,
+      "legalDescMatch": true,
+      "propertyAddressMatch": false,
+      "resonableFees": true,
+      "lender": "ATHENE ANNUITY & LIFE ASSURANCE COMPANY",
+      "lienAmount": 111925,
+      "dateRecorded": "2008-11-05",
+      "dtBookPage": "1707/708",
+      "loanType": "FNMA",
+      "loanTerm": "30 Years",
+      "maturityDate": "2038-10-31",
+      "tursteeFee": 5,
+      "trustee": "Hutchens Law Firm",
+      "assignmentBookPage": "2198/1507",
+      "strBookPage": "2223/512",
+      "strDate": "2020-09-14",
+      "loanEstimatedBalance": 86838.6,
+      "estLatePaymentAndFees": 16214.48,
+      "totalEstimatedDebt": 103053.08,
+      "cmaArv": 303520
+    },
     "ownerInfo": [
       {
         "sameOwner": true,
@@ -284,7 +282,20 @@
         "beenVerifiedURL": "https://www.beenverified.com/people/"
       }
     ],
-    "borrowerInfo": [{ "sameAsOwner": true, "addressSameAsOwner": true }],
+    "borrowerInfo": [
+      {
+        "sameAsOwner": true,
+        "addressSameAsOwner": true,
+        "ownerFullName": "STEPHEN C JONES",
+        "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549"
+      },
+      {
+        "sameAsOwner": true,
+        "addressSameAsOwner": true,
+        "ownerFullName": "DONNA JONES",
+        "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549"
+      }
+    ],
     "saleinfo": [
       {
         "firstBidderInfo": { "bidConfirmed": false, "bidUpset": false },
