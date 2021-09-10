@@ -495,7 +495,6 @@ const propertySchema = new Schema({
         lienForeclosing: { type: Boolean, default: false },
         noSTR: { type: Boolean, default: false },
         defectiveLien: { type: Boolean, default: false },
-        manualSearch: { type: Boolean, default: false },
         note: String,
 
         hoaName: String,
@@ -505,6 +504,7 @@ const propertySchema = new Schema({
         dtBookPage: String,
         trusteeHoa: String,
         totalDebt: Number,
+        trusteeFees: String,
         strDate: Date,
         strBookPage: String,
         ccAndRsInstrument: String,
