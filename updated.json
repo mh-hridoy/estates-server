@@ -264,34 +264,30 @@
       "totalEstimatedDebt": 103053.08,
       "cmaArv": 303520
     },
+    "sameOwner": true,
+    "pacer": false,
     "ownerInfo": [
       {
-        "sameOwner": true,
-        "pacer": false,
         "ownerFullName": "STEPHEN C JONES",
         "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549",
         "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
         "beenVerifiedURL": "https://www.beenverified.com/people/"
       },
       {
-        "sameOwner": false,
-        "pacer": false,
         "ownerFullName": "DONNA JONES",
         "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549",
         "pacerUrl": "https://pacer.login.uscourts.gov/csologin/login.jsf",
         "beenVerifiedURL": "https://www.beenverified.com/people/"
       }
     ],
+    "sameAsOwner": true,
+    "addressSameAsOwner": true,
     "borrowerInfo": [
       {
-        "sameAsOwner": true,
-        "addressSameAsOwner": true,
         "ownerFullName": "STEPHEN C JONES",
         "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549"
       },
       {
-        "sameAsOwner": true,
-        "addressSameAsOwner": true,
         "ownerFullName": "DONNA JONES",
         "ownerAddress": "245 Triple Crown Run, Louisburg,NC, 27549"
       }

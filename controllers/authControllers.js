@@ -121,8 +121,6 @@ const changePassword = asynchErrorHandler(async (req, res, next) => {
 
         await updatePass.save()
 
-
-
         await Code.deleteOne()
         res.json({ message: "Password Change Success. Please return and login again" })
     }

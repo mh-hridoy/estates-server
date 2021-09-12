@@ -634,12 +634,11 @@ const propertySchema = new Schema({
 
         }
     },
-
+    sameOwner: { type: Boolean, default: false },
+    pacer: { type: Boolean, default: false },
     ownerInfo: [
         {
             _id: false,
-            sameOwner: { type: Boolean, default: false },
-            pacer: { type: Boolean, default: false },
 
             ownerFullName: { type: String, default: "" },
             ownerAddress: String,
@@ -654,10 +653,10 @@ const propertySchema = new Schema({
             ],
         }
     ],
+    sameAsOwner: { type: Boolean, default: false },
+    addressSameAsOwner: { type: Boolean, default: false },
     borrowerInfo: [{
         _id: false,
-        sameAsOwner: { type: Boolean, default: false },
-        addressSameAsOwner: { type: Boolean, default: false },
         borrowerName: { type: String, default: "" },
         borrowerAddress: String,
         borrowerEmail: String,
