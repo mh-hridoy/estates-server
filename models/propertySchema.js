@@ -751,7 +751,6 @@ const propertySchema = new Schema({
             },
             otherBidderInfo: [
                 {
-                    isWinningBidder: { type: Boolean },
                     nameOfUpsetBidder: String,
                     addressOfUpsetBidder: String,
                     cityOfUpsetBidder: String,
@@ -773,12 +772,9 @@ const propertySchema = new Schema({
                     Notes: String,
                     imby: String,
                     imByDate: Date,
-                    createdAt: Date,
                     auction: String,
                     nosName: String,
                     nosDate: Date,
-                    imCheckedBy: String,
-                    imCheckerDate: Date,
 
                     deputyCSC: { type: Boolean },
                     assistantCSC: { type: Boolean },
