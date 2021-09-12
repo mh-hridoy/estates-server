@@ -719,8 +719,6 @@ const propertySchema = new Schema({
                 bidAmount: Number,
 
                 nameOfPurchaser: String,
-                isWinningBidder: { type: Boolean },
-
                 amountOfBid: Number,
                 bidDate: Date,
                 ldub: Date,

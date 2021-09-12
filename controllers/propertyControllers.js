@@ -40,8 +40,8 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     //
 
 
-    if (!req.query.startDate) req.query.startDate = new Date("2000-01-01").setHours(24, 59, 59, 59)
-    if (!req.query.endDate) req.query.endDate = new Date("2100-12-31").setHours(24, 59, 59, 59)
+    if (!req.query.startDate) req.query.startDate = new Date("2000-01-01").setHours(0, 0, 0, 0) //set it to 0 otherwise it wont track the current date/
+    if (!req.query.endDate) req.query.endDate = new Date("2100-12-31").setHours(24, 59, 59, 59) //set it to the last min .. that way the result will be more perfect/
 
 
     //for better case search experience . NEED TO RECHECK CODE FOR THAT.
@@ -52,7 +52,7 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     //didnot use await here because I had to sort these property before store them.. **checkout the all peroperty variable.
 
     let property = Property.find({
-        "saleinfo.saleDate": { $gte: new Date(req.query.startDate).setHours(24, 59, 59, 59), $lte: new Date(req.query.endDate).setHours(24, 59, 59, 59) },
+        "saleinfo.saleDate": { $gte: new Date(req.query.startDate).setHours(0, 0, 0, 0), $lte: new Date(req.query.endDate).setHours(24, 59, 59, 59) },
         totalSqf: { $gte: startSqf, $lte: endSqf },
         lotSqf: { $gte: startAcre, $lte: endAcre },
         "ownerInfo.ownerFullName": new RegExp(ownerFullName, "gi"),
