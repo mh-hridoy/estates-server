@@ -148,42 +148,37 @@ const propertySchema = new Schema({
         legalDescMatch: { type: Boolean, default: false },
         propertyAddressMatch: { type: Boolean, default: false },
         resonableFees: { type: Boolean, default: false },
-        amortizationView: {
-            type: { type: Boolean, default: false },
-            annualInterestRate: Number,
-            monthlyPayment: Number,
-            monthlyPrincipalPayment: Number,
-            monthlyInterestPayment: Number,
-            estimatedEquity: Number,
-        },
-        modA: {
-            type: { type: Boolean, default: false },
-            modABookPage: String,
-            modADate: Date,
-            modALienAmount: Number,
-            modALoanTerm: String,
-            modAmaturityDate: Date,
-            annualInterestRate: Number,
-            monthlyPayment: Number,
-            loanEstBalance: Number,
-            estLatePaymentAndFees: Number,
-            totalEstimatedDebt: Number,
-            cmaArv: Number,
-        },
-        subA: {
-            type: { type: Boolean, default: false },
-            subABookPage: String,
-            subADate: Date,
-            lienPosition: String
-        },
-        foreclosureResult: {
-            type: { type: Boolean, default: false },
-            trDeedInstrument: String,
-            trDeedDate: Date,
-            winningBidder: String,
-            winningbid: Number,
 
-        },
+        isAmortizationView: { type: Boolean, default: false },//changed
+        amortAnnualInterestRate: Number,//changed
+        amortMonthlyPayment: Number,//changed
+        monthlyPrincipalPayment: Number,
+        monthlyInterestPayment: Number,
+        estimatedEquity: Number,
+
+        isModA: { type: Boolean, default: false },//changed
+        modABookPage: String,
+        modADate: Date,
+        modALienAmount: Number,
+        modALoanTerm: String,
+        modAmaturityDate: Date,
+        annualInterestRate: Number,
+        monthlyPayment: Number,
+        loanEstBalance: Number,
+        modAEstLatePaymentAndFees: Number, //changed
+        modAtotalEstimatedDebt: Number, //changed
+
+        isSubA: { type: Boolean, default: false }, //changed
+        subABookPage: String,
+        subADate: Date,
+        lienPosition: String,
+
+        isForeclosureResult: { type: Boolean, default: false },//changed
+        trDeedInstrument: String,
+        trDeedDate: Date,
+        winningBidder: String,
+        winningbid: Number,
+
         document: {
             type: String,
             docType: String,
@@ -192,34 +187,17 @@ const propertySchema = new Schema({
             recordedDate: Date,
 
         },
-        propertySignature: {
-            owner1: { type: Boolean, default: false },
-            owner2: { type: Boolean, default: false },
-            owner3: { type: Boolean, default: false },
-            owner4: { type: Boolean, default: false },
-            dtcFirstCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaSecondCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaFinalCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            }
+        owner1: { type: Boolean, default: false },//changed
+        owner2: { type: Boolean, default: false },//changed
+        owner3: { type: Boolean, default: false },//changed
+        owner4: { type: Boolean, default: false },//changed
+        isDtcFirstCheck: { type: Boolean, default: false },//changed
 
-        }
+
+        isDcaSecondCheck: { type: Boolean, default: false },//changed
+
+        isDcaFinalCheck: { type: Boolean, default: false }, //changed
+
     },
 
     secondMortgageInfo:
@@ -252,42 +230,37 @@ const propertySchema = new Schema({
         legalDescMatch: { type: Boolean, default: false },
         propertyAddressMatch: { type: Boolean, default: false },
         resonableFees: { type: Boolean, default: false },
-        amortizationView: {
-            type: { type: Boolean, default: false },
-            annualInterestRate: Number,
-            monthlyPayment: Number,
-            monthlyPrincipalPayment: Number,
-            monthlyInterestPayment: Number,
-            estimatedEquity: Number,
-        },
-        modA: {
-            type: { type: Boolean, default: false },
-            modABookPage: String,
-            modADate: Date,
-            modALienAmount: Number,
-            modALoanTerm: String,
-            modAmaturityDate: Date,
-            annualInterestRate: Number,
-            monthlyPayment: Number,
-            loanEstBalance: Number,
-            estLatePaymentAndFees: Number,
-            totalEstimatedDebt: Number,
-            cmaArv: Number,
-        },
-        subA: {
-            type: { type: Boolean, default: false },
-            subABookPage: String,
-            subADate: Date,
-            lienPosition: String
-        },
-        foreclosureResult: {
-            type: { type: Boolean, default: false },
-            trDeedInstrument: String,
-            trDeedDate: Date,
-            winningBidder: String,
-            winningbid: Number,
 
-        },
+        isAmortizationView: { type: Boolean, default: false },//changed
+        amortAnnualInterestRate: Number,//changed
+        amortMonthlyPayment: Number,//changed
+        monthlyPrincipalPayment: Number,
+        monthlyInterestPayment: Number,
+        estimatedEquity: Number,
+
+        isModA: { type: Boolean, default: false },//changed
+        modABookPage: String,
+        modADate: Date,
+        modALienAmount: Number,//changed
+        modALoanTerm: String,//changed
+        modAmaturityDate: Date, //changed
+        annualInterestRate: Number,
+        monthlyPayment: Number,
+        loanEstBalance: Number,
+        modAEstLatePaymentAndFees: Number, //changed
+        modAtotalEstimatedDebt: Number, //changed
+        modAcmaArv: Number, //changed
+        isSubA: { type: Boolean, default: false }, //changed
+        subABookPage: String,
+        subADate: Date,
+        lienPosition: String,
+
+        isForeclosureResult: { type: Boolean, default: false },
+        trDeedInstrument: String,
+        trDeedDate: Date,
+        winningBidder: String,
+        winningbid: Number,
+
         document: {
             type: String,
             docType: String,
@@ -296,34 +269,17 @@ const propertySchema = new Schema({
             recordedDate: Date,
 
         },
-        propertySignature: {
-            owner1: { type: Boolean, default: false },
-            owner2: { type: Boolean, default: false },
-            owner3: { type: Boolean, default: false },
-            owner4: { type: Boolean, default: false },
-            dtcFirstCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaSecondCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaFinalCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            }
+        owner1: { type: Boolean, default: false },
+        owner2: { type: Boolean, default: false },
+        owner3: { type: Boolean, default: false },
+        owner4: { type: Boolean, default: false },
+        isDtcFirstCheck: { type: Boolean, default: false },
 
-        }
+
+        isDcaSecondCheck: { type: Boolean, default: false },
+
+        isDcaFinalCheck: { type: Boolean, default: false }
+
     },
 
     thirdMortgageInfo:
@@ -356,42 +312,37 @@ const propertySchema = new Schema({
         legalDescMatch: { type: Boolean, default: false },
         propertyAddressMatch: { type: Boolean, default: false },
         resonableFees: { type: Boolean, default: false },
-        amortizationView: {
-            type: { type: Boolean, default: false },
-            annualInterestRate: Number,
-            monthlyPayment: Number,
-            monthlyPrincipalPayment: Number,
-            monthlyInterestPayment: Number,
-            estimatedEquity: Number,
-        },
-        modA: {
-            type: { type: Boolean, default: false },
-            modABookPage: String,
-            modADate: Date,
-            modALienAmount: Number,
-            modALoanTerm: String,
-            modAmaturityDate: Date,
-            annualInterestRate: Number,
-            monthlyPayment: Number,
-            loanEstBalance: Number,
-            estLatePaymentAndFees: Number,
-            totalEstimatedDebt: Number,
-            cmaArv: Number,
-        },
-        subA: {
-            type: { type: Boolean, default: false },
-            subABookPage: String,
-            subADate: Date,
-            lienPosition: String
-        },
-        foreclosureResult: {
-            type: { type: Boolean, default: false },
-            trDeedInstrument: String,
-            trDeedDate: Date,
-            winningBidder: String,
-            winningbid: Number,
 
-        },
+        isAmortizationView: { type: Boolean, default: false },//changed
+        amortAnnualInterestRate: Number,//changed
+        amortMonthlyPayment: Number,//changed
+        monthlyPrincipalPayment: Number,
+        monthlyInterestPayment: Number,
+        estimatedEquity: Number,
+
+        isModA: { type: Boolean, default: false },//changed
+        modABookPage: String,
+        modADate: Date,
+        modALienAmount: Number,//changed
+        modALoanTerm: String,//changed
+        modAmaturityDate: Date, //changed
+        annualInterestRate: Number,
+        monthlyPayment: Number,
+        loanEstBalance: Number,
+        modAEstLatePaymentAndFees: Number, //changed
+        modAtotalEstimatedDebt: Number, //changed
+        modAcmaArv: Number, //changed
+        isSubA: { type: Boolean, default: false }, //changed
+        subABookPage: String,
+        subADate: Date,
+        lienPosition: String,
+
+        isForeclosureResult: { type: Boolean, default: false }, //changed
+        trDeedInstrument: String,
+        trDeedDate: Date,
+        winningBidder: String,
+        winningbid: Number,
+
         document: {
             type: String,
             docType: String,
@@ -400,34 +351,17 @@ const propertySchema = new Schema({
             recordedDate: Date,
 
         },
-        propertySignature: {
-            owner1: { type: Boolean, default: false },
-            owner2: { type: Boolean, default: false },
-            owner3: { type: Boolean, default: false },
-            owner4: { type: Boolean, default: false },
-            dtcFirstCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaSecondCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaFinalCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            }
+        owner1: { type: Boolean, default: false },
+        owner2: { type: Boolean, default: false },
+        owner3: { type: Boolean, default: false },
+        owner4: { type: Boolean, default: false },
+        isDtcFirstCheck: { type: Boolean, default: false },
 
-        }
+
+        isDcaSecondCheck: { type: Boolean, default: false },
+
+        isDcaFinalCheck: { type: Boolean, default: false },
+
     },
 
     otherMortgageInfo:
@@ -439,16 +373,14 @@ const propertySchema = new Schema({
         dateRecorded: Date,
         dtBookPage: String,
         assignmentBookPage: String,
-        redemptionInfo: {
-            type: { type: Boolean, default: false },
-            affidavitDate: Date,
-            taxCode: String,
-            redemptionExpires: Date,
-            redeemedByOwner: { type: Boolean, default: false },
-            redemptionNoticeInst: String,
-            redemptionDate: Date,
 
-        },
+        isRedemptionInfo: { type: Boolean, default: false }, //changed
+        affidavitDate: Date,
+        taxCode: String,
+        redemptionExpires: Date,
+        redeemedByOwner: { type: Boolean, default: false },
+        redemptionNoticeInst: String,
+        redemptionDate: Date,
 
         document: {
             type: String,
@@ -458,34 +390,17 @@ const propertySchema = new Schema({
             recordedDate: Date,
 
         },
-        propertySignature: {
             owner1: { type: Boolean, default: false },
             owner2: { type: Boolean, default: false },
             owner3: { type: Boolean, default: false },
-            owner4: { type: Boolean, default: false },
-            dtcFirstCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaSecondCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaFinalCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            }
+        owner4: { type: Boolean, default: false },
 
-        }
+        isDtcFirstCheck: { type: Boolean, default: false },
+
+        isDcaSecondCheck: { type: Boolean, default: false },
+
+        isDcaFinalCheck: { type: Boolean, default: false },
+
     },
 
 
@@ -510,60 +425,37 @@ const propertySchema = new Schema({
         hoaLienPriority: String,
 
 
-        foreclosureResult: {
-            type: { type: Boolean, default: false },
-            trDeedInstrument: String,
-            trDeedDate: Date,
-            winningBidder: String,
-            winningbid: Number,
+        isForeclosureResult: { type: Boolean, default: false },
+        trDeedInstrument: String,
+        trDeedDate: Date,
+        winningBidder: String,
+        winningbid: Number,
 
-        },
-        redemptionInfo: {
-            type: { type: Boolean, default: false },
-            affidavitDate: Date,
-            taxCode: String,
-            redemptionExpires: Date,
-            redeemedByOwner: { type: Boolean, default: false },
-            redemptionNoticeInst: String,
-            redemptionDate: Date,
+        isRedemptionInfo: { type: Boolean, default: false }, //changed
+        affidavitDate: Date,
+        taxCode: String,
+        redemptionExpires: Date,
+        redeemedByOwner: { type: Boolean, default: false },
+        redemptionNoticeInst: String,
+        redemptionDate: Date,
 
-        },
         document: {
             type: String,
             docType: String,
             otherName: String,
             caseNo: String,
             recordedDate: Date,
-
         },
-        propertySignature: {
-            owner1: { type: Boolean, default: false },
-            owner2: { type: Boolean, default: false },
-            owner3: { type: Boolean, default: false },
-            owner4: { type: Boolean, default: false },
-            dtcFirstCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaSecondCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaFinalCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            }
+        owner1: { type: Boolean, default: false },
+        owner2: { type: Boolean, default: false },
+        owner3: { type: Boolean, default: false },
+        owner4: { type: Boolean, default: false },
 
-        }
+        isDtcFirstCheck: { type: Boolean, default: false },
+
+        isDcaSecondCheck: { type: Boolean, default: false },
+
+        isDcaFinalCheck: { type: Boolean, default: false },
     },
     taxLien: {
         lienForeclosing: { type: Boolean, default: false },
@@ -577,24 +469,20 @@ const propertySchema = new Schema({
         case: String,
         sheriffOrConstable: String,
 
-        foreclosureResult: {
-            type: { type: Boolean, default: false },
-            trDeedInstrument: String,
-            trDeedDate: Date,
-            winningBidder: String,
-            winningbid: Number,
+        isForeclosureResult: { type: Boolean, default: false },
+        trDeedInstrument: String,
+        trDeedDate: Date,
+        winningBidder: String,
+        winningbid: Number,
 
-        },
-        redemptionInfo: {
-            type: { type: Boolean, default: false },
-            affidavitDate: Date,
-            taxCode: String,
-            redemptionExpires: Date,
-            redeemedByOwner: { type: Boolean, default: false },
-            redemptionNoticeInst: String,
-            redemptionDate: Date,
+        isRedemptionInfo: { type: Boolean, default: false }, //changed
+        affidavitDate: Date,
+        taxCode: String,
+        redemptionExpires: Date,
+        redeemedByOwner: { type: Boolean, default: false },
+        redemptionNoticeInst: String,
+        redemptionDate: Date,
 
-        },
         document: {
             type: String,
             docType: String,
@@ -603,35 +491,19 @@ const propertySchema = new Schema({
             recordedDate: Date,
 
         },
-        propertySignature: {
-            owner1: { type: Boolean, default: false },
-            owner2: { type: Boolean, default: false },
-            owner3: { type: Boolean, default: false },
-            owner4: { type: Boolean, default: false },
-            dtcFirstCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaSecondCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            },
-            dcaFinalCheck: {
-                type: { type: Boolean, default: false },
-                user: {
-                    name: String,
-                    checkedAt: Date
-                }
-            }
+        owner1: { type: Boolean, default: false },
+        owner2: { type: Boolean, default: false },
+        owner3: { type: Boolean, default: false },
+        owner4: { type: Boolean, default: false },
 
-        }
+        isDtcFirstCheck: { type: Boolean, default: false },
+
+        isDcaSecondCheck: { type: Boolean, default: false },
+
+        isDcaFinalCheck: { type: Boolean, default: false },
     },
+
+
     sameOwner: { type: Boolean, default: false },
     pacer: { type: Boolean, default: false },
     ownerInfo: [
