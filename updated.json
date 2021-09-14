@@ -1,21 +1,19 @@
 [
   {
-    "schoolsAndNeighbors": {
-      "elementarySchool": {
-        "name": "Bunn Elementary School",
-        "ranking": "6/10",
-        "distance": "2.0 mi"
-      },
-      "middleSchool": {
-        "name": "Bunn Middle School",
-        "ranking": "4/10",
-        "distance": "2.2 mi"
-      },
-      "highSchool": {
-        "name": "Bunn High School",
-        "ranking": "3/10",
-        "distance": "2.6 mi"
-      }
+    "elementarySchool": {
+      "ename": "Bunn Elementary School",
+      "eranking": "6/10",
+      "edistance": "2.0 mi"
+    },
+    "middleSchool": {
+      "mname": "Bunn Middle School",
+      "mranking": "4/10",
+      "mdistance": "2.2 mi"
+    },
+    "highSchool": {
+      "hname": "Bunn High School",
+      "hranking": "3/10",
+      "hdistance": "2.6 mi"
     },
     "hoaLien": {
       "foreclosureResult": { "type": false },
@@ -469,23 +467,21 @@
       }
     ],
 
-    "schoolsAndNeighbors": {
-      "elementarySchool": {
-        "name": "Sanford Creek Elementary",
-        "ranking": "4/10",
-        "distance": "4.3 mi"
-      },
+    "elementarySchool": {
+      "name": "Sanford Creek Elementary",
+      "ranking": "4/10",
+      "distance": "4.3 mi"
+    },
 
-      "middleSchool": {
-        "name": "Wake Forest Middle School",
-        "ranking": "5/10",
-        "distance": "2.2 mi"
-      },
-      "highSchool": {
-        "name": "Wake Forest High School",
-        "ranking": "5/10",
-        "distance": "4.3 mi"
-      }
+    "middleSchool": {
+      "name": "Wake Forest Middle School",
+      "ranking": "5/10",
+      "distance": "2.2 mi"
+    },
+    "highSchool": {
+      "name": "Wake Forest High School",
+      "ranking": "5/10",
+      "distance": "4.3 mi"
     },
     "assesmentAndTaxes": [
       {

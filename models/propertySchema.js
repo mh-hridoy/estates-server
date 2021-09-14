@@ -89,23 +89,21 @@ const propertySchema = new Schema({
         }
     ],
 
-    schoolsAndNeighbors: {
-        elementarySchool: {
-            name: String,
-            ranking: String,
-            distance: String,
-        },
+    elementarySchool: {
+        ename: String,
+        eranking: String,
+        edistance: String,
+    },
 
-        middleSchool: {
-            name: String,
-            ranking: String,
-            distance: String,
-        },
-        highSchool: {
-            name: String,
-            ranking: String,
-            distance: String,
-        }
+    middleSchool: {
+        mname: String,
+        mranking: String,
+        mdistance: String,
+    },
+    highSchool: {
+        hname: String,
+        hranking: String,
+        hdistance: String,
     },
     assesmentAndTaxes: [
         {
