@@ -264,7 +264,6 @@
     ],
     "saleinfo": [
       {
-        "firstBidderInfo": { "bidConfirmed": false, "bidUpset": false },
         "saleDate": "2021-08-12",
         "caseNumber": "20SP130",
         "saleType": "2nd Lien FCL",
@@ -278,7 +277,59 @@
         "trusteeHours": "8:30 am - 05:00 pm",
         "noticeOfForclosure": "Notice will be here",
         "legalNoticeURL": "Notice URL here",
-        "otherBidderInfo": []
+        "nameOfBidder": "String",
+        "bidAmount": 0,
+
+        "nameOfPurchaser": "FEDERAL HOME LONE MORTGAGE CORPORATION",
+        "amountOfBid": 400000.0,
+        "bidDate": "07/01/2021",
+        "ldub": "07/12/2021",
+        "minAmountOfNextBid": 420000.0,
+        "depositRequiredToIpset": 21000.0,
+        "address": "String",
+        "phone": 0,
+        "email": "String",
+        "fax": "String",
+        "dateOfReport": "07/01/2021",
+        "notes": "WILFRED 2021-07-26 2021-07-01 VCAP RPFS 3009 Polanski Dr $400000.00",
+
+        "documents": {
+          "docType": "Vcap",
+          "otherName": "DocHere",
+          "uploadedDate": "2021-08-07",
+          "uloadedBy": "UploaderName"
+        },
+        "otherBidderInfo": [
+          {
+            "nameOfUpsetBidder": "THIRD PARTY",
+
+            "amountOfBid": 420000.0,
+            "bidDate": "07/01/2021",
+            "lastDateForNextUb": "07/12/2021",
+
+            "depositWithTheClerk": 21000.0,
+            "minAmountOfNextUb": 441000.0,
+            "nameOfAttorneyOrAgent": "String",
+            "addressofAttorneyOrAgent": "String",
+            "cityOfAttorneyOrAgent": "String",
+            "zipCode": 0,
+            "phone0": 0,
+            "dateOfFilling": "07/01/2021",
+            "Notes": "2021/07/11 2021-07-01 UB 3009 Polanski Dr $420000.00",
+
+            "imCheckedBy": "someGuy",
+
+            "deputyCSC": true,
+            "assistantCSC": true,
+            "clerkOfSuperiorCourt": true,
+            "documents": {
+              "docType": "Upset",
+              "otherName": "DocHere",
+              "uploadedDate": "2021-08-07",
+              "uloadedBy": "UploaderNmae"
+            }
+          }
+        ]
       }
     ],
     "geo": { "lat": "35.9553564", "long": "-78.2952710" },
