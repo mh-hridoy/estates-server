@@ -549,7 +549,7 @@ const propertySchema = new Schema({
     saleinfo: [
         {
             saleDate: Date,
-            caseNumber: { type: String, default: "" },
+            caseNumber: String,
             openingBid: Number,
             saleType: String,
             saleStatus: String,
@@ -584,10 +584,9 @@ const propertySchema = new Schema({
             beforeSaleNotes: String,
             afterSaleNotes: String,
 
-            firstBidderInfo: {
                 nameOfBidder: String,
                 bidAmount: Number,
-
+            isWinningBidder: Boolean,
                 nameOfPurchaser: String,
                 amountOfBid: Number,
                 bidDate: Date,
@@ -602,12 +601,12 @@ const propertySchema = new Schema({
                 nameOfMortgage: String,
                 cryer: String,
                 imby: String,
-                imByDate: Date,
-                bidConfirmed: { type: Boolean },
-                bidUpset: { type: Boolean },
+            fimByDate: Date, //changed
+            bidConfirmed: Boolean,
+            bidUpset: Boolean,
                 auction: String,
-                nosName: String,
-                nosDate: Date,
+            fnosName: String,//changed
+            fnosDate: Date,//changed
                 notes: String,
                 createdAt: Date,
 
@@ -617,7 +616,6 @@ const propertySchema = new Schema({
                     uploadedDate: Date,
                     uloadedBy: String
 
-                }
             },
             otherBidderInfo: [
                 {
@@ -627,6 +625,8 @@ const propertySchema = new Schema({
                     upsetBidderZipCode: Number,
                     phone: String,
                     email: String,
+
+                    isWinningBidder: Boolean,
 
                     amountOfBid: Number,
                     bidDate: Date,
@@ -646,9 +646,9 @@ const propertySchema = new Schema({
                     nosName: String,
                     nosDate: Date,
 
-                    deputyCSC: { type: Boolean },
-                    assistantCSC: { type: Boolean },
-                    clerkOfSuperiorCourt: { type: Boolean },
+                    deputyCSC: Boolean,
+                    assistantCSC: Boolean,
+                    clerkOfSuperiorCourt: Boolean,
                     documents: {
                         docType: String,
                         otherName: String,
@@ -807,12 +807,12 @@ propertySchema.pre('save', function (next) {
 
     //if there's only one saleinfo array and no other bid info then.
     if (saleInfoArray.length === 1 && allOtherBidInfo.length === 0) {
-        if (lastSaleInfo.firstBidderInfo.nameOfPurchaser && lastSaleInfo.firstBidderInfo.amountOfBid) {
-            lastSaleInfo.firstBidderInfo.isWinningBidder = true
+        if (lastSaleInfo.nameOfPurchaser && lastSaleInfo.amountOfBid) {
+            lastSaleInfo.isWinningBidder = true
         }
         //if there's only one saleinfo array with otherbid info then.
     } else if (saleInfoArray.length === 1 && allOtherBidInfo.length !== 0) {
-        lastSaleInfo.firstBidderInfo.isWinningBidder = false
+        lastSaleInfo.isWinningBidder = false
         if (allOtherBidInfo.length === 1) {
             allOtherBidInfo.map((info) => { return info.isWinningBidder = true })
         } else if (allOtherBidInfo.length > 1) {
@@ -828,22 +828,22 @@ propertySchema.pre('save', function (next) {
             selectExceptLastOne.map(info => {
                 const selectAllOtherBidder = info.otherBidderInfo
                 selectAllOtherBidder.map((info) => { return info.isWinningBidder = false })
-                info.firstBidderInfo.isWinningBidder = false
+                info.isWinningBidder = false
 
                 return info //return info array because map require return an new array in order to be able to create and submit changed array
             })
             //
         }
         //CODE HERE FOR THE 
-        if (lastSaleInfo.otherBidderInfo.length === 0 && lastSaleInfo.firstBidderInfo.nameOfPurchaser && lastSaleInfo.firstBidderInfo.amountOfBid) {
-            lastSaleInfo.firstBidderInfo.isWinningBidder = true;
+        if (lastSaleInfo.otherBidderInfo.length === 0 && lastSaleInfo.nameOfPurchaser && lastSaleInfo.amountOfBid) {
+            lastSaleInfo.isWinningBidder = true;
 
         } else if (lastSaleInfo.otherBidderInfo.length === 1) {
-            lastSaleInfo.firstBidderInfo.isWinningBidder = false;
+            lastSaleInfo.isWinningBidder = false;
 
             lastSaleInfo.otherBidderInfo.map((info) => { return info.isWinningBidder = true })
         } else if (lastSaleInfo.otherBidderInfo.length > 1) {
-            lastSaleInfo.firstBidderInfo.isWinningBidder = false;
+            lastSaleInfo.isWinningBidder = false;
             const selectExceptLastOne = lastSaleInfo.otherBidderInfo.slice(0, -1)
 
             selectExceptLastOne.map(info => { return info.isWinningBidder = false })
