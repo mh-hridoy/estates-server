@@ -796,7 +796,7 @@ propertySchema.pre(/^find/, function (next) {
     next()
 })
 
-propertySchema.pre('save', function (next) {
+propertySchema.pre(["save", "updateOne"], function (next) {
     //first check if it contains firstBidderinfo. If yes and user is adding other bid info then make winningBidder to the firsBidderInfo to false and add winningBidder feld to true to the current bidder that user updated . if user is adding the firstBidderinfo then make it true. 
 
     const saleInfoArray = this.saleinfo
