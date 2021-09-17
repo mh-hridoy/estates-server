@@ -800,32 +800,32 @@ propertySchema.pre(["save", "updateOne"], function (next) {
     //first check if it contains firstBidderinfo. If yes and user is adding other bid info then make winningBidder to the firsBidderInfo to false and add winningBidder feld to true to the current bidder that user updated . if user is adding the firstBidderinfo then make it true. 
 
     const saleInfoArray = this.saleinfo
-    const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1]
-    const lastOtherBidInfo = lastSaleInfo.otherBidderInfo[lastSaleInfo.otherBidderInfo.length - 1]
-    const allOtherBidInfo = lastSaleInfo.otherBidderInfo
+    const lastSaleInfo = saleInfoArray && saleInfoArray[saleInfoArray.length - 1]
+    const lastOtherBidInfo = lastSaleInfo && lastSaleInfo.otherBidderInfo[lastSaleInfo.otherBidderInfo.length - 1]
+    const allOtherBidInfo = lastSaleInfo && lastSaleInfo.otherBidderInfo
 
     // saleinfo firstBidderInfo setup
 
     //if there's only one saleinfo array and no other bid info then.
-    if (saleInfoArray.length === 1 && allOtherBidInfo.length === 0) {
+    if (saleInfoArray && saleInfoArray.length === 1 && allOtherBidInfo && allOtherBidInfo.length === 0) {
         if (lastSaleInfo.nameOfPurchaser && lastSaleInfo.amountOfBid) {
             lastSaleInfo.isWinningBidder = true
         }
         //if there's only one saleinfo array with otherbid info then.
-    } else if (saleInfoArray.length === 1 && allOtherBidInfo.length !== 0) {
+    } else if (saleInfoArray && saleInfoArray.length === 1 && allOtherBidInfo && allOtherBidInfo.length !== 0) {
         lastSaleInfo.isWinningBidder = false
-        if (allOtherBidInfo.length === 1) {
+        if (allOtherBidInfo && allOtherBidInfo.length === 1) {
             allOtherBidInfo.map((info) => { return info.isWinningBidder = true })
-        } else if (allOtherBidInfo.length > 1) {
+        } else if (allOtherBidInfo && allOtherBidInfo.length > 1) {
             const selectOtheBidExceptLastOne = allOtherBidInfo.slice(0, -1)
             selectOtheBidExceptLastOne.map((info) => { return info.isWinningBidder = false })
             lastOtherBidInfo.isWinningBidder = true
         }
 
         //if there's not only one saleinfo then.   **CHECK THE CHANGEFIELD FILE FOR MORE INFO
-    } else if (saleInfoArray.length > 1) {
+    } else if (saleInfoArray && saleInfoArray.length > 1) {
         const selectExceptLastOne = saleInfoArray.slice(0, -1)
-        if (selectExceptLastOne.length !== 0) {
+        if (selectExceptLastOne && selectExceptLastOne.length !== 0) {
             selectExceptLastOne.map(info => {
                 const selectAllOtherBidder = info.otherBidderInfo
                 selectAllOtherBidder.map((info) => { return info.isWinningBidder = false })
@@ -836,14 +836,14 @@ propertySchema.pre(["save", "updateOne"], function (next) {
             //
         }
         //CODE HERE FOR THE 
-        if (lastSaleInfo.otherBidderInfo.length === 0 && lastSaleInfo.nameOfPurchaser && lastSaleInfo.amountOfBid) {
+        if (lastSaleInfo.otherBidderInfo && lastSaleInfo.otherBidderInfo.length === 0 && lastSaleInfo.nameOfPurchaser && lastSaleInfo.amountOfBid) {
             lastSaleInfo.isWinningBidder = true;
 
-        } else if (lastSaleInfo.otherBidderInfo.length === 1) {
+        } else if (lastSaleInfo.otherBidderInfo && lastSaleInfo.otherBidderInfo.length === 1) {
             lastSaleInfo.isWinningBidder = false;
 
             lastSaleInfo.otherBidderInfo.map((info) => { return info.isWinningBidder = true })
-        } else if (lastSaleInfo.otherBidderInfo.length > 1) {
+        } else if (lastSaleInfo.otherBidderInfo && lastSaleInfo.otherBidderInfo.length > 1) {
             lastSaleInfo.isWinningBidder = false;
             const selectExceptLastOne = lastSaleInfo.otherBidderInfo.slice(0, -1)
 
