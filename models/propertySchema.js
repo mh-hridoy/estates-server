@@ -530,7 +530,7 @@ const propertySchema = new Schema({
         borrowerName: { type: String, default: "" },
         borrowerAddress: String,
         borrowerEmail: String,
-        borrowerPhone: Number,
+        borrowerPhone: String,
         note: [
             {
                 type: String
