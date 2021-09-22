@@ -3,6 +3,18 @@ const asynchErrorHandler = require("../utils/asynchErrorHandler")
 const Property = require("../models/propertySchema")
 const Errorhandler = require("../utils/ErrorHandler")
 const { isValidObjectId } = require("mongoose")
+const ibm = require('ibm-cos-sdk');
+const fs = require('fs')
+// const COS = require('ibm-cos-sdk-config') //to check the bucket config ---ref ---to the official documents.
+
+var config = {
+    endpoint: process.env.IBM_ENDPOINTS,
+    apiKeyId: process.env.IBM_API_KEY,
+    serviceInstanceId: process.env.IBM_SERVICE_ID,
+    signatureVersion: 'iam',
+};
+
+const cos = new ibm.S3(config)
 
 const addProperty = asynchErrorHandler(async (req, res) => {
     const { propertyAddress, ...data } = req.body
@@ -246,14 +258,44 @@ const getRequestedProperty = asynchErrorHandler(async (req, res, next) => {
 
     //need to push bid info to the array
     res.json(property)
-}
-)
+})
+
+const uploadFiles = asynchErrorHandler(async (req, res, next) => {
+
+    const slelectedData = req.body
 
 
-//will be working on update property functionality
+    const base64Data = Object.keys(req.body).length !== 0 && new Buffer.from(req.body.data, "base64")
+
+    const params = {
+        Bucket: "estates.app",
+        Key: slelectedData.name,
+        Body: base64Data,
+        ContentType: slelectedData.type,
+        ACL: "public-read"
+    }
+
+    Object.keys(req.body).length !== 0 && cos.upload(params, (err, data) => {
+        if (err) {
+            return res.status(400).json(err)
+        }
+        res.status(200).json({ name: data.key, uid: slelectedData.uid, type: slelectedData.type, Location: data.Location, id: data.ETag })
+    })
+
+})
+
+const deleteFile = asynchErrorHandler(async (req, res, next) => {
+    const { id } = req.params
+
+    cos.deleteObject(id, (err, data) => {
+        if (err) console.log(err)
+        console.log(data)
+    })
+})
+
 
 module.exports = {
-    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile
 }
 
 

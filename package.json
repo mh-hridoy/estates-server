@@ -13,6 +13,8 @@
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.1.0",
     "helmet": "^4.6.0",
+    "ibm-cos-sdk": "^1.10.2",
+    "ibm-cos-sdk-config": "^1.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.6",
     "morgan": "^1.10.0",
