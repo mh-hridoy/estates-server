@@ -280,6 +280,7 @@ const uploadFiles = asynchErrorHandler(async (req, res, next) => {
             return res.status(400).json(err)
         }
         res.status(200).json({ name: data.key, uid: slelectedData.uid, type: slelectedData.type, Location: data.Location, id: data.ETag })
+        console.log(data)
     })
 
 })
@@ -287,7 +288,10 @@ const uploadFiles = asynchErrorHandler(async (req, res, next) => {
 const deleteFile = asynchErrorHandler(async (req, res, next) => {
     const { id } = req.params
 
-    cos.deleteObject(id, (err, data) => {
+    cos.deleteObject({
+        Bucket: "estates.app",
+
+    }, (err, data) => {
         if (err) console.log(err)
         console.log(data)
     })
