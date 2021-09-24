@@ -263,37 +263,71 @@ const getRequestedProperty = asynchErrorHandler(async (req, res, next) => {
 const uploadFiles = asynchErrorHandler(async (req, res, next) => {
 
     const slelectedData = req.body
+    const propertyId = req.params.pId
 
 
-    const base64Data = Object.keys(req.body).length !== 0 && new Buffer.from(req.body.data, "base64")
+    const isValidId = isValidObjectId(propertyId)
 
-    const params = {
-        Bucket: "estates.app",
-        Key: slelectedData.name,
-        Body: base64Data,
-        ContentType: slelectedData.type,
-        ACL: "public-read"
-    }
+    if (!isValidId) return next(new Errorhandler("Property not found"))
 
-    Object.keys(req.body).length !== 0 && cos.upload(params, (err, data) => {
-        if (err) {
-            return res.status(400).json(err)
+    const property = await Property.findById({ _id: propertyId })
+
+    if (!property) return next(new Errorhandler("Property not found"))
+
+
+    const responseData = []
+    slelectedData.map((file) => {
+        const base64Data = new Buffer.from(file.data, "base64")
+
+        const params = {
+            Bucket: "estates.app",
+            Key: file.name,
+            Body: base64Data,
+            ContentType: file.type,
+            ACL: "public-read"
         }
-        res.status(200).json({ name: data.key, uid: slelectedData.uid, type: slelectedData.type, Location: data.Location, id: data.ETag })
-        console.log(data)
+
+        cos.upload(params, async (err, data) => {
+            if (err) {
+                return next(new Errorhandler(err, 400))
+            } else {
+                const fileInfo = property.infoTabFile
+                responseData.push(data)
+                fileInfo.push(data)
+
+                if (responseData.length == slelectedData.length) {
+                    await property.save()
+                    res.status(200).json(responseData)
+
+                }
+            }
+        })
     })
+
 
 })
 
 const deleteFile = asynchErrorHandler(async (req, res, next) => {
-    const { id } = req.params
+    const { key } = req.body
+
+    const propertyId = req.params.id
+
+    const isValidId = isValidObjectId(propertyId)
+
+    if (!isValidId) return next(new Errorhandler("Property not found"))
+
+    const property = await Property.findById({ _id: propertyId })
+
+    if (!property) return next(new Errorhandler("Property not found"))
 
     cos.deleteObject({
         Bucket: "estates.app",
+        Key: key
 
     }, (err, data) => {
-        if (err) console.log(err)
-        console.log(data)
+        if (err) { return next(new Errorhandler(err, 400)) }
+
+        res.status(200).json(data)
     })
 })
 

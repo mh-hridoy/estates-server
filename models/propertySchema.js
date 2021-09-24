@@ -63,9 +63,12 @@ const propertySchema = new Schema({
     taxBillUrl: String,
 
     infoTabFile: [{
-        fileName: String,
-        uploadedAt: Date,
-        postedBy: String,
+        _id: false,
+        ETag: String,
+        VersionId: String,
+        Location: String,
+        key: String,
+        Bucket: String,
     }],
     zillowURL: String,
     zestimate: Number,
@@ -853,7 +856,7 @@ propertySchema.pre(["save", "updateOne"], function (next) {
         }
 
     }
-    console.log(lastSaleInfo)
+    // console.log(lastSaleInfo)
 
     next()
 })
