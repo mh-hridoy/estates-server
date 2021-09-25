@@ -274,7 +274,6 @@ const uploadFiles = asynchErrorHandler(async (req, res, next) => {
 
     if (!property) return next(new Errorhandler("Property not found"))
 
-
     const responseData = []
     slelectedData.map((file) => {
         const base64Data = new Buffer.from(file.data, "base64")
@@ -324,10 +323,17 @@ const deleteFile = asynchErrorHandler(async (req, res, next) => {
         Bucket: "estates.app",
         Key: key
 
-    }, (err, data) => {
-        if (err) { return next(new Errorhandler(err, 400)) }
+    }, async (err, data) => {
+        if (err) { return next(new Errorhandler(err, 400)) } else {
+            const fileInfo = property.infoTabFile
+            const indexOfDelFile = fileInfo.findIndex((file) => file.key === key)
+            fileInfo.splice(indexOfDelFile, 1)
 
-        res.status(200).json(data)
+            await property.save()
+
+            res.status(200).json(data)
+        }
+
     })
 })
 

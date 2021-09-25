@@ -790,7 +790,17 @@ const propertySchema = new Schema({
         thirdDCA: String,
         date: Date,
         note: String,
-    }
+
+    },
+    propertyImages: [{
+        _id: false,
+        ETag: String,
+        VersionId: String,
+        Location: String,
+        key: String,
+        Bucket: String,
+    }]
+
 }, { timestamps: true })
 
 propertySchema.pre(/^find/, function (next) {
