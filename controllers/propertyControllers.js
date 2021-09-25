@@ -337,9 +337,24 @@ const deleteFile = asynchErrorHandler(async (req, res, next) => {
     })
 })
 
+const uploadPictures = asynchErrorHandler(async (req, res, next) => {
+    const propertyId = req.params.id
+    const selectedImage = req.body
+
+    const isValidId = isValidObjectId(propertyId)
+
+    if (!isValidId) return next(new Errorhandler("Property not found"))
+
+    const property = await Property.findById({ _id: propertyId })
+
+    if (!property) return next(new Errorhandler("Property not found"))
+
+    res.json("hit the endpoint")
+})
+
 
 module.exports = {
-    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile, uploadPictures
 }
 
 
