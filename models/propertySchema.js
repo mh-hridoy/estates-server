@@ -673,10 +673,6 @@ const propertySchema = new Schema({
 
     },
 
-    image: {
-        type: String
-    },
-
     cmaArvNotes: String,
 
     amEmail: { type: [String] },
