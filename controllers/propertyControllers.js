@@ -349,7 +349,39 @@ const uploadPictures = asynchErrorHandler(async (req, res, next) => {
 
     if (!property) return next(new Errorhandler("Property not found"))
 
-    res.json("hit the endpoint")
+    const responseData = []
+
+    selectedImage.map((file) => {
+        const base64Data = new Buffer.from(file.data, "base64")
+
+        const params = {
+            Bucket: "estates.app",
+            Key: file.name,
+            Body: base64Data,
+            ContentType: file.type,
+            ACL: "public-read"
+        }
+
+        cos.upload(params, async (err, data) => {
+            if (err) {
+                return next(new Errorhandler(err, 400))
+            } else {
+                const propertyImages = property.propertyImages
+                responseData.push(data)
+                propertyImages.push(data)
+
+                if (responseData.length == selectedImage.length) {
+                    await property.save()
+                    res.status(200).json(responseData)
+
+                }
+            }
+        })
+    })
+
+    // res.json("hit the endpoint")
+
+
 })
 
 
