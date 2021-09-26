@@ -415,9 +415,30 @@ const deleteImage = asynchErrorHandler(async (req, res, next) => {
     })
 })
 
+const updateMap = asynchErrorHandler(async (req, res, next) => {
+    const geo = req.body
+
+    const propertyId = req.params.id
+
+    const isValidId = isValidObjectId(propertyId)
+
+    if (!isValidId) return next(new Errorhandler("Property not found"))
+
+    const property = await Property.findById({ _id: propertyId })
+
+    if (!property) return next(new Errorhandler("Property not found"))
+
+    await property.updateOne({ geo: geo })
+
+
+
+    res.status(200).json("Updated Successfully")
+
+})
+
 
 module.exports = {
-    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile, uploadPictures, deleteImage
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile, uploadPictures, deleteImage, updateMap
 }
 
 
