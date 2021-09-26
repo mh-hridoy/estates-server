@@ -384,9 +384,40 @@ const uploadPictures = asynchErrorHandler(async (req, res, next) => {
 
 })
 
+const deleteImage = asynchErrorHandler(async (req, res, next) => {
+    const { key } = req.body
+
+    const propertyId = req.params.id
+
+    const isValidId = isValidObjectId(propertyId)
+
+    if (!isValidId) return next(new Errorhandler("Property not found"))
+
+    const property = await Property.findById({ _id: propertyId })
+
+    if (!property) return next(new Errorhandler("Property not found"))
+
+    cos.deleteObject({
+        Bucket: "estates.app",
+        Key: key
+
+    }, async (err, data) => {
+        if (err) { return next(new Errorhandler(err, 400)) } else {
+            const propertyImages = property.propertyImages
+            const indexOfDelFile = propertyImages.findIndex((file) => file.key === key)
+            propertyImages.splice(indexOfDelFile, 1)
+
+            await property.save()
+
+            res.status(200).json(data)
+        }
+
+    })
+})
+
 
 module.exports = {
-    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile, uploadPictures
+    addProperty, getProperties, addBidderInfo, deletePropery, addNewSaleDate, updateProperty, getRequestedProperty, uploadFiles, deleteFile, uploadPictures, deleteImage
 }
 
 
