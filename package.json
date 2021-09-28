@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js"
+    "start": "node app.js"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
