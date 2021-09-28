@@ -50,10 +50,14 @@ app.all('*', (req, res) => {
 app.use(errorhandlingMiddleware)
 
 
+let server;
+mongoose.connect(process.env.DB_SECRET_KEY, options, () => {
 
-mongoose.connect(process.env.DB_SECRET_KEY, options, () => console.log("DB Connected"))
+    app.listen(port, () => console.log("Server listening on port " + port))
+    console.log("DB Connected")
+})
 
-const server = app.listen(port, () => console.log("Server listening on port " + port))
+
 
 process.on('unhandledRejection', err => {
     console.log("unhandledRejection Error... System will terminate soon")
