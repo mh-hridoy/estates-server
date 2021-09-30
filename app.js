@@ -27,7 +27,7 @@ process.on('uncaughtException', err => {
     process.exit(1)
 })
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://stark-shelf-92437.herokuapp.com'], //frontend url
+    origin: ['http://localhost:3000', 'https://stark-shelf-92437.herokuapp.com'], //frontend 
     credentials: true
 }))
 app.use(helmet())
