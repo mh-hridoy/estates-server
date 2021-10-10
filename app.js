@@ -27,7 +27,7 @@ process.on('uncaughtException', err => {
     process.exit(1)
 })
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://estate-client-beta.vercel.app'], //frontend
+    origin: ['http://localhost:3000', 'https://estate-client.herokuapp.com/'], //frontend
     credentials: true
 }))
 app.use(helmet())
@@ -67,6 +67,3 @@ process.on('unhandledRejection', err => {
     })
 
 })
-
-
-//git push origin HEAD:master okay
