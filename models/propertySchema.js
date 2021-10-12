@@ -15,7 +15,7 @@ const propertySchema = new Schema({
     state: {
         type: String,
         default: "",
-        enum: ["North Carolina", "South Carolina"]
+        enum: ["North Carolina", "South Carolina", ""]
     },
     zip: Number,
     lotSqf: Number,

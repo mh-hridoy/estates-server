@@ -23,92 +23,89 @@ const addProperty = asynchErrorHandler(async (req, res) => {
     res.json('Property added successfully.')
 })
 
-const getProperties = asynchErrorHandler(async (req, res, next) => {
 
+const getProperties = asynchErrorHandler(async (req, res, next) => {
     const allQuery = { ...req.query }
 
-    const depricateQuery = ["sort", "page", "limit", "fields", "startDate", "endDate"]
+    const depricateQuery = ["sort", "page", "limit"]
     depricateQuery.forEach(el => delete allQuery[el])
 
+    let query = {}
 
-    // eslint-disable-next-line no-unused-vars
-    //all the query field should have one default value in SCHEMA. otherwise mongodb sucks at query data even when using fucking $exists field...😡
+    for (const [key, value] of Object.entries(allQuery)) {
 
-    let { winningBidder, bidderName, startSqf, endSqf, startAcre, endAcre, ownerFullName, caseNumber, propertyAddress, city, state, county, PropertyDescription, legalDesc, borrowerName, ...data } = allQuery
+        if (key == "startDate" || key == "endDate") {
+            query = { ...query, "saleinfo.saleDate": { $gte: new Date(req.query.startDate ? req.query.startDate : "2000-01-01").setHours(0, 0, 0, 0), $lte: new Date(req.query.endDate ? req.query.endDate : "2100-12-31").setHours(24, 59, 59, 59) } }
+        }
 
-
-    //if I dont clarify what would happen if the user dosent provide startDate and endDate then it would thorw error. also these dates dosent work on the find property method with single new Date() method... kinda bug of mongoose...
-
-    //
-
-    //  IMPORTANT NOTE : MONGOOSE DOSENT TAKE PARAMS AS UNDEFINED FOR NUMBER AND DATE OBJECT.
-    //
-    if (!startAcre) startAcre = 0
-    if (!endAcre) endAcre = 999
-
-    if (!startSqf) startSqf = 0
-    if (!endSqf) endSqf = 99999
-
-    //
+        if (key == "startAcre" || key == "endAcre") {
+            query = { ...query, "lotSqf": { $gte: allQuery.startAcre ? +allQuery.startAcre : 0, $lte: allQuery.endAcre ? +allQuery.endAcre : 1000 } }
+        }
 
 
-    if (!req.query.startDate) req.query.startDate = new Date("2000-01-01").setHours(0, 0, 0, 0) //set it to 0 otherwise it wont track the current date/
-    if (!req.query.endDate) req.query.endDate = new Date("2100-12-31").setHours(24, 59, 59, 59) //set it to the last min .. that way the result will be more perfect/
+        if (key == "startSqf" || key == "endSqf") {
+            query = { ...query, "totalSqf": { $gte: allQuery.startSqf ? +allQuery.startSqf : 0, $lte: allQuery.endSqf ? +allQuery.endSqf : 99999 } }
+        }
 
+        if (key == "caseNumber") {
+            query = { ...query, "saleinfo.caseNumber": new RegExp(allQuery.caseNumber, "gi") }
+        }
 
-    //for better case search experience . NEED TO RECHECK CODE FOR THAT.
-    //`/(var) | (var)/gi` // check this method
-    // const modifiedNumber = caseNumber ? caseNumber.split(" ").join("") : undefined
+        if (key == "ownerFullName") {
+            query = { ...query, "ownerInfo.ownerFullName": new RegExp(allQuery.ownerFullName, "gi") }
+        }
 
+        if (key == "borrowerName") {
+            query = { ...query, "borrowerInfo.borrowerName": new RegExp(allQuery.borrowerName, "gi") }
+        }
 
-    //didnot use await here because I had to sort these property before store them.. **checkout the all peroperty variable.
+        if (allQuery.bidderName || allQuery.winningBidder) {
+            query = {
+                ...query, $or: [
 
-    let property = Property.find({
-        "saleinfo.saleDate": { $gte: new Date(req.query.startDate).setHours(0, 0, 0, 0), $lte: new Date(req.query.endDate).setHours(24, 59, 59, 59) },
-        totalSqf: { $gte: startSqf, $lte: endSqf },
-        lotSqf: { $gte: startAcre, $lte: endAcre },
-        "ownerInfo.ownerFullName": new RegExp(ownerFullName, "gi"),
-        "borrowerInfo.borrowerName": new RegExp(borrowerName, "gi"),
-        propertyAddress: new RegExp(propertyAddress, "gi"), city: new RegExp(city, "gi"), state: new RegExp(state, "gi"), county: new RegExp(county, "gi"), PropertyDescription: new RegExp(PropertyDescription, "gi"), legalDesc: new RegExp(legalDesc, "gi"), "saleinfo.caseNumber": new RegExp(caseNumber, "gi"), ...data
-    })
+                    { "saleinfo.nameOfPurchaser": new RegExp(allQuery.bidderName, "gi") },
+                    { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(allQuery.bidderName, "gi") }
+                ],
+                // eslint-disable-next-line no-dupe-keys
+                $or: [
+                    {
+                        $and: [{ "saleinfo.isWinningBidder": true },
+                        { "saleinfo.nameOfPurchaser": new RegExp(allQuery.winningBidder, "gi") }]
+                    },
+                    {
+                        $and: [{ "saleinfo.otherBidderInfo.isWinningBidder": true },
+                            { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(allQuery.winningBidder, "gi") }]
+                    }
 
-    //select the last index of array
-    // const saleInfoArray = property.schema.obj.saleinfo
-    // const lastSaleInfo = saleInfoArray[saleInfoArray.length - 1].saleDate
+                ],
+            }
 
-    //need try with if state blocks.
-    if (bidderName || winningBidder) {
-        property = Property.find({
-            "saleinfo.saleDate": { $gte: req.query.startDate, $lte: req.query.endDate },
-            totalSqf: { $gte: startSqf, $lte: endSqf },
-            lotSqf: { $gte: startAcre, $lte: endAcre },
-            "ownerInfo.ownerFullName": new RegExp(ownerFullName, "gi"),
-            "borrowerInfo.borrowerName": new RegExp(borrowerName, "gi"),
-            propertyAddress: new RegExp(propertyAddress, "gi"), city: new RegExp(city, "gi"), state: new RegExp(state, "gi"), county: new RegExp(county, "gi"), PropertyDescription: new RegExp(PropertyDescription, "gi"), legalDesc: new RegExp(legalDesc, "gi"), "saleinfo.caseNumber": new RegExp(caseNumber, "gi"),
-            $or: [
+        }
 
-                { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp(bidderName, "gi") },
-                { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(bidderName, "gi") }
-            ],
-            // eslint-disable-next-line no-dupe-keys
-            $or: [
-                {
-                    $and: [{ "saleinfo.firstBidderInfo.isWinningBidder": true },
-                    { "saleinfo.firstBidderInfo.nameOfPurchaser": new RegExp(winningBidder, "gi") }]
-                },
-                {
-                    $and: [{ "saleinfo.otherBidderInfo.isWinningBidder": true },
-                    { "saleinfo.otherBidderInfo.nameOfUpsetBidder": new RegExp(winningBidder, "gi") }]
-                }
-
-            ],
-            ...data
-
-        })
+        query = { ...query, [key]: new RegExp(value, "gi") }
     }
 
+    Object.keys(query).forEach((key) => {
+        query[key] == "" && delete query[key]
+        query.startDate && delete query.startDate
+        query.endDate && delete query.endDate
+        query.startAcre && delete query.startAcre
+        query.endAcre && delete query.endAcre
+        query.startSqf && delete query.startSqf
+        query.endSqf && delete query.endSqf
+        query.caseNumber && delete query.caseNumber
+        query.ownerFullName && delete query.ownerFullName
+        query.borrowerName && delete query.borrowerName
+        query.bidderName && delete query.bidderName
+        query.winningBidder && delete query.winningBidder
+    })
+
+    query
+
+    let property = Property.find(query)
 
     //for sort use -sortbyname to desc result.
+
     if (req.query.sort) {
         const modifiedSort = req.query.sort.split(",").join(" ")
         property = property.sort(modifiedSort)
@@ -119,10 +116,14 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     }
 
     //copy the proerty object and make a  constructor to get totaldocument counts.
+        //**** */
+
     const queryData = property.toConstructor();
     const copyQuery = new queryData()
+    //**** */
 
     //pagination functionality
+    //**** */
 
     const page = req.query.page * 1 || 1
     const limit = req.query.limit * 1 || 20
@@ -136,6 +137,7 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
 
         if (skip > propertyCount) return next(new Errorhandler("Pgae not found", 400))
     }
+    //**** */
 
     //execute Property
     const allProperty = await property;
@@ -145,57 +147,61 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
 
     res.json({ totalPage, totalSearchedProperty: propertyCount, allProperty })
 
+
 })
 
 const addBidderInfo = asynchErrorHandler(async (req, res, next) => {
 
-    const id = req.params.id;
-    const { saleinfoId, ...data } = req.body
+    // const id = req.params.id;
+    // const { saleinfoId, ...data } = req.body
 
-    const isValidId = isValidObjectId(id)
+    // const isValidId = isValidObjectId(id)
 
-    if (!isValidId) return next(new Errorhandler("Property not found"))
 
-    const property = await Property.findById({ _id: id })
 
-    if (!property) return next(new Errorhandler("Property not found"))
+    // if (!isValidId) return next(new Errorhandler("Property not found"))
 
-    const selectedSaleDate = property.saleinfo.find((obj) => {
-        const stringObjId = obj._id.toString()
-        return stringObjId === saleinfoId
-    })
+    // const property = await Property.findById({ _id: id })
 
-    const otherBidderArray = selectedSaleDate.otherBidderInfo
+    // if (!property) return next(new Errorhandler("Property not found"))
 
-    otherBidderArray.push(data)
+    // const selectedSaleDate = property.saleinfo.find((obj) => {
+    //     const stringObjId = obj._id.toString()
+    //     return stringObjId === saleinfoId
+    // })
 
-    await property.save()
+    // const otherBidderArray = selectedSaleDate.otherBidderInfo
+
+    // otherBidderArray.push(data)
+
+    // await property.save()
+
     //need to push bid info to the array
-    res.json("Information updated successfully")
+    res.json("this endpoint currenty deactivated")
 })
 
 //need to creaete another controller for the proeprty update.
 
 const addNewSaleDate = asynchErrorHandler(async (req, res, next) => {
-    const id = req.params.id;
-    const { ...data } = req.body
+    // const id = req.params.id;
+    // const { ...data } = req.body
 
-    const isValidId = isValidObjectId(id)
+    // const isValidId = isValidObjectId(id)
 
-    if (!isValidId) return next(new Errorhandler("Property not found"))
+    // if (!isValidId) return next(new Errorhandler("Property not found"))
 
-    const property = await Property.findById({ _id: id })
+    // const property = await Property.findById({ _id: id })
 
-    if (!property) return next(new Errorhandler("Property not found"))
+    // if (!property) return next(new Errorhandler("Property not found"))
 
-    const saleInfoArray = property.saleinfo
+    // const saleInfoArray = property.saleinfo
 
-    saleInfoArray.push(data)
+    // saleInfoArray.push(data)
 
-    await property.save()
+    // await property.save()
 
     //need to push bid info to the array
-    res.json("Information added successfully")
+    res.json("this endpoint currenty deactivated")
 
 })
 
