@@ -46,6 +46,7 @@ const userSchema = new Schema({
         enum: ["Active", "inActive"]
     },
     setAlarmed: [String],
+    buyIt: [{type: Schema.Types.ObjectId, ref: 'Property'}], //type will be shcema in order to populate the property data.
 
     selectedRole: String,
 

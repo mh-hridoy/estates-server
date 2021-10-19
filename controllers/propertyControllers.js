@@ -4,8 +4,12 @@ const Property = require("../models/propertySchema");
 const Errorhandler = require("../utils/ErrorHandler");
 const { isValidObjectId } = require("mongoose");
 const ibm = require("ibm-cos-sdk");
-const fs = require("fs");
+const sgMail = require('@sendgrid/mail')
+var mongoose = require("mongoose")
+
+// const fs = require("fs");
 // const COS = require('ibm-cos-sdk-config') //to check the bucket config ---ref ---to the official documents.
+const User = require("../models/userSchema")
 
 var config = {
   endpoint: process.env.IBM_ENDPOINTS,
@@ -152,7 +156,11 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
     query.winningBidder && delete query.winningBidder;
   });
 
-  let property = Property.find(query);
+  let property = Property.find(query).populate({
+    path: "buyItUser",
+    select:
+      "-email -password -role -profilePicture -likedPropertys -status -setAlarmed -buyIt -selectedRole -usedResetToken -createdAt -_id",
+  })
 
   //copy the proerty object and make a  constructor to get totaldocument counts.
   //**** */
@@ -247,6 +255,7 @@ const addNewSaleDate = asynchErrorHandler(async (req, res, next) => {
   res.json("this endpoint currenty deactivated");
 });
 
+
 const deletePropery = asynchErrorHandler(async (req, res, next) => {
   const { id } = req.body;
 
@@ -261,11 +270,53 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
   const properties = await Property.find({ _id: { $in: id } });
 
   if (properties.length === 0)
-    return next(new Errorhandler("No properties found"));
+    return next(new Errorhandler("No properties found"))
+  
+  const allFiles = []  
+  properties.forEach((property) => {
+    property.propertyImages.length !== 0 && property.propertyImages.forEach((image) => {
+      allFiles.push(image.key)
+    })
+     property.infoTabFile.length !== 0 &&
+       property.infoTabFile.forEach((file) => {
+         allFiles.push(file.key)
+       })
+    
+    property.saleinfo.length !== 0 &&
+      property.saleinfo.forEach((saleinfo) => {
+        saleinfo.saleInfoFiles.length !== 0 && saleinfo.saleInfoFiles.forEach((file) => {
+        allFiles.push(file.key)
 
-  await Property.deleteMany({ _id: { $in: id } });
+        })
+      })
+    
+  })
 
-  res.json("Operation succesful!");
+  allFiles.length !== 0 && allFiles.forEach((key) => {
+
+    cos.deleteObject(
+      {
+        Bucket: "estates.app",
+        Key: key,
+      },
+      async (err, data) => {
+        if (err) {
+          return next(new Errorhandler(err, 400))
+        } else {
+
+          await Property.deleteMany({ _id: { $in: id } });
+
+        }
+
+        if (allFiles.indexOf(key) == allFiles.length - 1) {
+          res.status(200).json("Operation succesful!")
+        }
+
+      }
+    )
+
+  })
+
 });
 
 const updateProperty = asynchErrorHandler(async (req, res, next) => {
@@ -293,7 +344,11 @@ const getRequestedProperty = asynchErrorHandler(async (req, res, next) => {
 
   if (!isValidId) return next(new Errorhandler("Property not found", 400));
 
-  const property = await Property.findById({ _id: id });
+  const property = await Property.findById({ _id: id }).populate({
+    path: "buyItUser",
+    select:
+      "-email -password -role -profilePicture -likedPropertys -status -setAlarmed -buyIt -selectedRole -usedResetToken -createdAt -_id"
+  })
 
   if (!property) return next(new Errorhandler("Property not found", 400));
 
@@ -342,6 +397,49 @@ const uploadFiles = asynchErrorHandler(async (req, res, next) => {
   });
 });
 
+const uploadSaleInfoFiles = asynchErrorHandler(async (req, res, next) => {
+  const { selectedFiles, fieldKey } = req.body
+  const propertyId = req.params.pId
+
+  const isValidId = isValidObjectId(propertyId)
+
+  if (!isValidId) return next(new Errorhandler("Property not found"))
+
+  const property = await Property.findById({ _id: propertyId })
+
+  if (!property) return next(new Errorhandler("Property not found"))
+
+
+
+  const responseData = []
+  selectedFiles.map((file) => {
+    const base64Data = new Buffer.from(file.data, "base64")
+
+    const params = {
+      Bucket: "estates.app",
+      Key: file.name,
+      Body: base64Data,
+      ContentType: file.type,
+      ACL: "public-read",
+    }
+
+    cos.upload(params, async (err, data) => {
+      if (err) {
+        return next(new Errorhandler(err, 400))
+      } else {
+        const fileInfo = property.saleinfo[fieldKey] && property.saleinfo[fieldKey].saleInfoFiles
+        responseData.push(data)
+        fileInfo.push(data)
+
+        if (responseData.length == selectedFiles.length) {
+          await property.save()
+          res.status(200).json(responseData)
+        }
+      }
+    })
+  })
+})
+
 const deleteFile = asynchErrorHandler(async (req, res, next) => {
   const { key } = req.body;
 
@@ -375,6 +473,8 @@ const deleteFile = asynchErrorHandler(async (req, res, next) => {
     }
   );
 });
+
+
 
 const uploadPictures = asynchErrorHandler(async (req, res, next) => {
   const propertyId = req.params.id;
@@ -474,6 +574,132 @@ const updateMap = asynchErrorHandler(async (req, res, next) => {
   res.status(200).json("Updated Successfully");
 });
 
+
+const addToBuyIt = asynchErrorHandler(async (req, res, next) => {
+
+const propertyId = req.params.id
+const {userId} = req.body
+
+const isValidId = isValidObjectId(propertyId)
+const isValidUser = isValidObjectId(userId)
+
+if (!isValidId) return next(new Errorhandler("Property not found"))
+if (!isValidUser) return next(new Errorhandler("Property not found"))
+
+  const property = await Property.findById({ _id: propertyId })
+  const user = await User.findById({ _id: userId })
+
+if (!property) return next(new Errorhandler("Property not found"))
+  if (!user) return next(new Errorhandler("Property not found"))
+  
+
+  const buyItUser = property.buyItUser
+  const userBuyItLisy = user.buyIt
+
+  buyItUser.push(userId)
+  userBuyItLisy.push(propertyId)
+
+   sgMail.setApiKey(process.env.SENDGRID_SECRET_KEY)
+   const msg = {
+     to: user.email, // Change to your recipient
+     from: "alif.pab120na.12@gmail.com", // Change to your verified sender
+     subject: "Buy it confirmation",
+     text: "Buy it",
+     html: `<h1>Your buy it request has been completed.</h1>
+            `,
+   }
+   sgMail
+     .send(msg)
+     .then(() => {
+       console.log("Email sent")
+     })
+     .catch((error) => {
+       console.error(error)
+     })
+
+  await property.save()
+  await user.save()
+
+
+  res.status(200).json("Buy it successfully.")
+
+})
+
+const checkBuyIt = asynchErrorHandler(async (req, res, next) => {
+  const propertyId = req.params.id
+  const {userId} = req.body
+
+  const isValidId = isValidObjectId(propertyId)
+  const isValidUser = isValidObjectId(userId)
+
+  if (!isValidId) return next(new Errorhandler("Property not found"))
+  if (!isValidUser) return next(new Errorhandler("Property not found"))
+
+  const property = await Property.findById({ _id: propertyId })
+  const user = await User.findById({ _id: userId })
+
+  if (!property) return next(new Errorhandler("Property not found"))
+  if (!user) return next(new Errorhandler("Property not found"))
+
+  const userBuyItLisy = user.buyIt
+
+  let response;
+
+  userBuyItLisy && userBuyItLisy.length !== 0 && userBuyItLisy.forEach((property) => {
+    if (property == propertyId) {
+      response = "Y"
+    } else {
+      response = "N"
+    }
+  })
+
+  res.status(200).json(response)
+
+})
+
+const passOnIt = asynchErrorHandler(async (req, res, next) => {
+  const propertyId = req.params.id
+  const { userId } = req.body
+
+  const isValidId = isValidObjectId(propertyId)
+  const isValidUser = isValidObjectId(userId)
+
+  if (!isValidId) return next(new Errorhandler("Property not found"))
+  if (!isValidUser) return next(new Errorhandler("No User Found"))
+
+  const property = await Property.findById({ _id: propertyId })
+  const user = await User.findById({ _id: userId })
+
+  if (!property) return next(new Errorhandler("Property not found"))
+  if (!user) return next(new Errorhandler("No User Found"))
+
+  const userBuyItLisy = user.buyIt
+  const useList = property.buyItUser
+
+  userBuyItLisy &&
+    userBuyItLisy.length != 0 &&
+    userBuyItLisy.map((propertyid, index) => {
+    if (propertyid == propertyId) userBuyItLisy.splice(index, 1)
+
+    return userBuyItLisy
+    })
+  
+   useList &&
+     useList.length != 0 &&
+     useList.map((userid, index) => {
+    if (userid == userId) useList.splice(index, 1)
+
+    return useList
+    })
+
+
+  await property.save()
+  await user.save()
+
+  res.status(200).json("Successfully pass on.")
+
+})
+
 module.exports = {
   addProperty,
   getProperties,
@@ -487,4 +713,8 @@ module.exports = {
   uploadPictures,
   deleteImage,
   updateMap,
-};
+  uploadSaleInfoFiles,
+  addToBuyIt,
+  checkBuyIt,
+  passOnIt,
+}

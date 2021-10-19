@@ -4,18 +4,18 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const propertySchema = new Schema({
-
+const propertySchema = new Schema(
+  {
     propertyAddress: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     city: String,
     county: String,
     state: {
-        type: String,
-        default: "",
-        enum: ["North Carolina", "South Carolina", ""]
+      type: String,
+      default: "",
+      enum: ["North Carolina", "South Carolina", ""],
     },
     zip: Number,
     lotSqf: Number,
@@ -62,14 +62,16 @@ const propertySchema = new Schema({
     treasurerURL: String,
     taxBillUrl: String,
 
-    infoTabFile: [{
+    infoTabFile: [
+      {
         _id: false,
         ETag: String,
         VersionId: String,
         Location: String,
         key: String,
         Bucket: String,
-    }],
+      },
+    ],
     zillowURL: String,
     zestimate: Number,
     redfinUrl: String,
@@ -82,595 +84,572 @@ const propertySchema = new Schema({
     harEst: Number,
     beenVerifiedURL: String,
     priceHistory: [
-        {
-            _id: false,
-            date: Date,
-            price: Number,
-            costPerSqf: Number,
-            source: String,
-            Description: String,
-        }
+      {
+        _id: false,
+        date: Date,
+        price: Number,
+        costPerSqf: Number,
+        source: String,
+        Description: String,
+      },
     ],
 
     elementarySchool: {
-        ename: String,
-        eranking: String,
-        edistance: String,
+      ename: String,
+      eranking: String,
+      edistance: String,
     },
 
     middleSchool: {
-        mname: String,
-        mranking: String,
-        mdistance: String,
+      mname: String,
+      mranking: String,
+      mdistance: String,
     },
     highSchool: {
-        hname: String,
-        hranking: String,
-        hdistance: String,
+      hname: String,
+      hranking: String,
+      hdistance: String,
     },
     assesmentAndTaxes: [
-        {
-            _id: false,
-            propertyTaxOwed: Number,
-            owedYear: Number,
-            taxAssessed: Number,
-            taxYear: Number
-        }
+      {
+        _id: false,
+        propertyTaxOwed: Number,
+        owedYear: Number,
+        taxAssessed: Number,
+        taxYear: Number,
+      },
     ],
 
     countyRODURL: String,
     manualSearch: { type: Boolean, default: false },
     noActiveMortgageLien: { type: Boolean, default: false },
-    firstmortgageInfo:
-    {
-        _id: false,
-        lienForeclosing: { type: Boolean, default: false },
-        noSTR: { type: Boolean, default: false },
-        defectiveLien: { type: Boolean, default: false },
-        note: String,
+    firstmortgageInfo: {
+      _id: false,
+      lienForeclosing: { type: Boolean, default: false },
+      noSTR: { type: Boolean, default: false },
+      defectiveLien: { type: Boolean, default: false },
+      note: String,
 
-        lender: String,
-        lienAmount: Number,
-        dateRecorded: Date,
-        instrument: String,
-        dtBookPage: String,
-        assignmentBookPage: String,
-        loanType: String,
-        loanTerm: String,
-        maturityDate: Date,
-        rightToCure: Number,
-        tursteeFee: Number,
-        trustee: String,
-        strBookPage: String,
-        strDate: Date,
-        loanEstimatedBalance: Number,
-        estLatePaymentAndFees: Number,
-        totalEstimatedDebt: Number,
-        cmaArv: Number,
-        totalDebt: Number,
-        legalDescMatch: { type: Boolean, default: false },
-        propertyAddressMatch: { type: Boolean, default: false },
-        resonableFees: { type: Boolean, default: false },
+      lender: String,
+      lienAmount: Number,
+      dateRecorded: Date,
+      instrument: String,
+      dtBookPage: String,
+      assignmentBookPage: String,
+      loanType: String,
+      loanTerm: String,
+      maturityDate: Date,
+      rightToCure: Number,
+      tursteeFee: Number,
+      trustee: String,
+      strBookPage: String,
+      strDate: Date,
+      loanEstimatedBalance: Number,
+      estLatePaymentAndFees: Number,
+      totalEstimatedDebt: Number,
+      cmaArv: Number,
+      totalDebt: Number,
+      legalDescMatch: { type: Boolean, default: false },
+      propertyAddressMatch: { type: Boolean, default: false },
+      resonableFees: { type: Boolean, default: false },
 
-        isAmortizationView: { type: Boolean, default: false },//changed
-        amortAnnualInterestRate: Number,//changed
-        amortMonthlyPayment: Number,//changed
-        monthlyPrincipalPayment: Number,
-        monthlyInterestPayment: Number,
-        estimatedEquity: Number,
+      isAmortizationView: { type: Boolean, default: false }, //changed
+      amortAnnualInterestRate: Number, //changed
+      amortMonthlyPayment: Number, //changed
+      monthlyPrincipalPayment: Number,
+      monthlyInterestPayment: Number,
+      estimatedEquity: Number,
 
-        isModA: { type: Boolean, default: false },//changed
-        modABookPage: String,
-        modADate: Date,
-        modALienAmount: Number,
-        modALoanTerm: String,
-        modAmaturityDate: Date,
-        annualInterestRate: Number,
-        monthlyPayment: Number,
-        loanEstBalance: Number,
-        modAEstLatePaymentAndFees: Number, //changed
-        modAtotalEstimatedDebt: Number, //changed
+      isModA: { type: Boolean, default: false }, //changed
+      modABookPage: String,
+      modADate: Date,
+      modALienAmount: Number,
+      modALoanTerm: String,
+      modAmaturityDate: Date,
+      annualInterestRate: Number,
+      monthlyPayment: Number,
+      loanEstBalance: Number,
+      modAEstLatePaymentAndFees: Number, //changed
+      modAtotalEstimatedDebt: Number, //changed
 
-        isSubA: { type: Boolean, default: false }, //changed
-        subABookPage: String,
-        subADate: Date,
-        lienPosition: String,
+      isSubA: { type: Boolean, default: false }, //changed
+      subABookPage: String,
+      subADate: Date,
+      lienPosition: String,
 
-        isForeclosureResult: { type: Boolean, default: false },//changed
-        trDeedInstrument: String,
-        trDeedDate: Date,
-        winningBidder: String,
-        winningbid: Number,
+      isForeclosureResult: { type: Boolean, default: false }, //changed
+      trDeedInstrument: String,
+      trDeedDate: Date,
+      winningBidder: String,
+      winningbid: Number,
 
-        document: {
-            type: String,
-            docType: String,
-            otherName: String,
-            caseNo: String,
-            recordedDate: Date,
+      document: {
+        type: String,
+        docType: String,
+        otherName: String,
+        caseNo: String,
+        recordedDate: Date,
+      },
+      owner1: { type: Boolean, default: false }, //changed
+      owner2: { type: Boolean, default: false }, //changed
+      owner3: { type: Boolean, default: false }, //changed
+      owner4: { type: Boolean, default: false }, //changed
+      isDtcFirstCheck: { type: Boolean, default: false }, //changed
 
-        },
-        owner1: { type: Boolean, default: false },//changed
-        owner2: { type: Boolean, default: false },//changed
-        owner3: { type: Boolean, default: false },//changed
-        owner4: { type: Boolean, default: false },//changed
-        isDtcFirstCheck: { type: Boolean, default: false },//changed
+      isDcaSecondCheck: { type: Boolean, default: false }, //changed
 
-
-        isDcaSecondCheck: { type: Boolean, default: false },//changed
-
-        isDcaFinalCheck: { type: Boolean, default: false }, //changed
-
+      isDcaFinalCheck: { type: Boolean, default: false }, //changed
     },
 
-    secondMortgageInfo:
-    {
-        _id: false,
-        lienForeclosing: { type: Boolean, default: false },
-        noSTR: { type: Boolean, default: false },
-        defectiveLien: { type: Boolean, default: false },
-        note: String,
+    secondMortgageInfo: {
+      _id: false,
+      lienForeclosing: { type: Boolean, default: false },
+      noSTR: { type: Boolean, default: false },
+      defectiveLien: { type: Boolean, default: false },
+      note: String,
 
-        lender: String,
-        lienAmount: Number,
-        dateRecorded: Date,
-        instrument: String,
-        dtBookPage: String,
-        assignmentBookPage: String,
-        loanType: String,
-        loanTerm: String,
-        maturityDate: Date,
-        rightToCure: Number,
-        tursteeFee: Number,
-        trustee: String,
-        strBookPage: String,
-        strDate: Date,
-        loanEstimatedBalance: Number,
-        estLatePaymentAndFees: Number,
-        totalEstimatedDebt: Number,
-        cmaArv: Number,
-        totalDebt: Number,
-        legalDescMatch: { type: Boolean, default: false },
-        propertyAddressMatch: { type: Boolean, default: false },
-        resonableFees: { type: Boolean, default: false },
+      lender: String,
+      lienAmount: Number,
+      dateRecorded: Date,
+      instrument: String,
+      dtBookPage: String,
+      assignmentBookPage: String,
+      loanType: String,
+      loanTerm: String,
+      maturityDate: Date,
+      rightToCure: Number,
+      tursteeFee: Number,
+      trustee: String,
+      strBookPage: String,
+      strDate: Date,
+      loanEstimatedBalance: Number,
+      estLatePaymentAndFees: Number,
+      totalEstimatedDebt: Number,
+      cmaArv: Number,
+      totalDebt: Number,
+      legalDescMatch: { type: Boolean, default: false },
+      propertyAddressMatch: { type: Boolean, default: false },
+      resonableFees: { type: Boolean, default: false },
 
-        isAmortizationView: { type: Boolean, default: false },//changed
-        amortAnnualInterestRate: Number,//changed
-        amortMonthlyPayment: Number,//changed
-        monthlyPrincipalPayment: Number,
-        monthlyInterestPayment: Number,
-        estimatedEquity: Number,
+      isAmortizationView: { type: Boolean, default: false }, //changed
+      amortAnnualInterestRate: Number, //changed
+      amortMonthlyPayment: Number, //changed
+      monthlyPrincipalPayment: Number,
+      monthlyInterestPayment: Number,
+      estimatedEquity: Number,
 
-        isModA: { type: Boolean, default: false },//changed
-        modABookPage: String,
-        modADate: Date,
-        modALienAmount: Number,//changed
-        modALoanTerm: String,//changed
-        modAmaturityDate: Date, //changed
-        annualInterestRate: Number,
-        monthlyPayment: Number,
-        loanEstBalance: Number,
-        modAEstLatePaymentAndFees: Number, //changed
-        modAtotalEstimatedDebt: Number, //changed
-        modAcmaArv: Number, //changed
-        isSubA: { type: Boolean, default: false }, //changed
-        subABookPage: String,
-        subADate: Date,
-        lienPosition: String,
+      isModA: { type: Boolean, default: false }, //changed
+      modABookPage: String,
+      modADate: Date,
+      modALienAmount: Number, //changed
+      modALoanTerm: String, //changed
+      modAmaturityDate: Date, //changed
+      annualInterestRate: Number,
+      monthlyPayment: Number,
+      loanEstBalance: Number,
+      modAEstLatePaymentAndFees: Number, //changed
+      modAtotalEstimatedDebt: Number, //changed
+      modAcmaArv: Number, //changed
+      isSubA: { type: Boolean, default: false }, //changed
+      subABookPage: String,
+      subADate: Date,
+      lienPosition: String,
 
-        isForeclosureResult: { type: Boolean, default: false },
-        trDeedInstrument: String,
-        trDeedDate: Date,
-        winningBidder: String,
-        winningbid: Number,
+      isForeclosureResult: { type: Boolean, default: false },
+      trDeedInstrument: String,
+      trDeedDate: Date,
+      winningBidder: String,
+      winningbid: Number,
 
-        document: {
-            type: String,
-            docType: String,
-            otherName: String,
-            caseNo: String,
-            recordedDate: Date,
+      document: {
+        type: String,
+        docType: String,
+        otherName: String,
+        caseNo: String,
+        recordedDate: Date,
+      },
+      owner1: { type: Boolean, default: false },
+      owner2: { type: Boolean, default: false },
+      owner3: { type: Boolean, default: false },
+      owner4: { type: Boolean, default: false },
+      isDtcFirstCheck: { type: Boolean, default: false },
 
-        },
-        owner1: { type: Boolean, default: false },
-        owner2: { type: Boolean, default: false },
-        owner3: { type: Boolean, default: false },
-        owner4: { type: Boolean, default: false },
-        isDtcFirstCheck: { type: Boolean, default: false },
+      isDcaSecondCheck: { type: Boolean, default: false },
 
-
-        isDcaSecondCheck: { type: Boolean, default: false },
-
-        isDcaFinalCheck: { type: Boolean, default: false }
-
+      isDcaFinalCheck: { type: Boolean, default: false },
     },
 
-    thirdMortgageInfo:
-    {
-        _id: false,
-        lienForeclosing: { type: Boolean, default: false },
-        noSTR: { type: Boolean, default: false },
-        defectiveLien: { type: Boolean, default: false },
-        note: String,
+    thirdMortgageInfo: {
+      _id: false,
+      lienForeclosing: { type: Boolean, default: false },
+      noSTR: { type: Boolean, default: false },
+      defectiveLien: { type: Boolean, default: false },
+      note: String,
 
-        lender: String,
-        lienAmount: Number,
-        dateRecorded: Date,
-        instrument: String,
-        dtBookPage: String,
-        assignmentBookPage: String,
-        loanType: String,
-        loanTerm: String,
-        maturityDate: Date,
-        rightToCure: Number,
-        tursteeFee: Number,
-        trustee: String,
-        strBookPage: String,
-        strDate: Date,
-        loanEstimatedBalance: Number,
-        estLatePaymentAndFees: Number,
-        totalEstimatedDebt: Number,
-        cmaArv: Number,
-        totalDebt: Number,
-        legalDescMatch: { type: Boolean, default: false },
-        propertyAddressMatch: { type: Boolean, default: false },
-        resonableFees: { type: Boolean, default: false },
+      lender: String,
+      lienAmount: Number,
+      dateRecorded: Date,
+      instrument: String,
+      dtBookPage: String,
+      assignmentBookPage: String,
+      loanType: String,
+      loanTerm: String,
+      maturityDate: Date,
+      rightToCure: Number,
+      tursteeFee: Number,
+      trustee: String,
+      strBookPage: String,
+      strDate: Date,
+      loanEstimatedBalance: Number,
+      estLatePaymentAndFees: Number,
+      totalEstimatedDebt: Number,
+      cmaArv: Number,
+      totalDebt: Number,
+      legalDescMatch: { type: Boolean, default: false },
+      propertyAddressMatch: { type: Boolean, default: false },
+      resonableFees: { type: Boolean, default: false },
 
-        isAmortizationView: { type: Boolean, default: false },//changed
-        amortAnnualInterestRate: Number,//changed
-        amortMonthlyPayment: Number,//changed
-        monthlyPrincipalPayment: Number,
-        monthlyInterestPayment: Number,
-        estimatedEquity: Number,
+      isAmortizationView: { type: Boolean, default: false }, //changed
+      amortAnnualInterestRate: Number, //changed
+      amortMonthlyPayment: Number, //changed
+      monthlyPrincipalPayment: Number,
+      monthlyInterestPayment: Number,
+      estimatedEquity: Number,
 
-        isModA: { type: Boolean, default: false },//changed
-        modABookPage: String,
-        modADate: Date,
-        modALienAmount: Number,//changed
-        modALoanTerm: String,//changed
-        modAmaturityDate: Date, //changed
-        annualInterestRate: Number,
-        monthlyPayment: Number,
-        loanEstBalance: Number,
-        modAEstLatePaymentAndFees: Number, //changed
-        modAtotalEstimatedDebt: Number, //changed
-        modAcmaArv: Number, //changed
-        isSubA: { type: Boolean, default: false }, //changed
-        subABookPage: String,
-        subADate: Date,
-        lienPosition: String,
+      isModA: { type: Boolean, default: false }, //changed
+      modABookPage: String,
+      modADate: Date,
+      modALienAmount: Number, //changed
+      modALoanTerm: String, //changed
+      modAmaturityDate: Date, //changed
+      annualInterestRate: Number,
+      monthlyPayment: Number,
+      loanEstBalance: Number,
+      modAEstLatePaymentAndFees: Number, //changed
+      modAtotalEstimatedDebt: Number, //changed
+      modAcmaArv: Number, //changed
+      isSubA: { type: Boolean, default: false }, //changed
+      subABookPage: String,
+      subADate: Date,
+      lienPosition: String,
 
-        isForeclosureResult: { type: Boolean, default: false }, //changed
-        trDeedInstrument: String,
-        trDeedDate: Date,
-        winningBidder: String,
-        winningbid: Number,
+      isForeclosureResult: { type: Boolean, default: false }, //changed
+      trDeedInstrument: String,
+      trDeedDate: Date,
+      winningBidder: String,
+      winningbid: Number,
 
-        document: {
-            type: String,
-            docType: String,
-            otherName: String,
-            caseNo: String,
-            recordedDate: Date,
+      document: {
+        type: String,
+        docType: String,
+        otherName: String,
+        caseNo: String,
+        recordedDate: Date,
+      },
+      owner1: { type: Boolean, default: false },
+      owner2: { type: Boolean, default: false },
+      owner3: { type: Boolean, default: false },
+      owner4: { type: Boolean, default: false },
+      isDtcFirstCheck: { type: Boolean, default: false },
 
-        },
-        owner1: { type: Boolean, default: false },
-        owner2: { type: Boolean, default: false },
-        owner3: { type: Boolean, default: false },
-        owner4: { type: Boolean, default: false },
-        isDtcFirstCheck: { type: Boolean, default: false },
+      isDcaSecondCheck: { type: Boolean, default: false },
 
-
-        isDcaSecondCheck: { type: Boolean, default: false },
-
-        isDcaFinalCheck: { type: Boolean, default: false },
-
+      isDcaFinalCheck: { type: Boolean, default: false },
     },
 
-    otherMortgageInfo:
-    {
-        note: String,
+    otherMortgageInfo: {
+      note: String,
 
-        lender: String,
-        lienAmount: Number,
-        dateRecorded: Date,
-        dtBookPage: String,
-        assignmentBookPage: String,
+      lender: String,
+      lienAmount: Number,
+      dateRecorded: Date,
+      dtBookPage: String,
+      assignmentBookPage: String,
 
-        isRedemptionInfo: { type: Boolean, default: false }, //changed
-        affidavitDate: Date,
-        taxCode: String,
-        redemptionExpires: Date,
-        redeemedByOwner: { type: Boolean, default: false },
-        redemptionNoticeInst: String,
-        redemptionDate: Date,
+      isRedemptionInfo: { type: Boolean, default: false }, //changed
+      affidavitDate: Date,
+      taxCode: String,
+      redemptionExpires: Date,
+      redeemedByOwner: { type: Boolean, default: false },
+      redemptionNoticeInst: String,
+      redemptionDate: Date,
 
-        document: {
-            type: String,
-            docType: String,
-            otherName: String,
-            caseNo: String,
-            recordedDate: Date,
+      document: {
+        type: String,
+        docType: String,
+        otherName: String,
+        caseNo: String,
+        recordedDate: Date,
+      },
+      owner1: { type: Boolean, default: false },
+      owner2: { type: Boolean, default: false },
+      owner3: { type: Boolean, default: false },
+      owner4: { type: Boolean, default: false },
 
-        },
-            owner1: { type: Boolean, default: false },
-            owner2: { type: Boolean, default: false },
-            owner3: { type: Boolean, default: false },
-        owner4: { type: Boolean, default: false },
+      isDtcFirstCheck: { type: Boolean, default: false },
 
-        isDtcFirstCheck: { type: Boolean, default: false },
+      isDcaSecondCheck: { type: Boolean, default: false },
 
-        isDcaSecondCheck: { type: Boolean, default: false },
-
-        isDcaFinalCheck: { type: Boolean, default: false },
-
+      isDcaFinalCheck: { type: Boolean, default: false },
     },
-
 
     hoaLien: {
-        lienForeclosing: { type: Boolean, default: false },
-        noSTR: { type: Boolean, default: false },
-        defectiveLien: { type: Boolean, default: false },
-        note: String,
+      lienForeclosing: { type: Boolean, default: false },
+      noSTR: { type: Boolean, default: false },
+      defectiveLien: { type: Boolean, default: false },
+      note: String,
 
-        hoaName: String,
-        hoaLienAmount: Number,
-        hoaLienDate: Date,
-        instrument: String,
-        dtBookPage: String,
-        trusteeHoa: String,
-        totalDebt: Number,
-        trusteeFees: String,
-        strDate: Date,
-        strBookPage: String,
-        ccAndRsInstrument: String,
-        ccAndRsDate: Date,
-        hoaLienPriority: String,
+      hoaName: String,
+      hoaLienAmount: Number,
+      hoaLienDate: Date,
+      instrument: String,
+      dtBookPage: String,
+      trusteeHoa: String,
+      totalDebt: Number,
+      trusteeFees: String,
+      strDate: Date,
+      strBookPage: String,
+      ccAndRsInstrument: String,
+      ccAndRsDate: Date,
+      hoaLienPriority: String,
 
+      isForeclosureResult: { type: Boolean, default: false },
+      trDeedInstrument: String,
+      trDeedDate: Date,
+      winningBidder: String,
+      winningbid: Number,
 
-        isForeclosureResult: { type: Boolean, default: false },
-        trDeedInstrument: String,
-        trDeedDate: Date,
-        winningBidder: String,
-        winningbid: Number,
+      isRedemptionInfo: { type: Boolean, default: false }, //changed
+      affidavitDate: Date,
+      taxCode: String,
+      redemptionExpires: Date,
+      redeemedByOwner: { type: Boolean, default: false },
+      redemptionNoticeInst: String,
+      redemptionDate: Date,
 
-        isRedemptionInfo: { type: Boolean, default: false }, //changed
-        affidavitDate: Date,
-        taxCode: String,
-        redemptionExpires: Date,
-        redeemedByOwner: { type: Boolean, default: false },
-        redemptionNoticeInst: String,
-        redemptionDate: Date,
+      document: {
+        type: String,
+        docType: String,
+        otherName: String,
+        caseNo: String,
+        recordedDate: Date,
+      },
+      owner1: { type: Boolean, default: false },
+      owner2: { type: Boolean, default: false },
+      owner3: { type: Boolean, default: false },
+      owner4: { type: Boolean, default: false },
 
-        document: {
-            type: String,
-            docType: String,
-            otherName: String,
-            caseNo: String,
-            recordedDate: Date,
-        },
-        owner1: { type: Boolean, default: false },
-        owner2: { type: Boolean, default: false },
-        owner3: { type: Boolean, default: false },
-        owner4: { type: Boolean, default: false },
+      isDtcFirstCheck: { type: Boolean, default: false },
 
-        isDtcFirstCheck: { type: Boolean, default: false },
+      isDcaSecondCheck: { type: Boolean, default: false },
 
-        isDcaSecondCheck: { type: Boolean, default: false },
-
-        isDcaFinalCheck: { type: Boolean, default: false },
+      isDcaFinalCheck: { type: Boolean, default: false },
     },
     taxLien: {
-        lienForeclosing: { type: Boolean, default: false },
-        defectiveLien: { type: Boolean, default: false },
+      lienForeclosing: { type: Boolean, default: false },
+      defectiveLien: { type: Boolean, default: false },
 
+      plaintiff: String,
+      judgmentAmount: Number,
+      judgmentDate: Date,
+      bpOrInstrument: String,
+      case: String,
+      sheriffOrConstable: String,
 
-        plaintiff: String,
-        judgmentAmount: Number,
-        judgmentDate: Date,
-        bpOrInstrument: String,
-        case: String,
-        sheriffOrConstable: String,
+      isForeclosureResult: { type: Boolean, default: false },
+      trDeedInstrument: String,
+      trDeedDate: Date,
+      winningBidder: String,
+      winningbid: Number,
 
-        isForeclosureResult: { type: Boolean, default: false },
-        trDeedInstrument: String,
-        trDeedDate: Date,
-        winningBidder: String,
-        winningbid: Number,
+      isRedemptionInfo: { type: Boolean, default: false }, //changed
+      affidavitDate: Date,
+      taxCode: String,
+      redemptionExpires: Date,
+      redeemedByOwner: { type: Boolean, default: false },
+      redemptionNoticeInst: String,
+      redemptionDate: Date,
 
-        isRedemptionInfo: { type: Boolean, default: false }, //changed
-        affidavitDate: Date,
-        taxCode: String,
-        redemptionExpires: Date,
-        redeemedByOwner: { type: Boolean, default: false },
-        redemptionNoticeInst: String,
-        redemptionDate: Date,
+      document: {
+        type: String,
+        docType: String,
+        otherName: String,
+        caseNo: String,
+        recordedDate: Date,
+      },
+      owner1: { type: Boolean, default: false },
+      owner2: { type: Boolean, default: false },
+      owner3: { type: Boolean, default: false },
+      owner4: { type: Boolean, default: false },
 
-        document: {
-            type: String,
-            docType: String,
-            otherName: String,
-            caseNo: String,
-            recordedDate: Date,
+      isDtcFirstCheck: { type: Boolean, default: false },
 
-        },
-        owner1: { type: Boolean, default: false },
-        owner2: { type: Boolean, default: false },
-        owner3: { type: Boolean, default: false },
-        owner4: { type: Boolean, default: false },
+      isDcaSecondCheck: { type: Boolean, default: false },
 
-        isDtcFirstCheck: { type: Boolean, default: false },
-
-        isDcaSecondCheck: { type: Boolean, default: false },
-
-        isDcaFinalCheck: { type: Boolean, default: false },
+      isDcaFinalCheck: { type: Boolean, default: false },
     },
-
 
     sameOwner: { type: Boolean, default: false },
     pacer: { type: Boolean, default: false },
     ownerInfo: [
-        {
-            _id: false,
+      {
+        _id: false,
 
-            ownerFullName: { type: String, default: "" },
-            ownerAddress: String,
-            ownerEmail: String,
-            ownerPhone: String,
-            pacerUrl: String,
-            beenVerifiedURL: String,
-            note: [
-                {
-                    type: String
-                }
-            ],
-        }
+        ownerFullName: { type: String, default: "" },
+        ownerAddress: String,
+        ownerEmail: String,
+        ownerPhone: String,
+        pacerUrl: String,
+        beenVerifiedURL: String,
+        note: [
+          {
+            type: String,
+          },
+        ],
+      },
     ],
     sameAsOwner: { type: Boolean, default: false },
     addressSameAsOwner: { type: Boolean, default: false },
-    borrowerInfo: [{
+    borrowerInfo: [
+      {
         _id: false,
         borrowerName: { type: String, default: "" },
         borrowerAddress: String,
         borrowerEmail: String,
         borrowerPhone: String,
         note: [
-            {
-                type: String
-            }
+          {
+            type: String,
+          },
         ],
-    }],
+      },
+    ],
     OwnerDocs: {
-        type: String,
-        docType: String,
-        otherName: String,
-        caseNo: String,
-        recordedDate: Date,
-
+      type: String,
+      docType: String,
+      otherName: String,
+      caseNo: String,
+      recordedDate: Date,
     },
 
     saleinfo: [
-        {
-            saleDate: Date,
-            caseNumber: String,
-            openingBid: Number,
-            saleType: String,
-            saleStatus: String,
-            salePlace: String,
-            saleTime: String,
-            truesteeFile: String,
-            precinct: Number,
-            trustee: String,
-            trusteeUrl: String,
-            trusteeAddress: String,
-            trusteePhone: String,
-            trusteeHours: String,
-            noticeOfForclosure: String,
-            legalNoticeURL: String,
-            datePulled: Date,
-            book: String,
-            page: String,
-            imBy: String,
+      {
+        saleDate: Date,
+        caseNumber: { type: String, default: "" },
+        openingBid: Number,
+        saleType: String,
+        saleStatus: String,
+        salePlace: String,
+        saleTime: String,
+        truesteeFile: String,
+        precinct: Number,
+        trustee: String,
+        trusteeUrl: String,
+        trusteeAddress: String,
+        trusteePhone: String,
+        trusteeHours: String,
+        noticeOfForclosure: String,
+        legalNoticeURL: String,
+        datePulled: Date,
+        book: String,
+        page: String,
+        imBy: String,
+        imByDate: Date,
+        nosName: String,
+        nosDate: Date,
+        auctionUrl: String,
+        auctionDate: String,
+        saleInfoFiles: [
+          {
+            _id: false,
+            ETag: String,
+            VersionId: String,
+            Location: String,
+            key: String,
+            Bucket: String,
+          },
+        ],
+        beforeSaleNotes: String,
+        afterSaleNotes: String,
+
+        nameOfBidder: String,
+        bidAmount: Number,
+        isWinningBidder: Boolean,
+        nameOfPurchaser: String,
+        amountOfBid: Number,
+        bidDate: Date,
+        ldub: Date,
+        minAmountOfNextBid: Number,
+        depositRequiredToIpset: Number,
+        address: String,
+        phone: String,
+        email: String,
+        fax: String,
+        dateOfReport: Date,
+        nameOfMortgage: String,
+        cryer: String,
+        imby: String,
+        fimByDate: Date, //changed
+        bidConfirmed: Boolean,
+        bidUpset: Boolean,
+        auction: String,
+        fnosName: String, //changed
+        fnosDate: Date, //changed
+        notes: String,
+        createdAt: Date,
+
+        documents: {
+          docType: String,
+          otherName: String,
+          uploadedDate: Date,
+          uloadedBy: String,
+        },
+        otherBidderInfo: [
+          {
+            nameOfUpsetBidder: String,
+            addressOfUpsetBidder: String,
+            cityOfUpsetBidder: String,
+            upsetBidderZipCode: Number,
+            phone: String,
+            email: String,
+
+            isWinningBidder: Boolean,
+
+            amountOfBid: Number,
+            bidDate: Date,
+            lastDateForNextUb: Date,
+            depositWithTheClerk: Number,
+            minAmountOfNextUb: Number,
+            nameOfAttorneyOrAgent: String,
+            addressofAttorneyOrAgent: String,
+            cityOfAttorneyOrAgent: String,
+            zipCode: Number,
+            phoneNumber: String,
+            dateOfFilling: Date,
+            Notes: String,
+            imby: String,
             imByDate: Date,
+            auction: String,
             nosName: String,
             nosDate: Date,
-            auctionUrl: String,
-            auctionDate: String,
-            saleInfoDocs: {
-                type: String,
-                docType: String,
-                otherName: String,
-                caseNo: String,
-                recordedDate: Date,
 
+            deputyCSC: Boolean,
+            assistantCSC: Boolean,
+            clerkOfSuperiorCourt: Boolean,
+            documents: {
+              docType: String,
+              otherName: String,
+              uploadedDate: Date,
+              uloadedBy: String,
             },
-            beforeSaleNotes: String,
-            afterSaleNotes: String,
-
-                nameOfBidder: String,
-                bidAmount: Number,
-            isWinningBidder: Boolean,
-                nameOfPurchaser: String,
-                amountOfBid: Number,
-                bidDate: Date,
-                ldub: Date,
-                minAmountOfNextBid: Number,
-                depositRequiredToIpset: Number,
-                address: String,
-                phone: String,
-                email: String,
-                fax: String,
-                dateOfReport: Date,
-                nameOfMortgage: String,
-                cryer: String,
-                imby: String,
-            fimByDate: Date, //changed
-            bidConfirmed: Boolean,
-            bidUpset: Boolean,
-                auction: String,
-            fnosName: String,//changed
-            fnosDate: Date,//changed
-                notes: String,
-                createdAt: Date,
-
-                documents: {
-                    docType: String,
-                    otherName: String,
-                    uploadedDate: Date,
-                    uloadedBy: String
-
-            },
-            otherBidderInfo: [
-                {
-                    nameOfUpsetBidder: String,
-                    addressOfUpsetBidder: String,
-                    cityOfUpsetBidder: String,
-                    upsetBidderZipCode: Number,
-                    phone: String,
-                    email: String,
-
-                    isWinningBidder: Boolean,
-
-                    amountOfBid: Number,
-                    bidDate: Date,
-                    lastDateForNextUb: Date,
-                    depositWithTheClerk: Number,
-                    minAmountOfNextUb: Number,
-                    nameOfAttorneyOrAgent: String,
-                    addressofAttorneyOrAgent: String,
-                    cityOfAttorneyOrAgent: String,
-                    zipCode: Number,
-                    phoneNumber: String,
-                    dateOfFilling: Date,
-                    Notes: String,
-                    imby: String,
-                    imByDate: Date,
-                    auction: String,
-                    nosName: String,
-                    nosDate: Date,
-
-                    deputyCSC: Boolean,
-                    assistantCSC: Boolean,
-                    clerkOfSuperiorCourt: Boolean,
-                    documents: {
-                        docType: String,
-                        otherName: String,
-                        uploadedDate: Date,
-                        uloadedBy: String
-                    }
-
-
-                }
-            ]
-
-        }
-
+          },
+        ],
+      },
     ],
 
     geo: {
-        lat: String,
-        long: String,
-
+      lat: String,
+      long: String,
     },
 
     cmaArvNotes: String,
@@ -678,126 +657,127 @@ const propertySchema = new Schema({
     amEmail: { type: [String] },
 
     firstComp: {
-        SSD: String,
-        GSD: String,
-        ADOM: Number,
-        adomDate: [
-            {
-                _id: false,
+      SSD: String,
+      GSD: String,
+      ADOM: Number,
+      adomDate: [
+        {
+          _id: false,
 
-                start: Date,
-                end: Date
-            }
-        ],
-        phaseOfRenovation: String,
-        priceSqfOnSaleComp1: Number,
-        priceSqfOnSaleComp2: Number,
-        saleCompsAndSSDMaps: String,
-        GSDSaleCompMaps: String,
-        rentGSD: Number,
-        priceSqfOnSoldComp1: Number,
-        priceSqfOnSoldComp2: Number,
-        GSDSoldCompMaps: String,
-        rentalCompsAndMaps: String,
-        pOneValue: Number,
-        pTwoValue: Number,
-        pThreeValue: Number,
-        rentalRate: Number,
-        compURL: String,
-        compURLTwo: String,
-        compURLThree: String,
-        compURLFour: String,
-        recommendedCMA: Number,
-        wholeTailValue: Number,
-        firstDTC: String,
-        date: Date,
-        note: String,
-
+          start: Date,
+          end: Date,
+        },
+      ],
+      phaseOfRenovation: String,
+      priceSqfOnSaleComp1: Number,
+      priceSqfOnSaleComp2: Number,
+      saleCompsAndSSDMaps: String,
+      GSDSaleCompMaps: String,
+      rentGSD: Number,
+      priceSqfOnSoldComp1: Number,
+      priceSqfOnSoldComp2: Number,
+      GSDSoldCompMaps: String,
+      rentalCompsAndMaps: String,
+      pOneValue: Number,
+      pTwoValue: Number,
+      pThreeValue: Number,
+      rentalRate: Number,
+      compURL: String,
+      compURLTwo: String,
+      compURLThree: String,
+      compURLFour: String,
+      recommendedCMA: Number,
+      wholeTailValue: Number,
+      firstDTC: String,
+      date: Date,
+      note: String,
     },
     secondComp: {
-        SSD: String,
-        GSD: String,
-        ADOM: Number,
-        adomDate: [
-            {
-                _id: false,
+      SSD: String,
+      GSD: String,
+      ADOM: Number,
+      adomDate: [
+        {
+          _id: false,
 
-                start: Date,
-                end: Date
-            }
-        ],
-        phaseOfRenovation: String,
-        priceSqfOnSaleComp1: Number,
-        priceSqfOnSaleComp2: Number,
-        saleCompsAndSSDMaps: String,
-        GSDSaleCompMaps: String,
-        rentGSD: Number,
-        priceSqfOnSoldComp1: Number,
-        priceSqfOnSoldComp2: Number,
-        GSDSoldCompMaps: String,
-        rentalCompsAndMaps: String,
-        pOneValue: Number,
-        pTwoValue: Number,
-        pThreeValue: Number,
-        rentalRate: Number,
-        compURL: String,
-        compURLTwo: String,
-        compURLThree: String,
-        compURLFour: String,
-        recommendedCMA: Number,
-        wholeTailValue: Number,
-        secondDCA: String,
-        date: Date,
-        note: String,
-
+          start: Date,
+          end: Date,
+        },
+      ],
+      phaseOfRenovation: String,
+      priceSqfOnSaleComp1: Number,
+      priceSqfOnSaleComp2: Number,
+      saleCompsAndSSDMaps: String,
+      GSDSaleCompMaps: String,
+      rentGSD: Number,
+      priceSqfOnSoldComp1: Number,
+      priceSqfOnSoldComp2: Number,
+      GSDSoldCompMaps: String,
+      rentalCompsAndMaps: String,
+      pOneValue: Number,
+      pTwoValue: Number,
+      pThreeValue: Number,
+      rentalRate: Number,
+      compURL: String,
+      compURLTwo: String,
+      compURLThree: String,
+      compURLFour: String,
+      recommendedCMA: Number,
+      wholeTailValue: Number,
+      secondDCA: String,
+      date: Date,
+      note: String,
     },
     thirdComp: {
-        SSD: String,
-        GSD: String,
-        ADOM: Number,
-        adomDate: [
-            {
-                _id: false,
+      SSD: String,
+      GSD: String,
+      ADOM: Number,
+      adomDate: [
+        {
+          _id: false,
 
-                start: Date,
-                end: Date
-            }
-        ],
-        phaseOfRenovation: String,
-        priceSqfOnSaleComp1: Number,
-        priceSqfOnSaleComp2: Number,
-        saleCompsAndSSDMaps: String,
-        GSDSaleCompMaps: String,
-        rentGSD: Number,
-        priceSqfOnSoldComp1: Number,
-        priceSqfOnSoldComp2: Number,
-        GSDSoldCompMaps: String,
-        rentalCompsAndMaps: String,
-        pOneValue: Number,
-        pTwoValue: Number,
-        pThreeValue: Number,
-        rentalRate: Number,
-        compURL: String,
-        compURLTwo: String,
-        compURLThree: String,
-        compURLFour: String,
-        recommendedCMA: Number,
-        wholeTailValue: Number,
-        thirdDCA: String,
-        date: Date,
-        note: String,
-
+          start: Date,
+          end: Date,
+        },
+      ],
+      phaseOfRenovation: String,
+      priceSqfOnSaleComp1: Number,
+      priceSqfOnSaleComp2: Number,
+      saleCompsAndSSDMaps: String,
+      GSDSaleCompMaps: String,
+      rentGSD: Number,
+      priceSqfOnSoldComp1: Number,
+      priceSqfOnSoldComp2: Number,
+      GSDSoldCompMaps: String,
+      rentalCompsAndMaps: String,
+      pOneValue: Number,
+      pTwoValue: Number,
+      pThreeValue: Number,
+      rentalRate: Number,
+      compURL: String,
+      compURLTwo: String,
+      compURLThree: String,
+      compURLFour: String,
+      recommendedCMA: Number,
+      wholeTailValue: Number,
+      thirdDCA: String,
+      date: Date,
+      note: String,
     },
-    propertyImages: [{
+    buyItUser: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    propertyImages: [
+      {
         _id: false,
         ETag: String,
         VersionId: String,
         Location: String,
         key: String,
         Bucket: String,
-    }]
-
-}, { timestamps: true })
+      },
+    ],
+  },
+  { timestamps: true }
+)
 
 propertySchema.pre(/^find/, function (next) {
     this.select('-__v -createdAt -updatedAt')
