@@ -23,6 +23,7 @@ const router = express.Router();
 
 router.get('/properties', protectedRoute, getProperties)
 router.get('/requested-property/:id', protectedRoute, getRequestedProperty)
+router.delete('/delete-property', protectedRoute, deletePropery)
 router.post('/upload-files/:pId', protectedRoute, uploadFiles)
 router.post("/upload-sale-info-files/:pId", protectedRoute, uploadSaleInfoFiles)
 router.post('/upload-pictures/:id', protectedRoute, uploadPictures)
@@ -34,7 +35,6 @@ router.post('/delete-file/:id', protectedRoute, deleteFile)
 router.post('/delete-image/:id', protectedRoute, deleteImage)
 router.patch('/add-bidderinfo/:id', protectedRoute, addBidderInfo)
 router.patch('/add-newsaledate/:id', protectedRoute, addNewSaleDate)
-router.delete('/delete-property', protectedRoute, deletePropery)
 router.put('/update-property/:id', protectedRoute, updateProperty)
 router.put('/update-map/:id', protectedRoute, updateMap)
 

@@ -5,7 +5,6 @@ const Errorhandler = require("../utils/ErrorHandler");
 const { isValidObjectId } = require("mongoose");
 const ibm = require("ibm-cos-sdk");
 const sgMail = require('@sendgrid/mail')
-var mongoose = require("mongoose")
 
 // const fs = require("fs");
 // const COS = require('ibm-cos-sdk-config') //to check the bucket config ---ref ---to the official documents.
@@ -21,8 +20,12 @@ var config = {
 const cos = new ibm.S3(config);
 
 const addProperty = asynchErrorHandler(async (req, res) => {
-  const { propertyAddress, ...data } = req.body;
-  const property = await new Property({ propertyAddress, ...data });
+  const { propertyAddress, caseNumber, ...data } = req.body
+  const property = await new Property({
+    saleinfo : [{caseNumber : caseNumber}],
+    propertyAddress,
+    ...data,
+  })
   const savedProperty = await property.save();
   res.json({
     message: "Property added successfully.",
@@ -178,7 +181,7 @@ const getProperties = asynchErrorHandler(async (req, res, next) => {
   property = property.skip(skip).limit(limit);
 
   //for sort use -sortbyname to desc result.
-  console.log("sort is" + req.query.sort);
+  // console.log("sort is" + req.query.sort);
   if (req.query.sort !== undefined) {
     const modifiedSort = req.query.sort.split(",").join(" ");
     property = property.sort(modifiedSort);
@@ -272,6 +275,7 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
   if (properties.length === 0)
     return next(new Errorhandler("No properties found"))
   
+  
   const allFiles = []  
   properties.forEach((property) => {
     property.propertyImages.length !== 0 && property.propertyImages.forEach((image) => {
@@ -292,30 +296,31 @@ const deletePropery = asynchErrorHandler(async (req, res, next) => {
     
   })
 
-  allFiles.length !== 0 && allFiles.forEach((key) => {
+  if (allFiles.length !== 0) {
+    allFiles.forEach((key) => {
+      cos.deleteObject(
+        {
+          Bucket: "estates.app",
+          Key: key,
+        },
+        async (err, data) => {
+          if (err) {
+            return next(new Errorhandler(err, 400))
+          } else {
+            await properties.deleteMany({ _id: { $in: id } })
+          }
 
-    cos.deleteObject(
-      {
-        Bucket: "estates.app",
-        Key: key,
-      },
-      async (err, data) => {
-        if (err) {
-          return next(new Errorhandler(err, 400))
-        } else {
-
-          await Property.deleteMany({ _id: { $in: id } });
-
+          if (allFiles.indexOf(key) == allFiles.length - 1) {
+            res.status(200).json("Operation succesful!")
+          }
         }
+      )
+    })
+  } else {
+                await Property.deleteMany({ _id: { $in: id } })
+            res.status(200).json("Operation succesful!")
 
-        if (allFiles.indexOf(key) == allFiles.length - 1) {
-          res.status(200).json("Operation succesful!")
-        }
-
-      }
-    )
-
-  })
+  }
 
 });
 

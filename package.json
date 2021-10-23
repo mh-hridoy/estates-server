@@ -19,12 +19,14 @@
     "mongoose": "^5.13.6",
     "morgan": "^1.10.0",
     "nanoid": "^3.1.23",
+    "node-cron": "^3.0.0",
+    "playwright": "^1.15.2",
     "validator": "^13.6.0",
     "xss-clean": "^0.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "engines": {
     "node": "16.10.0"

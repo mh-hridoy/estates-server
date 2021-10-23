@@ -536,7 +536,7 @@ const propertySchema = new Schema(
       {
         saleDate: Date,
         caseNumber: { type: String, default: "" },
-        openingBid: Number,
+        openingBid:  { type: Number, default: 0 },
         saleType: String,
         saleStatus: String,
         salePlace: String,
