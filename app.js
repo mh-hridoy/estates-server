@@ -13,6 +13,11 @@ const helmet = require('helmet')
 const playwright = require('playwright')
 const Property = require('./models/propertySchema')
 var cron = require("node-cron")
+const mbxClient = require("@mapbox/mapbox-sdk")
+const mbxStyles = require("@mapbox/mapbox-sdk/services/geocoding")
+
+const baseClient = mbxClient({ accessToken: process.env.MAPBOX_ACCESS_ID })
+const stylesService = mbxStyles(baseClient)
 
 
 
@@ -121,14 +126,37 @@ const autoMate = async () => {
     saleDate = beforeSaleNotes.split(",")[1]
     saleTime = beforeSaleNotes.split(",")[2]
     caseNumber = beforeSaleNotes.split(",")[3]
-    propertyAddress = beforeSaleNotes.split(",")[4]
-    city = beforeSaleNotes.split(",")[5]
-    const stateAndZip = beforeSaleNotes.split(",")[6]
+    propertyAddress = `${beforeSaleNotes.split(",")[4]}${
+      beforeSaleNotes
+        .split(",")[5]
+        .startsWith(" Unit" || " unit" || " apt" || " Apt" || " Ap" || "ap") ? ", " +
+      beforeSaleNotes.split(",")[5] : ""
+    }`
+    city = `${
+      beforeSaleNotes
+        .split(",")[5]
+        .startsWith(" Unit" || " unit" || " apt" || " Apt" || " Ap" || "ap")
+        ? beforeSaleNotes.split(",")[6]
+        : beforeSaleNotes.split(",")[5]
+    }`
+    const stateAndZip = `${
+      beforeSaleNotes
+        .split(",")[5]
+        .startsWith(" Unit" || " unit" || " apt" || " Apt" || " Ap" || "ap")
+        ? beforeSaleNotes.split(",")[7]
+        : beforeSaleNotes.split(",")[6]
+    }`
     const stateStr = stateAndZip.match(/[a-zA-Z]+/g)
     state = stateStr.join(" ")
-    const zipCode = stateAndZip.match(/\d+/g)
-    zip = +zipCode[0]
-    openingBid = beforeSaleNotes.split(",")[7]
+    const zipCode = stateAndZip && stateAndZip.match(/\d+/g)
+    zip = zipCode && + zipCode[0] //put the same logic for all the others
+    openingBid = `${
+      beforeSaleNotes
+        .split(",")[5]
+        .startsWith(" Unit" || " unit" || " apt" || " Apt" || " Ap" || "ap")
+        ? +beforeSaleNotes.split(",")[8] + beforeSaleNotes.split(",")[9]
+        : +beforeSaleNotes.split(",")[7] + beforeSaleNotes.split(",")[8]
+    }`
 
       propertyArray.push({
         county: county.trim(),
@@ -139,10 +167,12 @@ const autoMate = async () => {
         city: city.trim(),
         state: state.trim(),
         zip: zip,
-        openingBid: openingBid,
+        openingBid: openingBid == "NaN" ? 0 : +openingBid,
         beforeSaleNotes: beforeSaleNotes.trim(),
       })
-    })
+  })
+
+
   const createRecord = []
   const updateRecord = []
 
@@ -189,7 +219,16 @@ const autoMate = async () => {
           ? modifiedSaleDate + "/" + currentYear
           : modifiedSaleDate
 
-      // console.log(caseNumber)
+      const mapReq = await stylesService.forwardGeocode({
+        query: propertyAddress,
+        types: ["address"],
+        limit: 1,
+      })
+
+      const response = await mapReq.send()
+      const match = response.body
+
+  
       
       const property = await new Property({
         saleinfo: [
@@ -197,10 +236,14 @@ const autoMate = async () => {
             caseNumber: caseNumber.trim(),
             saleDate: correctDate,
             saleTime: saleTime.trim(),
-            openingBid: openingBid.trim(),
+            openingBid: +openingBid,
             beforeSaleNotes: beforeSaleNotes.trim(),
           },
         ],
+        geo: {
+          long: match.features[0].center[0],
+          lat: match.features[0].center[1],
+        },
         propertyAddress,
         ...data,
       })
@@ -241,7 +284,7 @@ const autoMate = async () => {
         },
       ],
     })
-    //check if the sale date matched .. otherwise push the data to create another array of obj.
+    // check if the sale date matched .. otherwise push the data to create another array of obj.
     const saleInfo = property[0].saleinfo
 
     const matchedSale = saleInfo.findIndex(
@@ -279,7 +322,8 @@ const autoMate = async () => {
 
   browser.close()
 }
-
+  
+  
 //check on caseNumber input when someone create a property.
 
 let server;
@@ -288,8 +332,9 @@ mongoose.connect(process.env.DB_SECRET_KEY, options, () => {
   app.listen(port, () => {
     console.log("Server listening on port " + port)
 
-    cron.schedule("10 10 00 * * *", () => {
-          autoMate()
+    cron.schedule("0 0 0 * * *", () => {
+      autoMate()
+      
     })
 
 })

@@ -5,7 +5,11 @@ const Errorhandler = require("../utils/ErrorHandler");
 const { isValidObjectId } = require("mongoose");
 const ibm = require("ibm-cos-sdk");
 const sgMail = require('@sendgrid/mail')
+const mbxClient = require("@mapbox/mapbox-sdk")
+const mbxStyles = require("@mapbox/mapbox-sdk/services/geocoding")
 
+const baseClient = mbxClient({ accessToken: process.env.MAPBOX_ACCESS_ID })
+const stylesService = mbxStyles(baseClient)
 // const fs = require("fs");
 // const COS = require('ibm-cos-sdk-config') //to check the bucket config ---ref ---to the official documents.
 const User = require("../models/userSchema")
@@ -21,9 +25,22 @@ const cos = new ibm.S3(config);
 
 const addProperty = asynchErrorHandler(async (req, res) => {
   const { propertyAddress, caseNumber, ...data } = req.body
+
+  const mapReq = await stylesService
+    .forwardGeocode({
+      query: propertyAddress,
+      types: ["address"],
+      limit: 1,
+    })
+
+ const response = await mapReq.send()
+  const match = response.body
+    
   const property = await new Property({
-    saleinfo : [{caseNumber : caseNumber}],
+    saleinfo: [{ caseNumber: caseNumber }],
+    geo: { long: match.features[0].center[0], lat: match.features[0].center[1] },
     propertyAddress,
+
     ...data,
   })
   const savedProperty = await property.save();
@@ -467,7 +484,7 @@ const deleteFile = asynchErrorHandler(async (req, res, next) => {
       if (err) {
         return next(new Errorhandler(err, 400));
       } else {
-        const fileInfo = property.infoTabFile;
+        const fileInfo = property.infoTabFile; //need to add the sale files. or create another instance of delete file for sale files.
         const indexOfDelFile = fileInfo.findIndex((file) => file.key === key);
         fileInfo.splice(indexOfDelFile, 1);
 
