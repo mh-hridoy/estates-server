@@ -731,18 +731,32 @@ const passOnIt = asynchErrorHandler(async (req, res, next) => {
 const getPropertyByMap = asynchErrorHandler(async (req, res, next) => {
   const { upper, bottom } = req.body
 
-  // console.log(upper, bottom)
-  // const property = await Property.find({
-  //   location: {
-  //     $geoWithin: {
-  //       $box: [upper, bottom],
-  //     },
-  //   },
-  // })
+  const property = await Property.find({
+    location: {
+      $geoWithin: {
+        $box: [upper, bottom],
+      },
+    },
+  })
 
-  // res.status(200).json(property.length)
-  console.log(upper, bottom)
-  res.status(200).json("hit the endpoint")
+  const allPropertyData = []
+
+  for (const record of property) {
+allPropertyData.push({
+  _id: record._id,
+  propertyAddress: record.propertyAddress,
+  city: record.cityity,
+  state: record.state,
+  zip: record.zip,
+  propertyImages: record.propertyImages,
+  geo: record.geo,
+})
+  }
+
+
+  res.status(200).json(allPropertyData)
+  // console.log(upper, bottom)
+  // res.status(200).json("hit the endpoint")
 }
 )
 module.exports = {
