@@ -209,6 +209,7 @@ const autoMate = async () => {
         saleTime,
         openingBid,
         beforeSaleNotes,
+        city, state,
         ...data
       } = record
       const currentYear = new Date().getFullYear()
@@ -220,7 +221,7 @@ const autoMate = async () => {
           : modifiedSaleDate
 
       const mapReq = await stylesService.forwardGeocode({
-        query: propertyAddress,
+        query: propertyAddress + ", " + city + " " + state,
         types: ["address"],
         limit: 1,
       })
@@ -243,6 +244,13 @@ const autoMate = async () => {
         geo: {
           long: match.features[0].center[0],
           lat: match.features[0].center[1],
+        },
+        location: {
+          type: "Point",
+          coordinates: [
+            match.features[0].center[0],
+            match.features[0].center[1],
+          ],
         },
         propertyAddress,
         ...data,
@@ -313,7 +321,7 @@ const autoMate = async () => {
       }
     }
 
-    await property[0].save()    
+    await property[0].save()
 
   })
     console.log(updateRecord.length)

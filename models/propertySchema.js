@@ -536,7 +536,7 @@ const propertySchema = new Schema(
       {
         saleDate: Date,
         caseNumber: { type: String, default: "" },
-        openingBid:  { type: Number, default: 0 },
+        openingBid: { type: Number, default: 0 },
         saleType: String,
         saleStatus: String,
         salePlace: String,
@@ -764,7 +764,11 @@ const propertySchema = new Schema(
       date: Date,
       note: String,
     },
-    buyItUser: [{type: Schema.Types.ObjectId, ref: 'User'}],
+    location: {
+      type: { type: String, default: "Point", enum: ["Point"] },
+      coordinates : [Number]
+    },
+    buyItUser: [{ type: Schema.Types.ObjectId, ref: "User" }],
     propertyImages: [
       {
         _id: false,
@@ -784,6 +788,8 @@ propertySchema.pre(/^find/, function (next) {
 
     next()
 })
+
+
 
 propertySchema.pre(["save", "updateOne"], function (next) {
     //first check if it contains firstBidderinfo. If yes and user is adding other bid info then make winningBidder to the firsBidderInfo to false and add winningBidder feld to true to the current bidder that user updated . if user is adding the firstBidderinfo then make it true. 

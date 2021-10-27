@@ -24,22 +24,28 @@ var config = {
 const cos = new ibm.S3(config);
 
 const addProperty = asynchErrorHandler(async (req, res) => {
-  const { propertyAddress, caseNumber, ...data } = req.body
+  const { propertyAddress, caseNumber, city, state, ...data } = req.body
 
-  const mapReq = await stylesService
-    .forwardGeocode({
-      query: propertyAddress,
-      types: ["address"],
-      limit: 1,
-    })
+  const mapReq = await stylesService.forwardGeocode({
+    query: propertyAddress + ", " + city + " " + state,
+    types: ["address"],
+    limit: 1,
+  })
 
  const response = await mapReq.send()
   const match = response.body
     
   const property = await new Property({
     saleinfo: [{ caseNumber: caseNumber }],
-    geo: { long: match.features[0].center[0], lat: match.features[0].center[1] },
+    geo: {
+      long: match.features[0].center[0],
+      lat: match.features[0].center[1],
+    },
     propertyAddress,
+    location: {
+      type: "Point",
+      coordinates: [match.features[0].center[0], match.features[0].center[1]],
+    },
 
     ...data,
   })
@@ -591,7 +597,7 @@ const updateMap = asynchErrorHandler(async (req, res, next) => {
 
   if (!property) return next(new Errorhandler("Property not found"));
 
-  await property.updateOne({ geo: geo });
+  await property.updateOne({ geo: geo, location:{type : "Point", coordinates: [geo.long, geo.lat]} })
 
   res.status(200).json("Updated Successfully");
 });
@@ -722,6 +728,23 @@ const passOnIt = asynchErrorHandler(async (req, res, next) => {
 
 })
 
+const getPropertyByMap = asynchErrorHandler(async (req, res, next) => {
+  const { upper, bottom } = req.body
+
+  // console.log(upper, bottom)
+  // const property = await Property.find({
+  //   location: {
+  //     $geoWithin: {
+  //       $box: [upper, bottom],
+  //     },
+  //   },
+  // })
+
+  // res.status(200).json(property.length)
+  console.log(upper, bottom)
+  res.status(200).json("hit the endpoint")
+}
+)
 module.exports = {
   addProperty,
   getProperties,
@@ -739,4 +762,5 @@ module.exports = {
   addToBuyIt,
   checkBuyIt,
   passOnIt,
+  getPropertyByMap
 }

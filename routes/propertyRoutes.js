@@ -16,6 +16,7 @@ const {
   uploadSaleInfoFiles,
   checkBuyIt,
   passOnIt,
+  getPropertyByMap,
 } = require("../controllers/propertyControllers")
 const protectedRoute = require('../utils/protectedRoute')
 
@@ -28,6 +29,7 @@ router.post('/upload-files/:pId', protectedRoute, uploadFiles)
 router.post("/upload-sale-info-files/:pId", protectedRoute, uploadSaleInfoFiles)
 router.post('/upload-pictures/:id', protectedRoute, uploadPictures)
 router.post("/buy-it/:id", protectedRoute, addToBuyIt)
+router.post("/property-map", getPropertyByMap)
 router.post("/check-buy-it/:id", protectedRoute, checkBuyIt)
 router.post("/pass-on-it/:id", protectedRoute, passOnIt)
 router.post('/add-property', protectedRoute, addProperty)
