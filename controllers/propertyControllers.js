@@ -10,6 +10,7 @@ const mbxStyles = require("@mapbox/mapbox-sdk/services/geocoding")
 
 const baseClient = mbxClient({ accessToken: process.env.MAPBOX_ACCESS_ID })
 const stylesService = mbxStyles(baseClient)
+
 // const fs = require("fs");
 // const COS = require('ibm-cos-sdk-config') //to check the bucket config ---ref ---to the official documents.
 const User = require("../models/userSchema")
@@ -729,12 +730,15 @@ const passOnIt = asynchErrorHandler(async (req, res, next) => {
 })
 
 const getPropertyByMap = asynchErrorHandler(async (req, res, next) => {
-  const { upper, bottom } = req.body
+  const {west, east, south, north} = req.query
 
   const property = await Property.find({
     location: {
       $geoWithin: {
-        $box: [upper, bottom],
+        $box: [
+          [west, east],
+          [south, north],
+        ],
       },
     },
   })
@@ -745,18 +749,17 @@ const getPropertyByMap = asynchErrorHandler(async (req, res, next) => {
 allPropertyData.push({
   _id: record._id,
   propertyAddress: record.propertyAddress,
-  city: record.cityity,
+  city: record.city,
   state: record.state,
   zip: record.zip,
   propertyImages: record.propertyImages,
   geo: record.geo,
+  totalSqf: record.totalSqf,
+  countyValue: record.countyValue,
 })
   }
 
-
   res.status(200).json(allPropertyData)
-  // console.log(upper, bottom)
-  // res.status(200).json("hit the endpoint")
 }
 )
 module.exports = {
