@@ -17,12 +17,14 @@ const {
   checkBuyIt,
   passOnIt,
   getPropertyByMap,
+  getSinglePropertyByMap,
 } = require("../controllers/propertyControllers")
 const protectedRoute = require('../utils/protectedRoute')
 
 const router = express.Router();
 
 router.get("/property-map", getPropertyByMap)
+router.get("/single-property-map/:id", getSinglePropertyByMap)
 router.get('/properties', protectedRoute, getProperties)
 router.get('/requested-property/:id', protectedRoute, getRequestedProperty)
 router.delete('/delete-property', protectedRoute, deletePropery)

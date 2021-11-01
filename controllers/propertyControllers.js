@@ -762,6 +762,48 @@ allPropertyData.push({
   res.status(200).json(allPropertyData)
 }
 )
+
+const getSinglePropertyByMap = asynchErrorHandler(async (req, res, next) => {
+  const id = req.params.id
+  
+  const isValidId = isValidObjectId(id)
+
+  if (!isValidId) return next(new Errorhandler("Property not found", 400))
+
+  const property = await Property.findById({ _id: id }).populate({
+    path: "buyItUser",
+    select:
+      "-email -password -role -profilePicture -likedPropertys -status -setAlarmed -buyIt -selectedRole -usedResetToken -createdAt -_id",
+  })
+
+  if (!property) return next(new Errorhandler("Property not found", 400))
+
+  property.infoTabFile = undefined
+  property.countyRODURL = undefined
+  property.manualSearch = undefined
+  property.noActiveMortgageLien = undefined
+  property.firstmortgageInfo = undefined
+  property.secondMortgageInfo = undefined
+  property.thirdMortgageInfo = undefined
+  property.otherMortgageInfo = undefined
+  property.hoaLien = undefined
+  property.taxLien = undefined
+  property.sameOwner = undefined
+  property.pacer = undefined
+  property.ownerInfo = undefined
+  property.sameAsOwner = undefined
+  property.addressSameAsOwner = undefined
+  property.borrowerInfo = undefined
+  property.OwnerDocs = undefined
+  property.saleinfo = undefined
+  property.amEmail = undefined
+  property.buyItUser = undefined
+  //need to push bid info to the array
+  res.json(property)
+
+}
+)
+
 module.exports = {
   addProperty,
   getProperties,
@@ -779,5 +821,6 @@ module.exports = {
   addToBuyIt,
   checkBuyIt,
   passOnIt,
-  getPropertyByMap
+  getPropertyByMap,
+  getSinglePropertyByMap,
 }
