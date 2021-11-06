@@ -804,6 +804,29 @@ const getSinglePropertyByMap = asynchErrorHandler(async (req, res, next) => {
 }
 )
 
+const propertyForHome = asynchErrorHandler(async (req, res, next) => {
+
+  const property = await Property.find().limit(10)
+
+  const allPropertyData = []
+
+  for (const record of property) {
+    allPropertyData.push({
+      _id: record._id,
+      propertyAddress: record.propertyAddress,
+      city: record.city,
+      state: record.state,
+      zip: record.zip,
+      propertyImages: record.propertyImages,
+      geo: record.geo,
+      totalSqf: record.totalSqf,
+      countyValue: record.countyValue,
+    })
+  }
+
+  res.status(200).json(allPropertyData)
+})
+
 module.exports = {
   addProperty,
   getProperties,
@@ -815,6 +838,7 @@ module.exports = {
   uploadFiles,
   deleteFile,
   uploadPictures,
+  propertyForHome,
   deleteImage,
   updateMap,
   uploadSaleInfoFiles,
