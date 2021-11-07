@@ -3,56 +3,59 @@ const Schema = mongoose.Schema
 const bcrypt = require('bcrypt')
 const validator = require('validator')
 
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     name: {
-        type: String,
-        required: [true, "Name is required"],
-        minLength: [4, "Name must contain more that 3 character"],
-        maxLength: [40, "Name should not exceed 40 characters"]
+      type: String,
+      required: [true, "Name is required"],
+      minLength: [4, "Name must contain more that 3 character"],
+      maxLength: [40, "Name should not exceed 40 characters"],
     },
     email: {
-        type: String,
-        unique: [true, "User already exists, Please login instead"],
-        required: [true, "Email is required"],
-        trim : true,
-        lowerCase: true,
-        validate: [validator.isEmail, "Please provide a valid email address"]
+      type: String,
+      unique: [true, "User already exists, Please login instead"],
+      required: [true, "Email is required"],
+      trim: true,
+      lowerCase: true,
+      validate: [validator.isEmail, "Please provide a valid email address"],
     },
     password: {
-        type: String,
-        required: [true, "Password is required"],
-        minLength: [8, "Password must contain at least 8 characters"],
+      type: String,
+      required: [true, "Password is required"],
+      minLength: [8, "Password must contain at least 8 characters"],
     },
     role: {
-        type: [String],
-        default: "DTC",
-        selectedRole: String,
-        enum: ["DTC", "DCA", "Image", "NOS", "Client", "Third DCA", "Accountant"]
+      type: [String],
+      default: "DTC",
+      selectedRole: String,
+      enum: ["DTC", "DCA", "Image", "NOS", "Client", "Third DCA", "Accountant"],
     },
     profilePicture: {
-        type: {
-            type: String,
-            default : "/avatar.png"            
-         }
+      type: {
+        type: String,
+        default: "/avatar.png",
+      },
     },
 
     likedPropertys: {
-        type: [String],
+      type: [String],
     },
+    notificationToken: String,
 
     status: {
-        type: String,
-        default: "Active",
-        enum: ["Active", "inActive"]
+      type: String,
+      default: "Active",
+      enum: ["Active", "inActive"],
     },
     setAlarmed: [String],
-    buyIt: [{type: Schema.Types.ObjectId, ref: 'Property'}], //type will be shcema in order to populate the property data.
+    buyIt: [{ type: Schema.Types.ObjectId, ref: "Property" }], //type will be shcema in order to populate the property data.
 
     selectedRole: String,
 
-    usedResetToken : String,
-
-}, { timestamps: true })
+    usedResetToken: String,
+  },
+  { timestamps: true }
+)
 
 
 userSchema.pre("save", async function (next) {

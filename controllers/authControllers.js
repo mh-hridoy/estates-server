@@ -15,13 +15,13 @@ const signup = asynchErrorHandler(async (req, res) => {  //asynchErrorHandler fu
 
 const login = asynchErrorHandler(async (req, res, next) => {
 
-    const { email, password } = req.body
+    const { email, password, notificationToken } = req.body
     const privateKey = process.env.JWT_SECRET
 
+        console.log(email, password, notificationToken)
     const user = await User.findOne({ email }).exec()
 
     // const comparePassword = await bcrypt.compare(password, user.password)
-
 
     if (!user || !password) {
         return next(new ErrorHandler('Credentials does not exist', 404))
@@ -40,7 +40,11 @@ const login = asynchErrorHandler(async (req, res, next) => {
         })
         res.setHeader('Authorization', 'Bearer ' + token);
 
+        await user.updateOne({
+          notificationToken: notificationToken ? notificationToken : "",
+        })
         res.status(200).json({ user, token })
+
     } else {
         return next(new ErrorHandler('Credentials does not exist', 404))
     }
