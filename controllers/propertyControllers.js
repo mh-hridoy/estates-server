@@ -867,9 +867,10 @@ const getNotifications = asynchErrorHandler(async (req, res, next) => {
 
 const storeNotiToken = asynchErrorHandler(async (req, res, next) => {
   const id = req.params.id
-  const token = req.body
+  const {token} = req.body
 
   const user = await User.findById({ _id: id })
+
 
     if (!user) return next(new Errorhandler("No User Found"))
 
