@@ -18,6 +18,7 @@ const {
   readNotification,
   passOnIt,
   getNotifications,
+  storeNotiToken,
   getPropertyByMap,propertyForHome,
   getSinglePropertyByMap,
 } = require("../controllers/propertyControllers")
@@ -33,6 +34,7 @@ router.get('/get-notifications/:id', protectedRoute, getNotifications)
 router.delete('/delete-property', protectedRoute, deletePropery)
 router.post('/read-notification', protectedRoute, readNotification)
 router.post('/upload-files/:pId', protectedRoute, uploadFiles)
+router.post('/store-notiken/:id', protectedRoute, storeNotiToken)
 router.post("/upload-sale-info-files/:pId", protectedRoute, uploadSaleInfoFiles)
 router.post('/upload-pictures/:id', protectedRoute, uploadPictures)
 router.post("/buy-it/:id", protectedRoute, addToBuyIt)

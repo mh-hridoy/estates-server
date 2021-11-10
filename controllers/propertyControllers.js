@@ -865,8 +865,22 @@ const getNotifications = asynchErrorHandler(async (req, res, next) => {
   res.json(notifications)
 })
 
+const storeNotiToken = asynchErrorHandler(async (req, res, next) => {
+  const id = req.params.id
+  const token = req.body
+
+  const user = await User.findById({ _id: id })
+
+    if (!user) return next(new Errorhandler("No User Found"))
+
+  await user.updateOne({ notificationToken: token })
+  
+  res.status(200).json("Token Saved successfully.")
+})
+
 module.exports = {
   addProperty,
+  storeNotiToken,
   readNotification,
   getProperties,
   addBidderInfo,
