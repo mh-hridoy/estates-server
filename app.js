@@ -15,11 +15,14 @@ const Property = require('./models/propertySchema')
 var cron = require("node-cron")
 const mbxClient = require("@mapbox/mapbox-sdk")
 const mbxStyles = require("@mapbox/mapbox-sdk/services/geocoding")
+const socket = require("socket.io")
+const Notification = require("./models/BuyItNotifications")
+// const User = require("./models/userSchema")
 
 const baseClient = mbxClient({ accessToken: process.env.MAPBOX_ACCESS_ID })
 const stylesService = mbxStyles(baseClient)
-
-
+// const admin = require("firebase-admin")
+// const serviceAccount = require("./estatescommunity.json")
 
 const port = process.env.PORT || 3000;
 const options = {
@@ -59,7 +62,29 @@ app.all('*', (req, res) => {
 
 app.use(errorhandlingMiddleware)
 
+
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: "https://estatescommunity-80e6f.firebaseio.com",
+// })
+
+// async function sendMessage() {
+//   // Send a message to devices with the registered tokens
+//   const tokens = [
+//     "dia3pIQBQWGwuxSEeMUn4a:APA91bFp01v_zRqq3tjPYoMQJtOVwoy0YRFz39QWdIYR86xMqD7Yxub5nHVHCke1I-pzIK75Ev5t7f8oRiFe7qfe9oO4ZaVp5rfiIYBm3lUjPDsxN0MmWd0BG9pTGNznHQdBe8S0bTlR",
+//   ]
+//   await admin.messaging().sendMulticast({
+//     tokens, // ['token_1', 'token_2', ...]
+//     notification: { title: "world!", body: "Message from the server."}
+//   })
+// }
+
+// // Send messages to our users
+// sendMessage()
+
+
 // Automate----Scrapping LOGS.COM
+
 const autoMate = async () => {
   const propertyArray = []
 
@@ -337,7 +362,7 @@ const autoMate = async () => {
 let server;
 mongoose.connect(process.env.DB_SECRET_KEY, options, () => {
 
-  app.listen(port, () => {
+ server = app.listen(port, () => {
     console.log("Server listening on port " + port)
 
     cron.schedule("0 0 0 * * *", () => {
@@ -345,13 +370,48 @@ mongoose.connect(process.env.DB_SECRET_KEY, options, () => {
       
     })
 
+ })
+  console.log("DB Connected")
+   const io = socket(server, {
+     cors: {
+       origin: "*",
+       methods: ["GET", "POST"],
+     },
+   })
+   io.on("connection", function (socket) {
+     console.log("Made socket connection")
+    //  console.log(socket.handshake.query.userId)
+     const userId = socket.handshake.query.userId
+
+const filter = [
+  { $match: { operationType: "insert" } },
+  // {
+  //   $project: {
+  //     "fullDocument.user_id": 1,
+  //     "fullDocument.chats": 0,
+  //     "fullDocument._id": 0,
+  //     "fullDocument.first_name": 0,
+  //     "fullDocument.last_name": 0,
+  //   },
+  // },
+]
+
+      const changedNotification = Notification.watch(filter)
+    //  console.log(changedNotification)
+     changedNotification.on("change", function (notification) {
+       if (notification.fullDocument.userId == userId) {
+         socket.emit("notifications", notification.fullDocument)
+       }
+      })
+      // console.log(socket.handshake.query.userId)
+      // Notification.find().then((result) => socket.emit("notifications", result))
+
+     socket.on("disconnect", () => {
+       console.log("User disconnected.")
+     })
+   })
+
 })
-
-    console.log("DB Connected")
-
-})
-
-
 
 process.on('unhandledRejection', err => {
     console.log("unhandledRejection Error... System will terminate soon")

@@ -15,12 +15,10 @@ const signup = asynchErrorHandler(async (req, res) => {  //asynchErrorHandler fu
 
 const login = asynchErrorHandler(async (req, res, next) => {
 
-    const { email, password, notificationToken } = req.body
+    const { email, password } = req.body
     const privateKey = process.env.JWT_SECRET
 
-        console.log(email, password, notificationToken)
     const user = await User.findOne({ email }).exec()
-
     // const comparePassword = await bcrypt.compare(password, user.password)
 
     if (!user || !password) {
@@ -32,7 +30,6 @@ const login = asynchErrorHandler(async (req, res, next) => {
     }
 
     if (user && await user.comparePassword(password, user.password)) {
-        user.password = undefined;
         var token = jwt.sign({ id: user._id }, privateKey, { expiresIn: "1d" });
 
         res.cookie("token", token, {
@@ -40,9 +37,9 @@ const login = asynchErrorHandler(async (req, res, next) => {
         })
         res.setHeader('Authorization', 'Bearer ' + token);
 
-        await user.updateOne({
-          notificationToken: notificationToken ? notificationToken : "",
-        })
+        user.buyItNotifications = undefined
+                user.password = undefined
+
         res.status(200).json({ user, token })
 
     } else {

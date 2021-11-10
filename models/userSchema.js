@@ -40,7 +40,9 @@ const userSchema = new Schema(
     likedPropertys: {
       type: [String],
     },
-    notificationToken: String,
+    notificationToken: { type: String },
+
+    buyItNotifications: [{ type: Schema.Types.ObjectId, ref: "Notification" }],
 
     status: {
       type: String,

@@ -15,7 +15,9 @@ const {
   addToBuyIt,
   uploadSaleInfoFiles,
   checkBuyIt,
+  readNotification,
   passOnIt,
+  getNotifications,
   getPropertyByMap,propertyForHome,
   getSinglePropertyByMap,
 } = require("../controllers/propertyControllers")
@@ -27,7 +29,9 @@ router.get("/home-property", propertyForHome)
 router.get("/single-property-map/:id", getSinglePropertyByMap)
 router.get('/properties', protectedRoute, getProperties)
 router.get('/requested-property/:id', protectedRoute, getRequestedProperty)
+router.get('/get-notifications/:id', protectedRoute, getNotifications)
 router.delete('/delete-property', protectedRoute, deletePropery)
+router.post('/read-notification', protectedRoute, readNotification)
 router.post('/upload-files/:pId', protectedRoute, uploadFiles)
 router.post("/upload-sale-info-files/:pId", protectedRoute, uploadSaleInfoFiles)
 router.post('/upload-pictures/:id', protectedRoute, uploadPictures)
