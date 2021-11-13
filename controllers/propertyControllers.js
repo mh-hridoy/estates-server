@@ -11,10 +11,10 @@ const Notification = require("../models/BuyItNotifications")
 const mongoose = require("mongoose")
 const baseClient = mbxClient({ accessToken: process.env.MAPBOX_ACCESS_ID })
 const stylesService = mbxStyles(baseClient)
-
 // const fs = require("fs");
 // const COS = require('ibm-cos-sdk-config') //to check the bucket config ---ref ---to the official documents.
 const User = require("../models/userSchema")
+
 
 var config = {
   endpoint: process.env.IBM_ENDPOINTS,
@@ -622,6 +622,9 @@ const addToBuyIt = asynchErrorHandler(async (req, res, next) => {
   if (!user) return next(new Errorhandler("User not found"))
 
   const buyItUser = property.buyItUser
+  const lastSaleInfo = property.saleinfo[property.saleinfo.length - 1]
+
+  const userNotiToken = user.notificationToken ? user.notificationToken : "NA"
 
   const buyItNotification = await new Notification({
     title: "Buy it",
@@ -631,6 +634,9 @@ const addToBuyIt = asynchErrorHandler(async (req, res, next) => {
       " to your buy it list.",
     propertyId: propertyId,
     userId: userId,
+    saleDate: lastSaleInfo.saleDate,
+    propertyAddress: property.propertyAddress,
+    targetedUser: userNotiToken,
   })
 
   await user.updateOne({

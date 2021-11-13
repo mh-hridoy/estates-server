@@ -7,7 +7,10 @@ const buyItNotifications = new Schema(
     message: String,
     status: { type: Boolean, default: true },
     propertyId: String,
+    saleDate: Date,
     userId: String,
+    propertyAddress: String,
+    targetedUser: String
   },
   { timestamps: true }
 )
