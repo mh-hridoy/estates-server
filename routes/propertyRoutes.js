@@ -18,6 +18,7 @@ const {
   readNotification,
   passOnIt,
   getNotifications,
+  getStats,
   storeNotiToken,
   getPropertyByMap,propertyForHome,
   getSinglePropertyByMap,
@@ -29,6 +30,7 @@ router.get("/property-map", getPropertyByMap)
 router.get("/home-property", propertyForHome)
 router.get("/single-property-map/:id", getSinglePropertyByMap)
 router.get('/properties', protectedRoute, getProperties)
+router.get('/stats', protectedRoute, getStats)
 router.get('/requested-property/:id', protectedRoute, getRequestedProperty)
 router.get('/get-notifications/:id', protectedRoute, getNotifications)
 router.delete('/delete-property', protectedRoute, deletePropery)

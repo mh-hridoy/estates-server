@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser') //it parse the client side cookies
 const helmet = require('helmet')
 const playwright = require('playwright')
 const Property = require('./models/propertySchema')
-var cron = require("node-cron")
+const cron = require("node-cron")
 const mbxClient = require("@mapbox/mapbox-sdk")
 const mbxStyles = require("@mapbox/mapbox-sdk/services/geocoding")
 const socket = require("socket.io")
@@ -407,7 +407,7 @@ const filter = [
 
            client
              .createNotification(notificationt)
-             .then((response) => {
+             .then(() => {
                //  console.log(response)
              })
              .catch((e) => {

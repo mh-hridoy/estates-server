@@ -885,6 +885,27 @@ const storeNotiToken = asynchErrorHandler(async (req, res, next) => {
   res.status(200).json("Token Saved successfully.")
 })
 
+const getStats = asynchErrorHandler(async (req, res, next) => {
+  const propertyStats = await Property.aggregate([
+    {
+      $match: {
+        createdAt: {
+          $gte: new Date("2021-01-01"),
+          $lte: new Date("2021-12-31"),
+        },
+      },
+    },
+    {
+      $group: { _id: { $month: "$createdAt" }, totalCreated: { $sum: 1 } },
+    },
+    { $project: { totalCreated : 1, _id : 0, month : "$_id" } },
+  ])
+  
+
+  res.status(200).json(propertyStats)
+
+})
+
 module.exports = {
   addProperty,
   storeNotiToken,
@@ -899,6 +920,7 @@ module.exports = {
   deleteFile,
   uploadPictures,
   propertyForHome,
+  getStats,
   deleteImage,
   updateMap,
   uploadSaleInfoFiles,
