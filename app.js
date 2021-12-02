@@ -178,6 +178,8 @@ const autoMate = async () => {
         openingBid: openingBid == "NaN" ? 0 : +openingBid,
         beforeSaleNotes: beforeSaleNotes.trim(),
       })
+
+
   })
 
 
@@ -185,22 +187,28 @@ const autoMate = async () => {
   const updateRecord = []
 
   for (const record of propertyArray) {
-    const propertyAddress = record.propertyAddress.trim()
-    const caseNumber = record.caseNumber.trim()
-    const property = await Property.find({
+    // const propertyAddress = record.propertyAddress.trim()
+    // const caseNumber = record.caseNumber.trim()
+
+    // console.log(
+    //   "Property Address: " + propertyAddress,
+    //   "Case Number: " + caseNumber
+    // )
+    const property = await Property.findOne({
       $and: [
         {
-          propertyAddress: new RegExp(propertyAddress, "gi"), //instead of this I can use the state and property address since the case number seems to be not working properly.
+          propertyAddress: new RegExp(record.propertyAddress.trim(), "gi"), //instead of this I can use the state and property address since the case number seems to be not working properly.
         },
         {
-          "saleinfo.caseNumber": new RegExp(caseNumber, "gi"),
+          state: new RegExp(record.state.trim(), "gi"),
         },
       ],
     })
 
-    if (property.length == 0) {
+    if (!property) {
       createRecord.push(record)
     } else {
+
       updateRecord.push(record)
     }
   }
@@ -208,112 +216,126 @@ const autoMate = async () => {
 
 
   // create property if data no where to be found
-  createRecord.length !== 0 &&
-    createRecord.forEach(async (record) => {
-      const {
-        propertyAddress,
-        caseNumber,
-        saleDate,
-        saleTime,
-        openingBid,
-        beforeSaleNotes,
-        city, state,
-        ...data
-      } = record
-      const currentYear = new Date().getFullYear()
-      const modifiedSaleDate = saleDate.split(" ").pop()
-      const yearOfDate = modifiedSaleDate.split("/")[2]
-      const correctDate =
-        yearOfDate == undefined
-          ? modifiedSaleDate + "/" + currentYear
-          : modifiedSaleDate
 
-      const mapReq = await stylesService.forwardGeocode({
-        query: propertyAddress + ", " + city + " " + state,
-        types: ["address"],
-        limit: 1,
-      })
-
-      const response = await mapReq.send()
-      const match = response.body
-
-  
-      
-      const property = await new Property({
-        saleinfo: [
-          {
-            caseNumber: caseNumber.trim(),
-            saleDate: correctDate,
-            saleTime: saleTime.trim(),
-            openingBid: +openingBid,
-            beforeSaleNotes: beforeSaleNotes.trim(),
-          },
-        ],
-        geo: {
-          long: match.features[0].center[0],
-          lat: match.features[0].center[1],
-        },
-        location: {
-          type: "Point",
-          coordinates: [
-            match.features[0].center[0],
-            match.features[0].center[1],
-          ],
-        },
-        propertyAddress,
-        ...data,
-      })
-      
-    await property.save()
-    })
-  console.log(createRecord.length)
-
-  // Update the property info if the data exist.
-  updateRecord.length !== 0 && updateRecord.forEach(async (record) => {
-
+  const createRecordFunc = async (record) => {
     const {
+      propertyAddress,
+      caseNumber,
       saleDate,
       saleTime,
       openingBid,
       beforeSaleNotes,
+      city,
+      state,
+      ...data
     } = record
-
-     const currentYear = new Date().getFullYear()
-     const modifiedSaleDate = saleDate.split(" ").pop()
-     const yearOfDate = modifiedSaleDate.split("/")[2]
-     const correctDate =
-       yearOfDate == undefined
-         ? modifiedSaleDate + "/" + currentYear
+    const currentYear = new Date().getFullYear()
+    const modifiedSaleDate = saleDate.split(" ").pop()
+    const yearOfDate = modifiedSaleDate.split("/")[2]
+    const correctDate =
+      yearOfDate == undefined
+        ? modifiedSaleDate + "/" + currentYear
         : modifiedSaleDate
-    
-    const property = await Property.find({
-      $or: [
+
+    const mapReq = await stylesService.forwardGeocode({
+      query: propertyAddress + ", " + city + " " + state,
+      types: ["address"],
+      limit: 1,
+    })
+
+        // console.log("create record")
+        // console.log(
+          
+        //   "Property Address: " + record.propertyAddress,
+        //   "Case Number: " + record.caseNumber
+        // )
+
+
+    const response = await mapReq.send()
+    const match = response.body
+
+    const property = await new Property({
+      saleinfo: [
         {
-          $and: [
-            {
-              propertyAddress: new RegExp(record.propertyAddress.trim(), "gi"),
-            },
-            {
-              "saleinfo.caseNumber": new RegExp(record.caseNumber.trim(), "gi"),
-            },
-          ],
+          caseNumber: caseNumber.trim(),
+          saleDate: correctDate,
+          saleTime: saleTime.trim(),
+          openingBid: +openingBid,
+          beforeSaleNotes: beforeSaleNotes.trim(),
         },
       ],
+      geo: {
+        long: match.features[0].center[0],
+        lat: match.features[0].center[1],
+      },
+      location: {
+        type: "Point",
+        coordinates: [match.features[0].center[0], match.features[0].center[1]],
+      },
+      propertyAddress,
+      city: city.trim(),
+      state:
+        state.trim() == "NC"
+          ? "North Carolina"
+          : state.trim() == "SC"
+          ? "South Carolina"
+          : state.trim(),
+      ...data,
     })
+
+    await property.save()
+  }
+
+  if (createRecord.length !== 0) {
+      for (const record of createRecord) {
+        // createRecord.forEach(async (record) => {
+        createRecordFunc(record)
+        // })
+      }
+
+    }
+  
+         console.log( "Record Created " + createRecord.length)
+
+
+  // Update the property info if the data exist.
+
+  const updateRecordFunc = async (record) => {
+    const { saleDate, saleTime, openingBid, beforeSaleNotes } = record
+
+    const currentYear = new Date().getFullYear()
+    const modifiedSaleDate = saleDate.split(" ").pop()
+    const yearOfDate = modifiedSaleDate.split("/")[2]
+    const correctDate =
+      yearOfDate == undefined
+        ? modifiedSaleDate + "/" + currentYear
+        : modifiedSaleDate
+    
+    //         console.log("Update record")
+
+
+    // console.log("Property Address: " + record.propertyAddress, "Case Number: " + record.caseNumber)
+
+    const property = await Property.find({
+     
+              propertyAddress: new RegExp(record.propertyAddress.trim(), "gi"),
+            }     
+   )
     // check if the sale date matched .. otherwise push the data to create another array of obj.
     const saleInfo = property[0].saleinfo
 
-    const matchedSale = saleInfo.findIndex(
-      (sale) => {
-        return new Date(sale.saleDate).toDateString() == new Date(saleDate).toDateString()
-      }
-    )
+    const matchedSale = saleInfo.findIndex((sale) => {
+      return (
+        new Date(sale.saleDate).toDateString() ==
+        new Date(saleDate).toDateString()
+      )
+    })
 
     if (matchedSale == -1) {
       saleInfo.push({
         saleDate: correctDate,
         saleTime,
-        openingBid,
+        openingBid: +openingBid,
         beforeSaleNotes: beforeSaleNotes.trim(),
       })
     } else {
@@ -321,8 +343,7 @@ const autoMate = async () => {
         saleDate: correctDate,
         saleTime,
         openingBid,
-        beforeSaleNotes: `${beforeSaleNotes.trim()}
-        ${
+        beforeSaleNotes: `${beforeSaleNotes.trim()}\n${
           saleInfo[matchedSale].beforeSaleNotes &&
           saleInfo[matchedSale].beforeSaleNotes.trim()
         }`,
@@ -330,12 +351,29 @@ const autoMate = async () => {
     }
 
     await property[0].save()
+  }
 
-  })
-    console.log(updateRecord.length)
+  if (updateRecord.length !== 0) {
+    for (const record of updateRecord) {
+      updateRecordFunc(record)
+    }
 
+  }
 
+    
 
+  console.log("Record Updated "+updateRecord.length)
+  
+  // console.log(`CreatedRecord : ${createRecord.lenght != 0 ? createRecord[0].propertyAddress + createRecord[0].caseNumber : ""}` )
+  // console.log(
+  //   `updateRecord : ${
+  //     createRecord.lenght != 0
+  //       ? createRecord[0].propertyAddress + createRecord[0].caseNumber
+  //       : ""
+  //   }`
+  // )
+
+  
   browser.close()
 }
   
