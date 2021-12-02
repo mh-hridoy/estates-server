@@ -99,7 +99,7 @@ const autoMate = async () => {
   })
   await page.waitForTimeout(5000)
 
-  await page.screenshot({ path: "checking.jpeg", fullPage: true })
+  // await page.screenshot({ path: "checking.jpeg", fullPage: true })
 
   await page.waitForTimeout(5000)
   await page.waitForSelector("div.rowHeaders")
