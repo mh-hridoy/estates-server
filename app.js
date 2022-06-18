@@ -45,7 +45,21 @@ process.on('uncaughtException', err => {
 //     origin: ['http://localhost:3000', 'https://estate-client-p.herokuapp.com'], //frontend
 //     credentials: true
 // }))
-app.use(cors())
+app.use(
+  cors({
+    origin: true,
+    methods: ["DELETE", "POST", "GET", "OPTIONS"],
+    allowedHeaders: [
+      "Access-Control-Allow-Headers",
+      "Content-Type",
+      "Access-Control-Allow-Origin",
+      "Authorization",
+      "X-Requested-With",
+    ],
+    // preflightContinue: true,
+    credentials: true,
+  })
+)
 app.use(helmet())
 app.use(express.json({ limit: "10MB" }))
 app.use(cookieParser())
