@@ -45,28 +45,14 @@ process.on('uncaughtException', err => {
 //     origin: ['http://localhost:3000', 'https://estates-server.herokuapp.com/'], //frontend
 //     credentials: true
 // }))
-app.use(
-  cors({
-    origin: ['http://localhost:3000', 'https://estates-server.herokuapp.com/'],
-    methods: ["DELETE", "POST", "GET", "OPTIONS"],
-    allowedHeaders: [
-      "Access-Control-Allow-Headers",
-      "Content-Type",
-      "Access-Control-Allow-Origin",
-      "Authorization",
-      "X-Requested-With",
-    ],
-    // preflightContinue: true,
-    credentials: true,
-  })
-)
 app.use(helmet())
 app.use(express.json({ limit: "10MB" }))
 app.use(cookieParser())
 app.use(morgan('dev'))
 app.use(sanitize())
 app.use(xss())
-    
+app.use(cors())
+
 fs.readdirSync('./routes').map(route => app.use('/api', require(`./routes/${route}`)))
 
 
