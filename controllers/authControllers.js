@@ -30,7 +30,7 @@ const login = asynchErrorHandler(async (req, res, next) => {
     }
 
     if (user && await user.comparePassword(password, user.password)) {
-        var token = jwt.sign({ id: user._id }, privateKey, { expiresIn: "1d" });
+        var token = jwt.sign({ id: user._id }, privateKey, { expiresIn: "10d" });
 
         res.cookie("token", token, {
             httpOnly: true,
